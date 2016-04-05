@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/job.css"/>
+		<link rel="stylesheet" href="./css/mui.min.css">
+		<style>
+			html,
+			body {
+				min-height: 100%;
+				background-color: #efeff4;
+			}
+			
+			.animated {
+				-webkit-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			
+			@-webkit-keyframes bounceInDown {
+				0%,
+				60%,
+				75%,
+				90%,
+				100% {
+					-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 25px, 0);
+					transform: translate3d(0, 25px, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(0, -10px, 0);
+					transform: translate3d(0, -10px, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(0, 5px, 0);
+					transform: translate3d(0, 5px, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			
+			@keyframes bounceInDown {
+				0%,
+				60%,
+				75%,
+				90%,
+				100% {
+					-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 25px, 0);
+					transform: translate3d(0, 25px, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(0, -10px, 0);
+					transform: translate3d(0, -10px, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(0, 5px, 0);
+					transform: translate3d(0, 5px, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			
+			.bounce-in-down {
+				-webkit-animation-name: bounceInDown;
+				animation-name: bounceInDown;
+			}
+			
+			@-webkit-keyframes fadeInDown {
+				0%,
+				60%,
+				75%,
+				90%,
+				100% {
+					-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			
+			@keyframes fadeInDown {
+				0%,
+				60%,
+				75%,
+				90%,
+				100% {
+					-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			
+			.fade-in-down {
+				-webkit-animation-name: fadeInDown;
+				animation-name: fadeInDown;
+			}
+			
+			@-webkit-keyframes bounceOutUp {
+				20% {
+					-webkit-transform: translate3d(0, -10px, 0);
+					transform: translate3d(0, -10px, 0);
+				}
+				40%,
+				45% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 20px, 0);
+					transform: translate3d(0, 20px, 0);
+				}
+				100% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+			}
+			
+			@keyframes bounceOutUp {
+				20% {
+					-webkit-transform: translate3d(0, -10px, 0);
+					transform: translate3d(0, -10px, 0);
+				}
+				40%,
+				45% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 20px, 0);
+					transform: translate3d(0, 20px, 0);
+				}
+				100% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+			}
+			
+			.bounce-out-up {
+				-webkit-animation-name: bounceOutUp;
+				animation-name: bounceOutUp;
+			}
+			
+			@-webkit-keyframes fadeOutUp {
+				20% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				40%,
+				45% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				100% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+			}
+			
+			@keyframes fadeOutUp {
+				20% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				40%,
+				45% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				100% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+			}
+			
+			.fade-out-up {
+				-webkit-animation-name: fadeOutUp;
+				animation-name: fadeOutUp;
+			}
+			
+			.menu-open {
+				height: 100%;
+				width: 100%;
+			}
+			
+			.menu-open .mui-scroll-wrapper {
+				position: absolute;
+				top: 48;
+				bottom: 0;
+				left: 0;
+				z-index: 1;
+				width: 100%;
+				overflow: hidden;
+				-webkit-backface-visibility: hidden;
+			}
+			
+			.menu-backdrop {
+				display: none;
+			}
+			
+			.menu-open .menu-backdrop {
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				height: 100%;
+				width: 100%;
+				display: block;
+				z-index: 998;
+			}
+			
+			.menu-wrapper {
+				position: fixed;
+				top: 48px;
+				left: 0;
+				right: 0;
+				z-index: 999;
+				text-align: center;
+				background-color: #333;
+				width: 100%;
+			}
+			
+			.menu-wrapper.hidden {
+				-webkit-transform: translate3d(0, -100%, 0);
+				transform: translate3d(0, -100%, 0);
+				z-index: -1;
+			}
+			
+			.menu {
+				width: 100%;
+			}
+			
+			.menu .mui-table-view-inverted {
+				color: gray;
+				font-size: 19px;
+			}
+			
+			.menu .mui-table-view-inverted .mui-table-view-cell:after {
+				height: 2px;
+				left: 0;
+				right: 0;
+			}
+			
+			.menu-wrapper.mui-active,
+			.menu-wrapper.mui-active .menu {
+				-webkit-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+			}
+			
+			#info {
+				padding: 20px 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a id="icon-menu" class="mui-action-menu mui-icon mui-icon-search mui-pull-right"><span style="font-size: 14px;">
+				
+			搜索职位</span></a>
+			<h1 class="mui-title">511职位</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded">
+
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<a href="#">
+							<img class="mui-media-object mui-pull-left" src="images/job/logo.png">
+							<div class="mui-media-body">
+								C#后端
+								<span id="value">7K~8K</span>
+								<p class='mui-ellipsis'>511人才网
+									<span id="address">南京六合</span>
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="#">
+							<img class="mui-media-object mui-pull-left" src="images/job/logo.png">
+							<div class="mui-media-body">
+								专职客服
+								<span id="value">7K~8K</span>
+								<p class='mui-ellipsis'>511人才网
+									<span id="address">苏州昆山</span>
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-hidden">cared
+						<div id="M_Toggle" class="mui-switch mui-active">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="./main.html">
+							<img class="mui-media-object mui-pull-left" src="images/job/logo.png">
+							<div class="mui-media-body">
+								UI/美工
+								<span id="value">7K~8K</span>
+								<p class='mui-ellipsis'>511人才网
+									<span id="address">苏州昆山</span>
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="./main.html">
+							<img class="mui-media-object mui-pull-left" src="images/job/logo.png">
+							<div class="mui-media-body">
+								UI/美工
+								<span id="value">7K~8K</span>
+								<p class='mui-ellipsis'>511人才网
+									<span id="address">苏州昆山</span>
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="#">
+							<img class="mui-media-object mui-pull-left" src="images/job/logo.png">
+							<div class="mui-media-body">
+								专职客服
+								<span id="value">7K~8K</span>
+								<p class='mui-ellipsis'>511人才网
+									<span id="address">苏州昆山</span>
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-hidden">cared
+						<div id="M_Toggle" class="mui-switch mui-active">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="./main.html">
+							<img class="mui-media-object mui-pull-left" src="images/job/logo.png">
+							<div class="mui-media-body">
+								UI/美工
+								<span id="value">7K~8K</span>
+								<p class='mui-ellipsis'>511人才网
+									<span id="address">苏州昆山</span>
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="./main.html">
+							<img class="mui-media-object mui-pull-left" src="images/job/logo.png">
+							<div class="mui-media-body">
+								UI/美工
+								<span id="value">7K~8K</span>
+								<p class='mui-ellipsis'>511人才网
+									<span id="address">苏州昆山</span>
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="#">
+							<img class="mui-media-object mui-pull-left" src="images/job/logo.png">
+							<div class="mui-media-body">
+								C#后端
+								<span id="value">7K~8K</span>
+								<p class='mui-ellipsis'>511人才网
+									<span id="address">南京六合</span>
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="#">
+							<img class="mui-media-object mui-pull-left" src="images/job/logo.png">
+							<div class="mui-media-body">
+								专职客服
+								<span id="value">7K~8K</span>
+								<p class='mui-ellipsis'>511人才网
+									<span id="address">苏州昆山</span>
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-hidden">cared
+						<div id="M_Toggle" class="mui-switch mui-active">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="./main.html">
+							<img class="mui-media-object mui-pull-left" src="images/job/logo.png">
+							<div class="mui-media-body">
+								UI/美工
+								<span id="value">7K~8K</span>
+								<p class='mui-ellipsis'>511人才网
+									<span id="address">苏州昆山</span>
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="./main.html">
+							<img class="mui-media-object mui-pull-left" src="images/job/logo.png">
+							<div class="mui-media-body">
+								UI/美工
+								<span id="value">7K~8K</span>
+								<p class='mui-ellipsis'>511人才网
+									<span id="address">苏州昆山</span>
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="#">
+							<img class="mui-media-object mui-pull-left" src="images/job/logo.png">
+							<div class="mui-media-body">
+								专职客服
+								<span id="value">7K~8K</span>
+								<p class='mui-ellipsis'>511人才网
+									<span id="address">苏州昆山</span>
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-hidden">cared
+						<div id="M_Toggle" class="mui-switch mui-active">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="./main.html">
+							<img class="mui-media-object mui-pull-left" src="images/job/logo.png">
+							<div class="mui-media-body">
+								UI/美工
+								<span id="value">7K~8K</span>
+								<p class='mui-ellipsis'>511人才网
+									<span id="address">苏州昆山</span>
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="./main.html">
+							<img class="mui-media-object mui-pull-left" src="images/job/logo.png">
+							<div class="mui-media-body">
+								UI/美工
+								<span id="value">7K~8K</span>
+								<p class='mui-ellipsis'>511人才网
+									<span id="address">苏州昆山</span>
+								</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+
+		<div id="menu-wrapper" class="menu-wrapper hidden">
+			<div id="menu" class="menu">
+				<ul class="mui-table-view mui-table-view-inverted">
+					<li class="mui-table-view-cell ">
+						<input type="search" class="mui-input-clear" placeholder="请输入公司名或职位名" style="width:90%;margin: 10px auto;">
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="javascript:;">行位类别</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="javascript:;">职位类别</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="javascript:;">工作地点</a>
+					</li>
+
+					<button class="mui-btn mui-btn mui-btn-primary" style="margin: 10px;width: 80%;">搜索</button>
+
+				</ul>
+			</div>
+		</div>
+		<div id="menu-backdrop" class="menu-backdrop"></div>
+		<div style="margin-bottom: 50px;">
+			<p style="font-size: 12px;">511人才网</p>
+		</div>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" href="./main.html">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item mui-active" href="./job.html">
+				<span class="mui-icon mui-icon-contact "></span>
+				<span class="mui-tab-label ">职位</span>
+			</a>
+			<a class="mui-tab-item " href="./message.html">
+				<span class="mui-icon mui-icon-chat"></span>
+				<span class="mui-tab-label">消息</span>
+			</a>
+			<a class="mui-tab-item" href="./setting.html">
+				<span class="mui-icon mui-icon-gear "></span>
+				<span class="mui-tab-label ">设置</span>
+			</a>
+		</nav>
+		<script src="./js/mui.min.js"></script>
+		<script>
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			var menuWrapper = document.getElementById("menu-wrapper");
+			var menu = document.getElementById("menu");
+			var menuWrapperClassList = menuWrapper.classList;
+			var backdrop = document.getElementById("menu-backdrop");
+			var info = document.getElementById("info");
+			backdrop.addEventListener('tap', toggleMenu);
+			document.getElementById("icon-menu").addEventListener('tap', toggleMenu)
+				//下沉菜单中的点击事件
+			mui('#menu').on('tap', 'a', function() {
+				toggleMenu();
+				info.innerHTML = '你已选择：' + this.innerHTML;
+			});
+			var busying = false;
+			function toggleMenu() {
+				if (busying) {
+					return;
+				}
+				busying = true;
+				if (menuWrapperClassList.contains('mui-active')) {
+					document.body.classList.remove('menu-open');
+					menuWrapper.className = 'menu-wrapper fade-out-up animated';
+					menu.className = 'menu bounce-out-up animated';
+					setTimeout(function() {
+						backdrop.style.opacity = 0;
+						menuWrapper.classList.add('hidden');
+					}, 500);
+				} else {
+					document.body.classList.add('menu-open');
+					menuWrapper.className = 'menu-wrapper fade-in-down animated mui-active';
+					menu.className = 'menu bounce-in-down animated';
+					backdrop.style.opacity = 1;
+				}
+				setTimeout(function() {
+					busying = false;
+				}, 500);
+			}
+		</script>
+	</body>
+
+</html>
