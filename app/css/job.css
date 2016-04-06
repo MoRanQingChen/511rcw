@@ -1,0 +1,11 @@
+#value{
+	color: #FF5053;
+	float: right;
+	margin-right: 25px;
+}
+#address{
+	font-size: 11px;
+	float: right;
+	margin-right: 25px;
+	color: #333;
+}

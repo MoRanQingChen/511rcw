@@ -77,6 +77,7 @@
 		</div>
 		<script src="js/mui.min.js"></script>
 		<script src="js/app.js"></script>
+		<script type="text/javascript" src="app/js/ajax.js"></script>
 		<script>
 			(function($, doc) {
 				$.init();
@@ -87,9 +88,23 @@
 					var passwordBox = doc.getElementById('password');
 					var passwordConfirmBox = doc.getElementById('password_confirm');
 					var emailBox = doc.getElementById('email');
+					var getReg=doc.getElementById("getReg");
+					
+					
+					getReg.addEventListener('tap', function(event) {
+						var regInfo = {
+							stype:16,
+							username: emailBox.value,
+							email: emailBox.value
+						};
+						jp("http://www.511rcw.com/handler/Handler.aspx",regInfo,function(){
+							
+						});
+					});
+					
 					regButton.addEventListener('tap', function(event) {
 						var regInfo = {
-							account: accountBox.value,
+							uname: accountBox.value,
 							password: passwordBox.value,
 							email: emailBox.value
 						};
@@ -98,22 +113,29 @@
 							plus.nativeUI.toast('密码两次输入不一致');
 							return;
 						}
-						app.reg(regInfo, function(err) {
-							if (err) {
-								plus.nativeUI.toast(err);
-								return;
-							}
-							plus.nativeUI.toast('注册成功');
-							$.openWindow({
+						regButton.disabled=true;
+						regButton.innerHTML="注册中...";
+						jp("http://www.511rcw.com/handler/Handler.aspx",regInfo,function(data){
+							if(data.success=='true'){
+								plus.nativeUI.toast("注册成功")
+								toMain(); 
+								$.openWindow({
 								url: 'login.html',
 								id: 'login',
 								show: {
 									aniShow: 'pop-in'
 								}
 							});
-						});
+							}else{ 
+								plus.nativeUI.alert(data.errormsg); 
+							}
+							regButton.disabled=false;
+							regButton.innerHTML="注册";
+
+						})
 					});
-				});
+					
+				})
 			}(mui, document));
 			var getReg = document.querySelector("#getReg");
 			var reg = document.querySelector("#reg")

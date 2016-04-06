@@ -67,9 +67,7 @@
 		"Runtime": {
 			"description": "访问运行期环境"
 		},
-		"XMLHttpRequest": {
-			"description": "跨域网络访问"
-		},
+		"XMLHttpRequest": {},
 		"Zip": {
 			"description": "文件压缩与解压缩"
 		},
@@ -215,11 +213,10 @@
 					"images/baner/baner3.png",
 					"images/baner/baner4.png",
 					"login.html",
+					"setting.html",
 					"job.html"
 				],
-				"refer": [
-					"setting.html"
-				],
+				"refer": [],
 				"priority": 1
 			},
 			"unlock.html": {
@@ -255,7 +252,8 @@
 					"fonts/mui.ttf",
 					"css/style.css",
 					"js/mui.min.js",
-					"js/app.js"
+					"js/app.js",
+					"app/js/ajax.js"
 				],
 				"refer": [
 					"login.html"
@@ -274,7 +272,9 @@
 					"images/qihoo.png",
 					"images/qq.png",
 					"images/sinaweibo.png",
-					"images/weixin.png"
+					"images/weixin.png",
+					"js/ajax.js",
+					"app/js/ajax.js"
 				],
 				"refer": [
 					"unlock.html",
@@ -286,15 +286,42 @@
 			},
 			"job.html": {
 				"resources": [
+					"images/baner/search.jpg",
+					"js/mui.picker.js",
+					"images/job/logo.png",
+					"js/zhiwei.js",
+					"js/mui.poppicker.js",
+					"css/job.css",
+					"js/hangwei.js",
+					"css/mui.poppicker.css",
+					"css/mui.picker.css",
+					"js/city.data-3.js",
+					"main.html",
+					"fonts/mui.ttf",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"app/js/ajax.js",
+					"css/app.css",
+					"js/ajax.js"
+				],
+				"refer": [
+					"jobInfo.html"
+				],
+				"priority": 0
+			},
+			"jobInfo.html": {
+				"resources": [
+					"css/iconfont.ttf",
+					"css/jobInfo.css",
+					"css/iconfont.css",
+					"js/app.js",
 					"images/job/logo.png",
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css",
-					"css/job.css"
-				],
-				"refer": [
 					"main.html"
 				],
+				"refer": [],
 				"priority": 0
 			}
 		},

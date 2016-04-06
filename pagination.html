@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/job.css" />
+		<link rel="stylesheet" href="./css/mui.min.css">
+		<link href="./css/mui.picker.css" rel="stylesheet" />
+		<link href="./css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+		
+				<style>
+			html,
+			body {
+				min-height: 100%;
+				background-color: #efeff4;
+			}
+			
+			.animated {
+				-webkit-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			
+			@-webkit-keyframes bounceInDown {
+				0%,
+				60%,
+				75%,
+				90%,
+				100% {
+					-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 25px, 0);
+					transform: translate3d(0, 25px, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(0, -10px, 0);
+					transform: translate3d(0, -10px, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(0, 5px, 0);
+					transform: translate3d(0, 5px, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			
+			@keyframes bounceInDown {
+				0%,
+				60%,
+				75%,
+				90%,
+				100% {
+					-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 25px, 0);
+					transform: translate3d(0, 25px, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(0, -10px, 0);
+					transform: translate3d(0, -10px, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(0, 5px, 0);
+					transform: translate3d(0, 5px, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			
+			.bounce-in-down {
+				-webkit-animation-name: bounceInDown;
+				animation-name: bounceInDown;
+			}
+			
+			@-webkit-keyframes fadeInDown {
+				0%,
+				60%,
+				75%,
+				90%,
+				100% {
+					-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			
+			@keyframes fadeInDown {
+				0%,
+				60%,
+				75%,
+				90%,
+				100% {
+					-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			
+			.fade-in-down {
+				-webkit-animation-name: fadeInDown;
+				animation-name: fadeInDown;
+			}
+			
+			@-webkit-keyframes bounceOutUp {
+				20% {
+					-webkit-transform: translate3d(0, -10px, 0);
+					transform: translate3d(0, -10px, 0);
+				}
+				40%,
+				45% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 20px, 0);
+					transform: translate3d(0, 20px, 0);
+				}
+				100% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+			}
+			
+			@keyframes bounceOutUp {
+				20% {
+					-webkit-transform: translate3d(0, -10px, 0);
+					transform: translate3d(0, -10px, 0);
+				}
+				40%,
+				45% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 20px, 0);
+					transform: translate3d(0, 20px, 0);
+				}
+				100% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+			}
+			
+			.bounce-out-up {
+				-webkit-animation-name: bounceOutUp;
+				animation-name: bounceOutUp;
+			}
+			
+			@-webkit-keyframes fadeOutUp {
+				20% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				40%,
+				45% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				100% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+			}
+			
+			@keyframes fadeOutUp {
+				20% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				40%,
+				45% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				100% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+			}
+			
+			.fade-out-up {
+				-webkit-animation-name: fadeOutUp;
+				animation-name: fadeOutUp;
+			}
+			
+			.menu-open {
+				height: 100%;
+				width: 100%;
+			}
+			
+			.menu-open .mui-scroll-wrapper {
+				position: absolute;
+				top: 48;
+				bottom: 0;
+				left: 0;
+				z-index: 1;
+				width: 100%;
+				overflow: hidden;
+				-webkit-backface-visibility: hidden;
+			}
+			
+			.menu-backdrop {
+				display: none;
+			}
+			
+			.menu-open .menu-backdrop {
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				height: 100%;
+				width: 100%;
+				display: block;
+				z-index: 996;
+			}
+			
+			.menu-wrapper {
+				position: fixed;
+				top: 48px;
+				left: 0;
+				right: 0;
+				z-index: 997;
+				text-align: center;
+				background-color: #333;
+				width: 100%;
+			}
+			
+			.menu-wrapper.hidden {
+				-webkit-transform: translate3d(0, -100%, 0);
+				transform: translate3d(0, -100%, 0);
+				z-index: -1;
+			}
+			
+			.menu {
+				width: 100%;
+			}
+			
+			.menu .mui-table-view-inverted {
+				color: gray;
+				font-size: 19px;
+			}
+			
+			.menu .mui-table-view-inverted .mui-table-view-cell:after {
+				height: 2px;
+				left: 0;
+				right: 0;
+			}
+			
+			.menu-wrapper.mui-active,
+			.menu-wrapper.mui-active .menu {
+				-webkit-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+			}
+			
+			#info {
+				padding: 20px 10px;
+			}
+			
+			#top-search {
+				margin: 15px;
+				margin-bottom: 0;
+				position: fixed;
+				z-index: 99;
+				margin: 0;
+				padding: 20px;
+				width: 100%;
+			}
+		</style>
+	
+	</head>
+	<body>
+		<body>
+
+
+		<div class="mui-content" style="margin-top: 70px;">
+			<!--<div id="top-search" class="mui-input-row mui-search">
+				<input type="search" value="请输入公司名或职位名" style="color: #999;">
+			</div>-->
+			<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="mui-content-padded">
+						<ul class="mui-table-view">
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<!--翻页-->
+		
+		
+		<div class="mui-content-padded">
+				<ul class="mui-pagination">
+					<li class="mui-previous mui-disabled">
+						<a href="#">
+							&laquo;
+						</a>
+					</li>
+					<li class="mui-active">
+						<a href="#">
+							1
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							2
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							3
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							4
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							5
+						</a>
+					</li>
+					<li class="mui-next">
+						<a href="#">
+							&raquo;
+						</a>
+					</li>
+				</ul>
+			</div>
+		<script src="./js/mui.min.js"></script>
+</body>
+</html>
