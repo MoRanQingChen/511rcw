@@ -82,10 +82,16 @@
 	"message.html": {
 		"resources": [
 			"js/app.js",
-			"setting.html"
+			"setting.html",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/job.css",
+			"css/mui.min.css",
+			"job.html"
 		],
 		"refer": [
-			"setting.html"
+			"setting.html",
+			"job.html"
 		]
 	},
 	"setting.html": {
@@ -116,7 +122,8 @@
 			"fonts/mui.ttf",
 			"css/mui.min.css",
 			"images/job/logo.png",
-			"main.html"
+			"main.html",
+			"js/ajax.js"
 		],
 		"refer": [
 			"setting.html",

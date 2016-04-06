@@ -319,7 +319,20 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css",
-					"main.html"
+					"main.html",
+					"js/ajax.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"message.html": {
+				"resources": [
+					"js/app.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/job.css",
+					"css/mui.min.css",
+					"job.html"
 				],
 				"refer": [],
 				"priority": 0

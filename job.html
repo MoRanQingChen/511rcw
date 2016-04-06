@@ -492,7 +492,7 @@
 						}
 					}
 					table.appendChild(flag);
-					var allPage = Math.ceil(num / 10);
+					allPage = Math.ceil(num / 10);
 					var smallPage = allPage > 5 ? 5 : allPage;
 					for (var i = 0; i < smallPage; i++) {
 						var oLi = document.createElement('li');
@@ -594,14 +594,16 @@
 					}, false);
 				});
 				//---------------------------------------
-				$('.mui-pagination').on('tap', 'a', function() {
+				$('.mui-pagination').on('tap', 'a', function() {//页码
 					console.log(this.innerHTML)
 					if (this.innerHTML == "»") {
 						data.page++;
-					} else if (this.innerHTML == "«" && data.page > 0) {
+					} else if (this.innerHTML == "«" && data.page > 0) { 
 						data.page--;
-					} else {
-						//						data.page=2
+					} else{
+						if(allPage>5&&this.innerHTML>3&&this.innerHTML<allPage-2){
+							
+						} 
 						data.page = this.innerHTML - 1;
 					}
 					console.log(data.page)

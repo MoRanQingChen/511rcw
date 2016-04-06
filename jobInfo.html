@@ -261,6 +261,7 @@ www.yunpian.com 口碑最好的短信平台，但梦想不止于短信。
 		</div>
 			<script src="js/mui.min.js "></script>
 			<script src="js/app.js "></script>
+			<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
 			<script>
 
 				(function($, doc) { 
@@ -280,6 +281,13 @@ www.yunpian.com 口碑最好的短信平台，但梦想不止于短信。
 						//设置
 						var JobId = plus.webview.currentWebview();
 						alert(JobId.id);
+						var data={
+							t:3,
+							id:JobId.id.toString()
+						}
+						jp("http://www.511rcw.com/app/Apphandler.ashx",data,function(array){
+							console.log(array);
+						})
 						var settingButton = doc.getElementById('setting');
 						//settingButton.style.display = settings.autoLogin ? 'block' : 'none';
 						settingButton.addEventListener('tap', function(event) {
