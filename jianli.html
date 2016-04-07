@@ -7,12 +7,13 @@
 		<title></title>
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="css/job.css" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" /> 
 		<style>
 			ul {
 				font-size: 14px;
 				color: #8f8f94;
 			}
-			
 			.mui-btn {
 				padding: 10px;
 				http: //127.0.0.1:8020/app/main.html#
@@ -38,75 +39,262 @@
 					<label>真实姓名：</label>
 					<input type="text" placeholder="真实姓名">
 				</div>
-				<div class="mui-input-row">
-					<label>年龄：</label>
-					<input type="text" placeholder="周岁">
+				<div class="mui-input-row" id="xingbie">
+					<label>性别：</label>
+					<input type="text" placeholder="请选择性别">
+				</div>
+				<div class="mui-input-row mui-input-range field-contain">
+		            <div style="float:left">
+		                <label style="width: 90px;">年龄：</label>
+		                <input type="text" id='fieldnianling-range-input' value='25' style="width: 50px;">
+		            </div>
+		            <div style="margin-left:141px;"> 
+		                <input type="range" id='fieldnianling-range' value="25" min="16" max="80" />
+		            </div>
+		        </div> 
+				<div class="mui-input-row mui-input-range field-contain">
+		            <div style="float:left">
+		                <label style="width: 90px;">身高：</label>
+		                <input type="text" id='fieldshengao-range-input' value='170' style="width: 50px;">
+		            </div>
+		            <div style="margin-left:141px;"> 
+		                <input type="range" id='fieldshengao-range' value="170" min="50" max="300" />
+		            </div>
+		        </div> 
+				<div id="hunyin" class="mui-input-row">
+					<label>婚姻状况：</label>
+					<input type="text" placeholder="请选择婚姻状况">
+				</div>
+				<div id="jingyan" class="mui-input-row">
+					<label>工作经验：</label>
+					<input type="text" placeholder="请选择工作经验">
+				</div>
+				<div id="hukou" class="mui-input-row">
+					<label>户口地址：</label>
+					<input type="text"placeholder="请选择户口地址"/>
+				</div>
+				<div id="xueli" class="mui-input-row">
+					<label>学历：</label>
+					<input type="text" placeholder="请选择学历信息">
 				</div>
 				<div class="mui-input-row">
-					<label>Input</label>
-					<input type="text" class="mui-input-clear" placeholder="带清除按钮的输入框">
+					<label>联系电话：</label>
+					<input type="text" placeholder="手机或电话">
 				</div>
-
-				<div class="mui-input-row mui-plus-visible">
-					<label>Input</label>
-					<input type="text" class="mui-input-speech mui-input-clear" placeholder="语音输入">
+				<div class="mui-input-row">
+					<label>电子邮箱：</label>
+					<input type="email" placeholder="电子邮箱">
 				</div>
+				<div id="tongxun" class="mui-input-row">
+					<label>通讯地址：</label>
+					<input type="text" placeholder="请选择通讯地址">
+				</div>
+				<div class="mui-input-row">
+					<label>联系QQ：</label>
+					<input type="text" placeholder="联系QQ">
+				</div>
+				<div class="mui-input-row">
+					<label>个人博客：</label>
+					<input type="text" placeholder="个人主页或博客">
+				</div>
+			
 				<div class="mui-button-row">
-					<button type="button" class="mui-btn mui-btn-primary" onclick="return false;">确认</button>&nbsp;&nbsp;
-					<button type="button" class="mui-btn mui-btn-danger" onclick="return false;">取消</button>
+					<button class="mui-btn mui-btn-primary" onclick="return false;" style="float: right; margin-right: 20px;height: 35px;line-height: 15px;">保存并下一步</button>&nbsp;&nbsp;
 				</div>
 			</form>
 		</div>
 		<script src="js/mui.min.js "></script>
 		<script src="js/app.js "></script>
+		<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/mui.picker.js"></script>
+		<script src="./js/mui.poppicker.js"></script>
+
+
+
+		<!--<script src="../js/mui.picker.min.js"></script>-->
+		
+		
 		<script>
 			(function($, doc) {
 				$.init();
-				var settings = app.getSettings();
-				var account = doc.getElementById('account');
-				//
-				window.addEventListener('show', function() {
-					var state = app.getState();
-					account.innerText = state.account;
-				}, false);
-				$.plusReady(function() {
-					var settingPage = $.preload({
-						"id ": 'setting',
-						"url ": 'setting.html'
+						mui('body').on('shown', '.mui-popover', function(e) {
+			//console.log('shown', e.detail.id);//detail为当前popover元素
+		});
+		mui('body').on('hidden', '.mui-popover', function(e) {
+			//console.log('hidden', e.detail.id);//detail为当前popover元素
+		});
+//-------------------------------------------------------------------------------------------
+	    var rangeList = document.querySelectorAll('input[type="range"]');
+	    for(var i=0,len=rangeList.length;i<len;i++){
+	        rangeList[i].addEventListener('input',function(){
+	            if(this.id.indexOf('field')>=0){
+	                document.getElementById(this.id+'-input').value = this.value;
+	            }else{
+	                document.getElementById(this.id+'-val').innerHTML = this.value;
+	            }
+	            
+	
+	        });
+	    }
+	
+	    document.getElementById('fieldnianling-range-input').addEventListener('input',function(){
+	        document.getElementById('fieldnianling-range').value = this.value;
+	    });
+	    document.getElementById('fieldshengao-range-input').addEventListener('input',function(){
+	        document.getElementById('fieldshengao-range').value = this.value;
+	    });
+
+
+
+//----------------------------------------------------------------------------------------
+		document.getElementById("xingbie").addEventListener('tap',function () {
+			var btnArray = [{title:"男性"},{title:"女性"}];
+			plus.nativeUI.actionSheet( {
+				title:"性别",
+				cancel:"取消",
+				buttons:btnArray
+			}, function(e){
+				var index = e.index;
+				var text = "";
+				switch (index){
+					case 0:
+						break;
+					case 1:
+						text += "男性";
+						break;
+					case 2:
+						text += "女性";
+						break;
+				}
+				document.getElementById("xingbie").getElementsByTagName('input')[0].value = text;
+			} );
+		});
+		
+		document.getElementById("hunyin").addEventListener('tap',function () {
+			var btnArray = [{title:"已婚"},{title:"未婚"},{title:"保密"}];
+			plus.nativeUI.actionSheet( {
+				title:"婚姻状况",
+				cancel:"取消",
+				buttons:btnArray
+			}, function(e){
+				var index = e.index;
+				var text = "";
+				switch (index){
+					case 0:
+						break;
+					case 1:
+						text += "已婚";
+						break;
+					case 2:
+						text += "未婚";
+						break;
+					case 3:
+						text += "保密";
+						break;
+				}
+				document.getElementById("hunyin").getElementsByTagName('input')[0].value = text;
+			} );
+		});
+		
+		document.getElementById("jingyan").addEventListener('tap',function () {
+			var btnArray = [{title:"无经验"},{title:"1年以下"},{title:"1-3年"},{title:"3-5年"},{title:"5-10年"},{title:"10年以上"}];
+			plus.nativeUI.actionSheet( {
+				title:"工作经验",
+				cancel:"取消",
+				buttons:btnArray
+			}, function(e){
+				var index = e.index; 
+				var text = "";
+				switch (index){
+					case 0:
+						break;
+					case 1:
+						text += "无经验";
+						break;
+					case 2:
+						text += "1年以下";
+						break;
+					case 3:
+						text += "1-3年";
+						break;
+					case 4:
+						text += "3-5年";
+						break;
+					case 5:
+						text += "5-10年";
+						break;
+					case 6:
+						text += "10年以上";
+						break;
+				}
+				document.getElementById("jingyan").getElementsByTagName('input')[0].value = text;
+			} );
+		});
+		
+		
+		document.getElementById("xueli").addEventListener('tap',function () {
+			var btnArray = [{title:"初中"},{title:"高中"},{title:"中技"},{title:"中专"},{title:"大专"},{title:"本科"},{title:"硕士"},{title:"博士"}];
+			plus.nativeUI.actionSheet( {
+				title:"工作经验",
+				cancel:"取消",
+				buttons:btnArray
+			}, function(e){
+				var index = e.index; 
+				var text = "";
+				switch (index){
+					case 0:
+						break;
+					case 1:
+						text += "初中";
+						break;
+					case 2:
+						text += "高中";
+						break;
+					case 3:
+						text += "中技";
+						break;
+					case 4:
+						text += "中专";
+						break;
+					case 5:
+						text += "大专";
+						break;
+					case 6:
+						text += "本科";
+						break;
+					case 7:
+						text += "硕士";
+						break;
+					case 8:
+						text += "博士";
+						break;
+				}
+				document.getElementById("xueli").getElementsByTagName('input')[0].value = text;
+			} );
+		});
+//-------------------------------------------------------------------------------------------
+					
+
+					var cityPicker3 = new $.PopPicker({
+						layer: 3
 					});
-					//设置
-					var settingButton = doc.getElementById('setting');
-					//settingButton.style.display = settings.autoLogin ? 'block' : 'none';
-					settingButton.addEventListener('tap', function(event) {
-						$.openWindow({
-							id: 'setting',
-							show: {
-								aniShow: 'pop-in'
-							},
-							styles: {
-								popGesture: 'hide'
-							},
-							waiting: {
-								autoShow: false
-							}
+					cityPicker3.setData(cityData3);
+
+					hukou.addEventListener('tap', function(event) {
+						cityPicker3.show(function(items) {
+							document.getElementById("hukou").getElementsByTagName('input')[0].value = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+							//返回 false 可以阻止选择框的关闭 
+							//return false;
 						});
-					});
-					//--
-					$.oldBack = mui.back;
-					var backButtonPress = 0;
-					$.back = function(event) {
-						backButtonPress++;
-						if (backButtonPress > 1) {
-							plus.runtime.quit();
-						} else {
-							plus.nativeUI.toast('再按一次退出应用');
-						}
-						setTimeout(function() {
-							backButtonPress = 0;
-						}, 1000);
-						return false;
-					};
-				});
+					}, false);
+
+					tongxun.addEventListener('tap', function(event) {
+						cityPicker3.show(function(items) {
+							document.getElementById("tongxun").getElementsByTagName('input')[0].value = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+							//返回 false 可以阻止选择框的关闭 
+							//return false;
+						});
+					}, false);
 			}(mui, document));
 		</script>
 

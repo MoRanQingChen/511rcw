@@ -336,6 +336,52 @@
 				],
 				"refer": [],
 				"priority": 0
+			},
+			"jianli.html": {
+				"resources": [
+					"js/app.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/job.css",
+					"css/mui.min.css",
+					"js/city.data-3.js",
+					"js/mui.poppicker.js",
+					"css/mui.poppicker.css",
+					"css/mui.picker.css",
+					"js/mui.picker.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"jianli-2.html": {
+				"resources": [
+					"js/mui.picker.js",
+					"js/app.js",
+					"js/mui.min.js",
+					"js/mui.poppicker.js",
+					"css/job.css",
+					"css/mui.min.css",
+					"css/mui.poppicker.css",
+					"css/mui.picker.css",
+					"js/city.data-3.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"jianli-3.html": {
+				"resources": [
+					"js/mui.picker.js",
+					"js/app.js",
+					"js/mui.min.js",
+					"js/mui.poppicker.js",
+					"css/job.css",
+					"css/mui.min.css",
+					"css/mui.poppicker.css",
+					"css/mui.picker.css",
+					"js/city.data-3.js"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {

@@ -472,6 +472,10 @@
 				yema.innerHTML = "<li class='mui-previous mui-disabled'><a href='#'>&laquo;</a></li>";
 				table.innerHTML = "";
 				jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(num, JSONdata) {
+					document.getElementById("heighSearch").disabled=false;
+					document.getElementById("heighSearch").innerHTML='搜索'
+					
+					
 					var flag = document.createDocumentFragment();
 					for (var i in JSONdata) {
 						var arr = JSONdata[i].split('|');
@@ -538,6 +542,8 @@
 					};
 					addJob();
 					toggleMenu();
+					document.getElementById("heighSearch").disabled=true;
+					document.getElementById("heighSearch").innerHTML='搜索中...'
 				});
 				$.init();
 				$.ready(function() {
