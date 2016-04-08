@@ -13,7 +13,8 @@
       "fonts/mui.ttf",
       "login.html",
       "job.html",
-      "setting.html"
+      "setting.html",
+      "message.html"
     ],
     "refer": [
       "job.html",
@@ -33,7 +34,8 @@
       "images/sinaweibo.png",
       "images/weixin.png",
       "images/qq.png",
-      "app/js/ajax.js"
+      "app/js/ajax.js",
+      "message.html"
     ],
     "refer": [
       "main.html",
@@ -87,7 +89,9 @@
       "fonts/mui.ttf",
       "css/job.css",
       "css/mui.min.css",
-      "job.html"
+      "job.html",
+      "login.html",
+      "main.html"
     ],
     "refer": [
       "setting.html",
@@ -106,7 +110,10 @@
       "libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
       "images/iconfont-tianjia.png",
       "js/mui.view.js",
-      "fonts/mui.ttf"
+      "fonts/mui.ttf",
+      "js/app.js",
+      "js/mui.min.js",
+      "css/mui.min.css"
     ],
     "refer": [
       "login.html"
@@ -183,6 +190,18 @@
       "css/mui.poppicker.css",
       "css/mui.picker.css",
       "js/city.data-3.js"
-    ]
+    ],
+    "refer": []
+  },
+  "application.html": {
+    "resources": [
+      "js/app.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/job.css",
+      "css/mui.min.css",
+      "job.html"
+    ],
+    "refer": []
   }
 }

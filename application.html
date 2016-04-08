@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/job.css"/>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">投递简历</h1>
+			
+		</header>
+		<div class="mui-content">
+			<br />
+			<br />
+			<span style="color: crimson;">
+					申请职位：
+			</span>
+			
+			<ul id="list" class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell">
+网站维护一名<br />
+江苏/昆山/开发区<br />
+东东网络科技有限公司
+				</li>
+			</ul>
+
+			<div class="mui-input-row">
+
+				<br />
+				<span style="color: crimson;">
+					选择简历：
+				</span>
+				<br />
+				<h5>
+					以下是您保存的简历，请选择一份合适该职位的完整简历，点击“立即申请”寄给该公司
+				</h5>
+				
+			</div>
+
+			<form class="mui-input-group" style="margin-top: 10px;">
+					<div class="mui-input-row mui-radio mui-left">
+						<label>前端工程师</label>
+						<input name="radio1" type="radio" checked>
+					</div>
+					<div class="mui-input-row mui-radio mui-left">
+						<label>webApp</label>
+						<input name="radio1" type="radio">
+					</div>
+
+ 
+			</form>
+			<br />
+				<span style="color: crimson;">
+					备注说明：
+				</span>
+				<div class="mui-input-row" style="margin: 10px 5px;">
+					<textarea id="textarea" rows="5" placeholder="我们建议您在递交申请的同时，可以对自己再做一些重点的说明，可以大大提高您的求职成功率！"></textarea>
+				
+				</div>
+			<input type="submit" value="立即申请" style="float: right;margin-right: 15px;"/>
+			<div style="width: 100px;height: 100px;"></div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</div>
+				<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" href="./main.html">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="./job.html">
+				<span class="mui-icon mui-icon-contact "></span>
+				<span class="mui-tab-label ">职位</span>
+			</a>
+			<a class="mui-tab-item " href="./message.html">
+				<span class="mui-icon mui-icon-chat  mui-active"></span>
+				<span class="mui-tab-label">消息</span>
+			</a>
+			<a class="mui-tab-item" href="./setting.html">
+				<span class="mui-icon mui-icon-gear "></span>
+				<span class="mui-tab-label ">设置</span>
+			</a>
+		</nav>
+		<script src="js/mui.min.js "></script>
+		<script src="js/app.js "></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				var settings = app.getSettings();
+				
+			}(mui, document));
+		</script>
+
+	</body>
+
+</html>

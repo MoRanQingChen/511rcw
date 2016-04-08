@@ -434,6 +434,7 @@
 				switch (index) {
 					case 1:
 						app.setState({});
+						plus.navigator.setCookie('userId', null);
 						mui.openWindow({
 							url: 'login.html',
 							id: 'login',

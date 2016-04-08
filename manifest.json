@@ -214,7 +214,8 @@
 					"images/baner/baner4.png",
 					"login.html",
 					"setting.html",
-					"job.html"
+					"job.html",
+					"message.html"
 				],
 				"refer": [],
 				"priority": 1
@@ -274,7 +275,8 @@
 					"images/sinaweibo.png",
 					"images/weixin.png",
 					"js/ajax.js",
-					"app/js/ajax.js"
+					"app/js/ajax.js",
+					"message.html"
 				],
 				"refer": [
 					"unlock.html",
@@ -302,7 +304,8 @@
 					"css/mui.min.css",
 					"app/js/ajax.js",
 					"css/app.css",
-					"js/ajax.js"
+					"js/ajax.js",
+					"message.html"
 				],
 				"refer": [
 					"jobInfo.html"
@@ -332,7 +335,9 @@
 					"fonts/mui.ttf",
 					"css/job.css",
 					"css/mui.min.css",
-					"job.html"
+					"job.html",
+					"login.html",
+					"main.html"
 				],
 				"refer": [],
 				"priority": 0
@@ -379,6 +384,18 @@
 					"css/mui.poppicker.css",
 					"css/mui.picker.css",
 					"js/city.data-3.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"application.html": {
+				"resources": [
+					"js/app.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/job.css",
+					"css/mui.min.css",
+					"job.html"
 				],
 				"refer": [],
 				"priority": 0

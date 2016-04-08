@@ -126,7 +126,7 @@
 		<script src="js/mui.min.js"></script>
 		<script src="js/mui.enterfocus.js"></script>
 		<script src="js/app.js"></script>
-		<script src="app/js/ajax.js"></script>
+		<script src="js/ajax.js"></script>
 		<script>
 					var accountBox = document.getElementById('account');
 					var passwordBox = document.getElementById('password');
@@ -239,15 +239,17 @@
 
 					loginButton.addEventListener('tap', function(event) {
 						var loginInfo = {
-							stype:0,
+							t:1,
 							p1: accountBox.value,
-							p2: passwordBox.value
+							p2: passwordBox.value,
+							p3:'person' 
 						};
 						this.disabled=true;
 						this.innerHTML="登陆中..."
-						jp("appHandler",loginInfo, function(data) {
+						jp("http://www.511rcw.com/app/AppHandler.ashx",loginInfo, function(data) {
 							if(data.success=='true'){
-								plus.nativeUI.toast("登陆成功")
+								plus.nativeUI.toast("登陆成功");
+								plus.navigator.setCookie('userId', accountBox.value);
 								toMain(); 
 							}else{
 								plus.nativeUI.alert("账号或密码错误");
@@ -328,19 +330,7 @@
 						oauthArea.style.display = document.body.clientHeight > 400 ? 'block' : 'none';
 					}, false);
 					//
-					var backButtonPress = 0;
-					$.back = function(event) {
-						backButtonPress++;
-						if (backButtonPress > 1) {
-							plus.runtime.quit();
-						} else {
-							plus.nativeUI.toast('再按一次退出应用');
-						}
-						setTimeout(function() {
-							backButtonPress = 0;
-						}, 1000);
-						return false;
-					};
+					
 				});
 			}(mui, document));
 		</script>
