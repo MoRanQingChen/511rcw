@@ -217,7 +217,11 @@
 					"job.html",
 					"message.html"
 				],
-				"refer": [],
+				"refer": [
+					"jianli.html",
+					"jianli-3.html",
+					"jianli-4.html"
+				],
 				"priority": 1
 			},
 			"unlock.html": {
@@ -353,7 +357,8 @@
 					"js/mui.poppicker.js",
 					"css/mui.poppicker.css",
 					"css/mui.picker.css",
-					"js/mui.picker.js"
+					"js/mui.picker.js",
+					"js/ajax.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -368,7 +373,8 @@
 					"css/mui.min.css",
 					"css/mui.poppicker.css",
 					"css/mui.picker.css",
-					"js/city.data-3.js"
+					"js/city.data-3.js",
+					"js/ajax.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -383,7 +389,8 @@
 					"css/mui.min.css",
 					"css/mui.poppicker.css",
 					"css/mui.picker.css",
-					"js/city.data-3.js"
+					"js/city.data-3.js",
+					"js/ajax.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -396,6 +403,22 @@
 					"css/job.css",
 					"css/mui.min.css",
 					"job.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"jianli-4.html": {
+				"resources": [
+					"js/mui.picker.js",
+					"js/mui.poppicker.js",
+					"js/ajax.js",
+					"css/mui.poppicker.css",
+					"css/mui.picker.css",
+					"js/city.data-3.js",
+					"js/app.js",
+					"js/mui.min.js",
+					"css/job.css",
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0

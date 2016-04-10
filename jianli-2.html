@@ -8,12 +8,13 @@
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="css/job.css" />
 		<link href="css/mui.picker.css" rel="stylesheet" />
-		<link href="css/mui.poppicker.css" rel="stylesheet" /> 
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
 		<style>
 			ul {
 				font-size: 14px;
 				color: #8f8f94;
 			}
+			
 			.mui-btn {
 				padding: 10px;
 				http: //127.0.0.1:8020/app/main.html#
@@ -26,136 +27,168 @@
 			<h1 class="mui-title">我的简历</h1>
 		</header>
 		<div class="mui-content">
-			<br />
-			二：求职意向
+			<br /> 二：求职意向
 			<br />
 			<br />
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>近期岗位：</label>
-					<input type="text" placeholder="若无工作经验可忽略">
+					<input type="text" placeholder="若无工作经验可忽略" id="RecuetlyPost">
 				</div>
-				<div class="mui-input-row"  id="xingzhi">
+				<div class="mui-input-row" id="xingzhi">
 					<label>期望性质：</label>
-					<input type="text" placeholder="请选择期望工作性质">
+					<input type="text" placeholder="请选择期望工作性质" id="HopeType">
 				</div>
 				<div class="mui-input-row" id="diqu">
 					<label>期望地区：</label>
-					<input type="text" placeholder="请选择期望工作地区">
+					<input type="text" placeholder="请选择期望工作地区" id="HopeZone">
 				</div>
 				<div class="mui-input-row" id="yuexin">
 					<label>期望月薪：</label>
-					<input type="text" placeholder="请选择期望月薪">
+					<input type="text" placeholder="请选择期望月薪" id="HopeMonthFee">
 				</div>
 				<div class="mui-input-row" id="zhiwei">
 					<label>求职意向：</label>
 					<input type="text" placeholder="请选择求职意向">
 				</div>
-				<div class="mui-button-row">
-					<button class="mui-btn mui-btn-primary" onclick="return false;" style="float: right; margin-right: 20px;height: 35px;line-height: 15px;">保存并下一步</button>&nbsp;&nbsp;
-				</div>
+
 			</form>
+				<div class="mui-button-row" style="margin-top: 10px;">
+					<button class="mui-btn mui-btn-primary" id="reg1" style="float: right; margin-right: 20px;height: 35px;line-height: 15px;">保存并下一步</button>&nbsp;&nbsp;
+				</div>
 		</div>
 		<script src="js/mui.min.js "></script>
 		<script src="js/app.js "></script>
 		<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./js/mui.picker.js"></script>
 		<script src="./js/mui.poppicker.js"></script>
-
-
+		<script src="./js/ajax.js"></script> 
 
 		<!--<script src="../js/mui.picker.min.js"></script>-->
-		
-		
+
 		<script>
 			(function($, doc) {
 				$.init();
-						mui('body').on('shown', '.mui-popover', function(e) {
-			//console.log('shown', e.detail.id);//detail为当前popover元素
-		});
-		mui('body').on('hidden', '.mui-popover', function(e) {
-			//console.log('hidden', e.detail.id);//detail为当前popover元素
-		});
-//----------------------------------------------------------------------------------------
-		document.getElementById("xingzhi").addEventListener('tap',function () {
-			var btnArray = [{title:"全职"},{title:"兼职"}];
-			plus.nativeUI.actionSheet( {
-				title:"期望工作性质",
-				cancel:"取消",
-				buttons:btnArray
-			}, function(e){
-				var index = e.index;
-				var text = "";
-				switch (index){
-					case 0:
-						break;
-					case 1:
-						text += "全职";
-						break;
-					case 2:
-						text += "兼职";
-						break;
-				}
-				document.getElementById("xingzhi").getElementsByTagName('input')[0].value = text;
-			} );
-		});
-		
-		
-		document.getElementById("yuexin").addEventListener('tap',function () {
-			var btnArray = [{title:"面议"},{title:"1000~1500元每月"},{title:"1500~2000元每月"},{title:"2000~3000元每月"},{title:"3000~5000元每月"},{title:"5000~10000元每月"},{title:"一万以上每月"}];
-			plus.nativeUI.actionSheet( {
-				title:"期望月薪",
-				cancel:"取消",
-				buttons:btnArray
-			}, function(e){
-				var index = e.index; 
-				var text = "";
-				switch (index){
-					case 0:
-						break;
-					case 1:
-						text += "面议";
-						break;
-					case 2:
-						text += "1000~1500元每月";
-						break;
-					case 3:
-						text += "1500~2000元每月";
-						break;
-					case 4:
-						text += "2000~3000元每月";
-						break;
-					case 5:
-						text += "3000~5000元每月";
-						break;
-					case 6:
-						text += "5000~10000元每月";
-						break;
-					case 7:
-						text += "一万以上每月";
-						break;
-				}
-				document.getElementById("yuexin").getElementsByTagName('input')[0].value = text;
-			} );
-		});
-//-------------------------------------------------------------------------------------------
-					
-
-					var cityPicker3 = new $.PopPicker({
-						layer: 3
+				mui('body').on('shown', '.mui-popover', function(e) {
+					//console.log('shown', e.detail.id);//detail为当前popover元素
+				});
+				mui('body').on('hidden', '.mui-popover', function(e) {
+					//console.log('hidden', e.detail.id);//detail为当前popover元素
+				}); 
+				//----------------------------------------------------------------------------------------
+				document.getElementById("xingzhi").addEventListener('tap', function() {
+					var btnArray = [{
+						title: "全职"
+					}, {
+						title: "兼职"
+					}];
+					plus.nativeUI.actionSheet({
+						title: "期望工作性质",
+						cancel: "取消",
+						buttons: btnArray
+					}, function(e) {
+						var index = e.index;
+						var text = "";
+						switch (index) {
+							case 0:
+								break;
+							case 1:
+								text += "全职";
+								break;
+							case 2:
+								text += "兼职";
+								break;
+						}
+						document.getElementById("xingzhi").getElementsByTagName('input')[0].value = text;
 					});
-					cityPicker3.setData(cityData3);
-
-					document.getElementById("diqu").addEventListener('tap', function(event) {
-						cityPicker3.show(function(items) {
-							document.getElementById("diqu").getElementsByTagName('input')[0].value = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
-							//返回 false 可以阻止选择框的关闭 
-							//return false;
+				});
+				document.getElementById("yuexin").addEventListener('tap', function() {
+					var btnArray = [{
+						title: "面议"
+					}, {
+						title: "1000~1500元每月"
+					}, {
+						title: "1500~2000元每月"
+					}, {
+						title: "2000~3000元每月"
+					}, {
+						title: "3000~5000元每月"
+					}, {
+						title: "5000~10000元每月"
+					}, {
+						title: "一万以上每月"
+					}];
+					plus.nativeUI.actionSheet({
+						title: "期望月薪",
+						cancel: "取消",
+						buttons: btnArray
+					}, function(e) {
+						var index = e.index;
+						var text = "";
+						switch (index) {
+							case 0:
+								break;
+							case 1:
+								text += "面议";
+								break;
+							case 2:
+								text += "1000~1500元每月";
+								break;
+							case 3:
+								text += "1500~2000元每月";
+								break;
+							case 4:
+								text += "2000~3000元每月";
+								break;
+							case 5:
+								text += "3000~5000元每月";
+								break;
+							case 6:
+								text += "5000~10000元每月";
+								break;
+							case 7:
+								text += "一万以上每月";
+								break;
+						}
+						document.getElementById("yuexin").getElementsByTagName('input')[0].value = text;
+					});
+				});
+				//-------------------------------------------------------------------------------------------
+				var cityPicker3 = new $.PopPicker({
+					layer: 3
+				});
+				cityPicker3.setData(cityData3);
+				document.getElementById("diqu").addEventListener('tap', function(event) {
+					cityPicker3.show(function(items) {
+						document.getElementById("diqu").getElementsByTagName('input')[0].value = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+						//返回 false 可以阻止选择框的关闭 
+						//return false;
+					});
+				}, false);
+				document.getElementById('reg1').onclick = function() {
+						var data = {
+							t: 7,
+							id: 5128,//待修改！！！！！
+							RecuetlyPost: v('RecuetlyPost'),
+							HopeType: v('HopeType'),
+							HopeZone: v('HopeZone'),
+							HopeMonthFee: v('HopeMonthFee'),
+							zhiwei: 0//待修改！！！！！
+						} 
+						console.log(data.RecuetlyPost)
+						jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
+							alert(JSONdata);
+							if (JSONdata != 0) {
+								alert("出现错误！");
+							}
 						});
-					}, false);
+
+						function v(ele) {
+							return document.getElementById(ele).value;
+						}
+				} 
 			}(mui, document));
 		</script>
-
 	</body>
 
 </html>

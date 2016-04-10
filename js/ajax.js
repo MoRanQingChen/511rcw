@@ -8,9 +8,9 @@
         var oHead = document.getElementsByTagName('head')[0];
         var params = formatParams(oData);
         var oS = document.createElement('script');
-        
         oHead.appendChild(oS);
         oS.src = url + '?' + params; 
+        console.log(oS.src);
         function formatParams(data) {
         	var arr = []; 
         	for (var name in data) {

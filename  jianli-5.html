@@ -21,37 +21,36 @@
 			}
 		</style>
 	</head>
-
 	<body>
 		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
 			<h1 class="mui-title">我的简历</h1>
 		</header>
 		<div class="mui-content">
-			<br /> 三：教育经历
+			<br /> 五：培训经历
 			<br />
 			<br />
 			<form class="mui-input-group" style="margin-bottom: 20px;">
 				<div class="mui-input-row" id="ruxue">
 					<label>开始日期：</label>
-					<input type="text" placeholder="选择入学日期" id="startDate">
+					<input type="text" placeholder="选择开始日期" id="startDate">
 				</div>
 				<div class="mui-input-row" id="biye">
 					<label>结束日期：</label>
-					<input type="text" placeholder="选择毕业日期" id="endDate">
+					<input type="text" placeholder="选择结束日期" id="endDate">
 				</div>
 				<div class="mui-input-row">
-					<label>学校名称：</label>
-					<input type="text" placeholder="输入学校名称" id="Title">
+					<label>培训机构：</label>
+					<input type="text" placeholder="输入培训机构名称" id="Title">
 				</div>
 				<div class="mui-input-row">
-					<label>专业名称：</label>
-					<input type="text" placeholder="输入所学专业" id="Remark1">
-				</div>
-				<div class="mui-input-row" id="xueli">
-					<label>最高学历：</label>
-					<input type="text" placeholder="请选择学历" id="Remark2">
+					<label>培训课程：</label>
+					<input type="text" placeholder="输入所培训课程" id="Remark1">
 				</div>
 			</form>
+			<label>培训描述：</label>
+				<div class="mui-input-row" style="margin: 10px 5px;">
+					<textarea rows="5" placeholder="培训描述" id="Remark2"></textarea>
+				</div>
 			<!--			<button class="mui-btn mui-btn-primary" onclick="return false;" style="float: left; margin-left: 20px;height: 35px;line-height: 15px;">继续添加经历</button>
 --><button id="reg1" class="mui-btn mui-btn-primary" style="float: right; margin-right: 20px;height: 35px;line-height: 15px;">保存并下一步</button>&nbsp;&nbsp;
 
@@ -73,63 +72,6 @@
 				});
 				mui('body').on('hidden', '.mui-popover', function(e) {
 					//console.log('hidden', e.detail.id);//detail为当前popover元素
-				});
-				//-------------------------------------------------------------------------------------------
-				document.getElementById("xueli").addEventListener('tap', function() {
-					var btnArray = [{
-						title: "初中"
-					}, {
-						title: "高中"
-					}, {
-						title: "中技"
-					}, {
-						title: "中专"
-					}, {
-						title: "大专"
-					}, {
-						title: "本科"
-					}, {
-						title: "硕士"
-					}, {
-						title: "博士"
-					}];
-					plus.nativeUI.actionSheet({
-						title: "学历",
-						cancel: "取消",
-						buttons: btnArray
-					}, function(e) {
-						var index = e.index;
-						var text = "";
-						switch (index) {
-							case 0:
-								break;
-							case 1:
-								text += "初中";
-								break;
-							case 2:
-								text += "高中";
-								break;
-							case 3:
-								text += "中技";
-								break;
-							case 4:
-								text += "中专";
-								break;
-							case 5:
-								text += "大专";
-								break;
-							case 6:
-								text += "本科";
-								break;
-							case 7:
-								text += "硕士";
-								break;
-							case 8:
-								text += "博士";
-								break;
-						}
-						document.getElementById("xueli").getElementsByTagName('input')[0].value = text;
-					});
 				});
 				//-------------------------------------------------------------------------------------------
 				document.getElementById("ruxue").addEventListener('tap', function() {
@@ -173,7 +115,7 @@
 					//----------------------------------------------------------------------
 				document.getElementById('reg1').onclick = function() {
 					var data = { 
-						t:9,
+						t:11,
 						id: 5128,//待修改！！！！！
 						startDate: v('startDate'),
 						endDate: v('endDate'),

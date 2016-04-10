@@ -249,7 +249,8 @@
 						jp("http://www.511rcw.com/app/AppHandler.ashx",loginInfo, function(data) {
 							if(data.success=='true'){
 								plus.nativeUI.toast("登陆成功");
-								plus.navigator.setCookie('userId', accountBox.value);
+//								plus.navigator.setCookie('user', user:accountBox.value);
+								plus.navigator.setCookie('id', 4061);
 								toMain(); 
 							}else{
 								plus.nativeUI.alert("账号或密码错误");

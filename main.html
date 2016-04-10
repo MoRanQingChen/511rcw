@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="css/job.css"/>
 		<style>
 			ul {
-				font-size: 14px;
+				font-size: 14px;http://127.0.0.1:8020/app/main.html#
 				color: #8f8f94;
 			}
 			
@@ -78,9 +78,8 @@
 					</div>
 				</a>
 			</li>
-			<li class="mui-table-view-cell mui-media mui-col-xs-6">
+			<li class="mui-table-view-cell mui-media mui-col-xs-6" onclick="openJianli()"> 
 				<a href="#"  style="border-right: 1px solid #DDD;border-top: 1px solid #DDD;">
-					
 					<div class="mui-media-body"  style="height: 40px;">
 						精英职位<span class="mui-icon mui-icon-personadd"></span>
 					</div>
@@ -126,10 +125,16 @@
 		<script>
 		
 			function getCookie(){
-				var coo=plus.navigator.getCookie('userId');
+				var coo=plus.navigator.getCookie('id');
 				alert(coo);
 			} 
-		
+			function openJianli(){
+				alert(222)
+						mui.openWindow({
+							url:'jianli-4.html',
+							id:'jianli'
+						})
+			}
 			var JSONdata={"0":"1750|业务员|5000~10000元/月|江苏省/昆山/所有县|昆山德信致远环境科技有限公司","1":"1751|钣金设计师|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司","2":"1752|采购员|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司","3":"1753|销售工程师|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司","4":"1754|品质主管|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司","5":"1755|外贸业务- 急|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司","6":"1759| 平面设计|5000~10000元/月|江苏省/昆山/所有县|昆山华翔汽车销售服务有限公司","7":"1760|人事助理|3000~5000元/月|江苏省/昆山/所有县|昆山华翔汽车销售服务有限公司","8":"1761|市场专员|3000~5000元/月|江苏省/昆山/所有县|昆山华翔汽车销售服务有限公司","9":"1762|客服中心主管|面议|//|昆山华翔汽车销售服务有限公司"}
 			var flag=document.createDocumentFragment();
 			for(var i=0;i<10;i++){
