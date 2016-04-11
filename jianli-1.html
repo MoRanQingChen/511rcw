@@ -93,11 +93,11 @@
 					<label>联系QQ：</label>
 					<input type="text" placeholder="联系QQ" id="LinkQQ">
 				</div>
-
-				<div class="mui-button-row">
-					<button id="reg1" class="mui-btn mui-btn-primary" style="float: right; margin-right: 20px;height: 35px;line-height: 15px;">保存并下一步</button>&nbsp;&nbsp;
-				</div>
 			</form>
+			<div class="mui-button-row">
+				<button id="reg1" class="mui-btn mui-btn-primary" style="float: right; margin-right: 20px;height: 35px;line-height: 15px;">保存并下一步</button>&nbsp;&nbsp;
+			</div>
+
 		</div>
 		<script src="js/mui.min.js "></script>
 		<script src="js/app.js "></script>
@@ -315,39 +315,45 @@
 				}, false);
 				//-----------------------------------------------------------------------------------------------
 				//
-				var coo;
 				mui.plusReady(function() {
 					coo = plus.navigator.getCookie('id');
 					document.getElementById('reg1').onclick = function() {
 						var data = {
 							t: 6,
 							id: 0,
-							user: coo,
+							User: coo,
 							title: v('title'),
 							RealName: v('RealName'),
-							sex: v('sex'),
-							hunyan: v('hunyan'),
+							sex: v('sex') == '男性' ? true : false,
+							hunyan: v('hunyan') == '未婚' ? 0 : v('hunyan') == '已婚' ? 1 : 2,
 							gz: v('gz'),
 							NativePlace: v('NativePlace'),
 							EducationLevel: v('EducationLevel'),
 							LinkMobile: v('LinkMobile'),
 							Email: v('Email'),
 							TongxunAddress: v('TongxunAddress'),
-							LinkQQ: v('LinkQQ')
+							LinkQQ: v('LinkQQ'),
+							Height: 1
 						}
 						jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
-							alert(JSONdata)
-							if(JSONdata!=0){ 
+							if (arguments[0] > 0) {
 								alert("出现错误！");
+							} else {
+								var extrasId = arguments[0] * (-1);
+								mui.openWindow({
+									url: 'jianli-2.html',
+									id: arguments[0] * (-1),
+									extras: extrasId
+								})
 							}
-						}); 
+						});
+
+						function v(ele) {
+							console.log(document.getElementById(ele).value);
+							return document.getElementById(ele).value;
+						}
 					}
 				});
-
-				function v(ele) {
-					console.log(document.getElementById(ele).value);
-					return document.getElementById(ele).value;
-				}
 			}(mui, document));
 		</script>
 

@@ -167,7 +167,9 @@
 			"js/mui.picker.js",
 			"js/ajax.js"
 		],
-		"refer": []
+		"refer": [
+			"jianli-2.html"
+		]
 	},
 	"jianli-2.html": {
 		"resources": [
@@ -182,7 +184,9 @@
 			"js/city.data-3.js",
 			"js/ajax.js"
 		],
-		"refer": []
+		"refer": [
+			"jianli-3.html"
+		]
 	},
 	"jianli-3.html": {
 		"resources": [
@@ -197,7 +201,9 @@
 			"js/city.data-3.js",
 			"js/ajax.js"
 		],
-		"refer": []
+		"refer": [
+			"jianli-4.html"
+		]
 	},
 	"application.html": {
 		"resources": [
@@ -222,6 +228,28 @@
 			"js/mui.min.js",
 			"css/job.css",
 			"css/mui.min.css"
+		],
+		"refer": [
+			"jianli-5.html"
+		]
+	},
+	"jianli-5.html": {
+		"refer": [
+			"jianli-6.html"
+		]
+	},
+	"jianli-6.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"js/mui.poppicker.js",
+			"css/job.css",
+			"css/mui.min.css",
+			"js/ajax.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/city.data-3.js"
 		]
 	}
 }

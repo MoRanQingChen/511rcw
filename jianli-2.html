@@ -165,10 +165,16 @@
 						//return false;
 					});
 				}, false);
+				//--------------------------------------------------------------------------
+				
+
+				
+				//--------------------------------------------------------
 				document.getElementById('reg1').onclick = function() {
+						var resumeInfo = plus.webview.currentWebview();
 						var data = {
 							t: 7,
-							id: 5128,//待修改！！！！！
+							id: resumeInfo.id,
 							RecuetlyPost: v('RecuetlyPost'),
 							HopeType: v('HopeType'),
 							HopeZone: v('HopeZone'),
@@ -180,9 +186,16 @@
 							alert(JSONdata);
 							if (JSONdata != 0) {
 								alert("出现错误！");
+							}else{
+								var extrasId = resumeInfo.id;
+								console.log(extrasId);
+								mui.openWindow({
+									url: 'jianli-3.html',
+									id: resumeInfo.id+'-2',
+									extras: extrasId
+								})
 							}
 						});
-
 						function v(ele) {
 							return document.getElementById(ele).value;
 						}

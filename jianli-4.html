@@ -45,7 +45,7 @@
 			</form>
 			
 
-			<div class="mui-input-row" style="margin:-5px;margin-top: -10px;margin-bottom: 10px;">
+			<div class="mui-input-row" style="margin:0px;margin-top: -10px;margin-bottom: 10px;">
 					<textarea rows="5" placeholder="输入企业介绍:简要说明公司性质、规模、业务、发展历程等" id="Remark1"></textarea>
 				</div>
 				<form class="mui-input-group" style="margin-bottom: 20px;">
@@ -56,11 +56,11 @@
 				
 			</form>
 
-			<div class="mui-input-row" style="margin:-5px;margin-top: -10px;">
+			<div class="mui-input-row" style="margin:0px;margin-top: -10px;">
 					<textarea rows="5" placeholder="输入企业介绍:简要介绍您的个人业绩，工作情况。" id="Remark3"></textarea>
 				</div>
 			<!--			<button class="mui-btn mui-btn-primary" onclick="return false;" style="float: left; margin-left: 20px;height: 35px;line-height: 15px;">继续添加经历</button>
---><button id="reg1" class="mui-btn mui-btn-primary" style="float: right; margin-right: 20px;height: 35px;line-height: 15px;">保存并下一步</button>&nbsp;&nbsp;
+--><button id="reg1" class="mui-btn mui-btn-primary" style="float: right; margin-right: 20px;height: 35px;line-height: 15px;margin-bottom: 10px;">保存并下一步</button>&nbsp;&nbsp;
 
 		</div>
 		<script src="js/mui.min.js "></script>
@@ -123,9 +123,10 @@
 					})
 					//----------------------------------------------------------------------
 				document.getElementById('reg1').onclick = function() {
+					var resumeInfo = plus.webview.currentWebview();
 					var data = { 
 						t:10,
-						id: 5128,//待修改！！！！！
+						id: resumeInfo.id.substring(0,resumeInfo.id.length-4),
 						startDate: v('startDate'),
 						endDate: v('endDate'),
 						Title: v('Title'),
@@ -138,7 +139,14 @@
 						alert(JSONdata);
 						if (JSONdata != 0) {
 							alert("出现错误！");
-						}
+						}else{
+								var extrasId = resumeInfo.id;
+								mui.openWindow({
+									url: 'jianli-5.html',
+									id: resumeInfo.id+'-4',
+									extras: extrasId
+								})
+							}
 					});
 
 					function v(ele) {

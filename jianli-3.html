@@ -172,9 +172,10 @@
 					})
 					//----------------------------------------------------------------------
 				document.getElementById('reg1').onclick = function() {
+					var resumeInfo = plus.webview.currentWebview();
 					var data = { 
 						t:9,
-						id: 5128,//待修改！！！！！
+						id: resumeInfo.id.substring(0,resumeInfo.id.length-2),
 						startDate: v('startDate'),
 						endDate: v('endDate'),
 						Title: v('Title'),
@@ -186,7 +187,14 @@
 						alert(JSONdata);
 						if (JSONdata != 0) {
 							alert("出现错误！");
-						}
+						}else{
+								var extrasId = resumeInfo.id;
+								mui.openWindow({
+									url: 'jianli-4.html',
+									id: resumeInfo.id+'-3',
+									extras: extrasId
+								})
+							}
 					});
 
 					function v(ele) {

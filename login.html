@@ -247,10 +247,10 @@
 						this.disabled=true;
 						this.innerHTML="登陆中..."
 						jp("http://www.511rcw.com/app/AppHandler.ashx",loginInfo, function(data) {
-							if(data.success=='true'){
+							if(data.success){
 								plus.nativeUI.toast("登陆成功");
 //								plus.navigator.setCookie('user', user:accountBox.value);
-								plus.navigator.setCookie('id', 4061);
+								plus.navigator.setCookie('id', data.success);
 								toMain(); 
 							}else{
 								plus.nativeUI.alert("账号或密码错误");
