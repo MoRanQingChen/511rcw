@@ -115,7 +115,7 @@
 					</li>
 				</ul>-->
 					<nav class="mui-bar mui-bar-tab">
-						<a class="mui-tab-item" style="width: 66%;display: block;float: left;background-color: #fa9f20;" href="./main.html">
+						<a class="mui-tab-item" style="width: 66%;display: block;float: left;background-color: #fa9f20;" onclick="apply()">
 
 							<span class="mui-tab-label" style="color:white;line-height: 50px;">投递简历</span>
 						</a>
@@ -194,7 +194,7 @@
 					return document.getElementById(ele);
 				}
 				
-				
+
 				
 				
 				
@@ -213,11 +213,16 @@
 							"url ": 'setting.html'
 						});
 						//设置
-						var JobId = plus.webview.currentWebview();
+				var JobId = plus.webview.currentWebview();
 				var data={
 						t:3,
 						id:JobId.id
 				};
+				
+
+				
+				
+				
 				jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
 				if(JSONdata.success){
 					var arr=JSONdata.success.split('|'); 
@@ -281,6 +286,14 @@
 						})
 						},0);
 						qitazhiwei.appendChild(oLi)
+					}
+					function apply(){
+						mui.openWindow({
+							url:'application.html',
+							id:JobId.id+,
+							extras:extrasId
+						})
+						
 					}
 				}
 				
