@@ -32,23 +32,23 @@
 			<br />
 			<form class="mui-input-group" style="margin-bottom: 20px;">
 				<div class="mui-input-row" id="ruxue">
-					<label>开始日期：</label>
+					<label>开始日期<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="选择入学日期" id="startDate">
 				</div>
 				<div class="mui-input-row" id="biye">
-					<label>结束日期：</label>
+					<label>结束日期<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="选择毕业日期" id="endDate">
 				</div>
 				<div class="mui-input-row">
-					<label>学校名称：</label>
+					<label>学校名称<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="输入学校名称" id="Title">
 				</div>
-				<div class="mui-input-row">
-					<label>专业名称：</label>
+				<div class="mui-input-row"> 
+					<label>专业名称<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="输入所学专业" id="Remark1">
 				</div>
 				<div class="mui-input-row" id="xueli">
-					<label>最高学历：</label>
+					<label>最高学历<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="请选择学历" id="Remark2">
 				</div>
 			</form>
@@ -172,35 +172,47 @@
 					})
 					//----------------------------------------------------------------------
 				document.getElementById('reg1').onclick = function() {
+					if (/^\s*$/.test(v('startDate')) || /^\s*$/.test(v('endDate')) || /^\s*$/.test(v('Title')) || /^\s*$/.test(v('Remark1')) || /^\s*$/.test(v('Remark2'))) {
+						alert("有未填写的必填项！");
+						return
+					}
 					var resumeInfo = plus.webview.currentWebview();
-					var data = { 
-						t:9,
-						id: resumeInfo.id.substring(0,resumeInfo.id.length-2),
+					var data = {
+						t: 9,
+						id: resumeInfo.id.substring(0, resumeInfo.id.length - 2),
 						startDate: v('startDate'),
 						endDate: v('endDate'),
 						Title: v('Title'),
 						Remark1: v('Remark1'),
 						Remark2: v('Remark2')
-					} 
+					}
 					console.log(data.RecuetlyPost)
 					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
 						alert(JSONdata);
 						if (JSONdata != 0) {
 							alert("出现错误！");
-						}else{
-								var extrasId = resumeInfo.id;
-								mui.openWindow({
-									url: 'jianli-4.html',
-									id: resumeInfo.id+'-3',
-									extras: extrasId
-								})
-							}
+						} else {
+							var extrasId = resumeInfo.id;
+							mui.openWindow({
+								url: 'jianli-4.html',
+								id: resumeInfo.id + '-3',
+								extras: extrasId
+							})
+						}
 					});
 
 					function v(ele) {
 						return document.getElementById(ele).value;
 					}
-				}
+				}!(function() {
+					var JSONdata = '10541|$|12/08/01 00:00:00|$|16/10/01 00:00:00|$|江科大|$|金属|$|博士|$|';
+					var arr = JSONdata.split('|$|');
+					document.getElementById("startDate").value = arr[1];
+					document.getElementById("endDate").value = arr[2];
+					document.getElementById("Title").value = arr[3];
+					document.getElementById("Remark1").value = arr[4];
+					document.getElementById("Remark2").value = arr[5];
+				})()
 			}(mui, document));
 		</script>
 

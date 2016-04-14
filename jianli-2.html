@@ -36,33 +36,33 @@
 					<input type="text" placeholder="若无工作经验可忽略" id="RecuetlyPost">
 				</div>
 				<div class="mui-input-row" id="xingzhi">
-					<label>期望性质：</label>
+					<label>期望性质<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="请选择期望工作性质" id="HopeType">
 				</div>
 				<div class="mui-input-row" id="diqu">
-					<label>期望地区：</label>
+					<label>期望地区<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="请选择期望工作地区" id="HopeZone">
 				</div>
 				<div class="mui-input-row" id="yuexin">
-					<label>期望月薪：</label>
+					<label>期望月薪<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="请选择期望月薪" id="HopeMonthFee">
 				</div>
 				<div class="mui-input-row" id="zhiwei">
-					<label>求职意向：</label>
-					<input type="text" placeholder="请选择求职意向">
+					<label>求职意向<span style="color: red;">*</span>：</label>
+					<input type="text" placeholder="请选择求职意向" id="yixiang">
 				</div>
 
 			</form>
-				<div class="mui-button-row" style="margin-top: 10px;">
-					<button class="mui-btn mui-btn-primary" id="reg1" style="float: right; margin-right: 20px;height: 35px;line-height: 15px;">保存并下一步</button>&nbsp;&nbsp;
-				</div>
+			<div class="mui-button-row" style="margin-top: 10px;">
+				<button class="mui-btn mui-btn-primary" id="reg1" style="float: right; margin-right: 20px;height: 35px;line-height: 15px;">保存并下一步</button>&nbsp;&nbsp;
+			</div>
 		</div>
 		<script src="js/mui.min.js "></script>
 		<script src="js/app.js "></script>
 		<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./js/mui.picker.js"></script>
 		<script src="./js/mui.poppicker.js"></script>
-		<script src="./js/ajax.js"></script> 
+		<script src="./js/ajax.js"></script>
 
 		<!--<script src="../js/mui.picker.min.js"></script>-->
 
@@ -74,7 +74,7 @@
 				});
 				mui('body').on('hidden', '.mui-popover', function(e) {
 					//console.log('hidden', e.detail.id);//detail为当前popover元素
-				}); 
+				});
 				//----------------------------------------------------------------------------------------
 				document.getElementById("xingzhi").addEventListener('tap', function() {
 					var btnArray = [{
@@ -166,40 +166,54 @@
 					});
 				}, false);
 				//--------------------------------------------------------------------------
-				
-
-				
 				//--------------------------------------------------------
 				document.getElementById('reg1').onclick = function() {
-						var resumeInfo = plus.webview.currentWebview();
-						var data = {
-							t: 7,
-							id: resumeInfo.id,
-							RecuetlyPost: v('RecuetlyPost'),
-							HopeType: v('HopeType'),
-							HopeZone: v('HopeZone'),
-							HopeMonthFee: v('HopeMonthFee'),
-							zhiwei: 0//待修改！！！！！
-						} 
-						console.log(data.RecuetlyPost)
-						jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
-							alert(JSONdata);
-							if (JSONdata != 0) {
-								alert("出现错误！");
-							}else{
-								var extrasId = resumeInfo.id;
-								console.log(extrasId);
-								mui.openWindow({
-									url: 'jianli-3.html',
-									id: resumeInfo.id+'-2',
-									extras: extrasId
-								})
-							}
-						});
-						function v(ele) {
-							return document.getElementById(ele).value;
+if(/^\s*$/.test(v('yixiang'))||/^\s*$/.test(v('HopeType'))||/^\s*$/.test(v('HopeZone'))||/^\s*$/.test(v('HopeMonthFee'))){
+alert("有未填写的必填项！");
+			return
+		}
+					
+					
+					
+					var resumeInfo = plus.webview.currentWebview();
+					var data = {
+						t: 7,
+						id: resumeInfo.id,
+						RecuetlyPost: v('RecuetlyPost'),
+						HopeType: v('HopeType'),
+						HopeZone: v('HopeZone'),
+						HopeMonthFee: v('HopeMonthFee'),
+						zhiwei: 0 //待修改！！！！！
+					}
+					console.log(data.RecuetlyPost)
+					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
+						alert(JSONdata);
+						if (JSONdata != 0) {
+							alert("出现错误！");
+						} else {
+							var extrasId = resumeInfo.id;
+							console.log(extrasId);
+							mui.openWindow({
+								url: 'jianli-3.html',
+								id: resumeInfo.id + '-2',
+								extras: extrasId
+							})
 						}
-				} 
+					});
+
+					function v(ele) {
+						return document.getElementById(ele).value;
+					}
+				}
+				!(function() {
+					var JSONdata = '5252|4061|简历名|真实姓名|男|0|未婚|10年以上|北京市 北京市 东城区|博士|1800 247151|526333257@qq.com|江苏省 苏州市 昆山市|526333257||近期岗位|全职|北京市 北京市 东城区|一万以上每月|0|特长||||||1.00|||False|False|False|False|True|2016-4-13 10:13:52|2016-4-13 10:16:09|0||False|0|0|||)'
+					var arr = JSONdata.split('|');
+							document.getElementById("RecuetlyPost").value = arr[15];
+							document.getElementById("HopeType").value = arr[16];
+							document.getElementById("HopeZone").value = arr[17]
+							document.getElementById("HopeMonthFee").value = arr[18]
+							document.getElementById("yixiang").value = arr[19]
+				})();
 			}(mui, document));
 		</script>
 	</body>

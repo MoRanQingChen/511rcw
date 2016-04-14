@@ -399,30 +399,32 @@
 			<p style="font-size: 12px;">511人才网</p>
 		</div>
 		<nav class="mui-bar mui-bar-tab">
-			<a class="mui-tab-item" href="./main.html">
+			<a class="mui-tab-item" href="./main.html" id="nav-home">
 				<span class="mui-icon mui-icon-home"></span>
 				<span class="mui-tab-label">首页</span>
 			</a>
-			<a class="mui-tab-item mui-active" href="./job.html">
+			<a class="mui-tab-item mui-active" href="./job.html" id="nav-job">
 				<span class="mui-icon mui-icon-contact "></span>
 				<span class="mui-tab-label ">职位</span>
 			</a>
-			<a class="mui-tab-item " href="./message.html">
+			<a class="mui-tab-item " href="./message.html" id="nav-message">
 				<span class="mui-icon mui-icon-chat"></span>
 				<span class="mui-tab-label">消息</span>
 			</a>
-			<a class="mui-tab-item" href="./setting.html">
+			<a class="mui-tab-item" href="./setting.html" id="nav-setting">
 				<span class="mui-icon mui-icon-gear "></span>
 				<span class="mui-tab-label ">设置</span>
 			</a>
 		</nav>
 		<script src="./js/mui.min.js"></script>
+		
 		<script src="./js/mui.picker.js"></script>
 		<script src="./js/mui.poppicker.js"></script>
 		<script src="./js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/hangwei.js" type="text/javascript" charset="utf-8"></script>
 		<!--<script src="js/zhiwei.js" type="text/javascript" charset="utf-8"></script>-->
 		<script src="js/ajax.js"></script>
+		<script src="js/allHave.js"></script>
 		<script>
 			mui.init({
 				swipeBack: true //启用右滑关闭功能
@@ -616,54 +618,6 @@
 					addJob();
 				});
 			})(mui, document);
-			
-			
-			
-			
-			+row["ID"].Exp_IntTryParse();
-        +row["Mem_User_ID"].Exp_IntTryParse();
-  +row["Title"].Exp_Trim();
-     +row["RealName"].Exp_Trim();
-+row["Sex"].Exp_Trim();
-+row["Age"].Exp_IntTryParse();
-   +row["Hunyan"].Exp_Trim();
-    +row["Gongzuo"].Exp_Trim();
-        +row["NativePlace"].Exp_Trim();
-           +row["EducationLevel"].Exp_Trim();
-       +row["LinkMobile"].Exp_Trim();
-  +row["Email"].Exp_Trim();
-           +row["TongxunAddress"].Exp_Trim();
-   +row["LinkQQ"].Exp_Trim();
-        +row["PersonWeibo"].Exp_Trim();
-         +row["RecuetlyPost"].Exp_Trim();
-     +row["HopeType"].Exp_Trim();
-     +row["HopeZone"].Exp_Trim();
-         +row["HopeMonthFee"].Exp_Trim();
-    +row["ClassID"].Exp_IntTryParse();
-          +row["ContentsSkill"].Exp_Trim();
-              +row["ContentsEducation"].Exp_Trim();
-         +row["ContentsWork"].Exp_Trim();
-           +row["ContentsPeixun"].Exp_Trim();
-          +row["XinxiangPhoto"].Exp_Trim();
-        +row["Nationality"].Exp_Trim();
-   +row["Height"].Exp_DecimalTryParse();
-    +row["Address"].Exp_Trim();
-      +row["FreeTime1"].Exp_Trim();
-      +row["IsChecked"].Exp_BoolTryParse();
-    +row["IsIndex"].Exp_BoolTryParse();
-        +row["IsRecommand"].Exp_BoolTryParse();
-     +row["IsActive"].Exp_BoolTryParse();
- +row["Flag"].Exp_BoolTryParse();
-    +row["AddTime"].Exp_DateTimeTryParse();
-     +row["EditTime"].Exp_DateTimeTryParse();
-    +row["Remark1"].Exp_IntTryParse();
-    +row["Remark2"].Exp_Trim();
-    +row["Remark3"].Exp_BoolTryParse();
-    +row["Remark4"].Exp_Trim();
-    +row["Remark5"].Exp_IntTryParse();
-    +row["Remark6"].Exp_Trim();
-    +row["Remark7"].Exp_Trim();
-    +row["Remark8"].Exp_Trim();
 		</script>
 
 		<script>

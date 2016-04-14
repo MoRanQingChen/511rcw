@@ -21,6 +21,7 @@
 			}
 		</style>
 	</head>
+
 	<body>
 		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
 			<h1 class="mui-title">我的简历</h1>
@@ -31,34 +32,33 @@
 			<br />
 			<form class="mui-input-group" style="margin-bottom: 20px;">
 				<div class="mui-input-row" id="ruxue">
-					<label>开始日期：</label>
+					<label>开始日期<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="选择开始日期" id="startDate">
 				</div>
 				<div class="mui-input-row" id="biye">
-					<label>结束日期：</label>
+					<label>结束日期<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="选择结束日期" id="endDate">
 				</div>
 				<div class="mui-input-row">
-					<label>企业名称：</label>
+					<label>企业名称<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="输入企业名称" id="Title">
 				</div>
 			</form>
-			
 
 			<div class="mui-input-row" style="margin:0px;margin-top: -10px;margin-bottom: 10px;">
-					<textarea rows="5" placeholder="输入企业介绍:简要说明公司性质、规模、业务、发展历程等" id="Remark1"></textarea>
-				</div>
-				<form class="mui-input-group" style="margin-bottom: 20px;">
+				<textarea rows="5" placeholder="输入企业介绍:简要说明公司性质、规模、业务、发展历程等" id="Remark1"></textarea>
+			</div>
+			<form class="mui-input-group" style="margin-bottom: 20px;">
 				<div class="mui-input-row" id="Remark1">
-					<label>职位名称：</label>
+					<label>职位名称<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="请输入职位名称" id="Remark2">
 				</div>
-				
+
 			</form>
 
 			<div class="mui-input-row" style="margin:0px;margin-top: -10px;">
-					<textarea rows="5" placeholder="输入企业介绍:简要介绍您的个人业绩，工作情况。" id="Remark3"></textarea>
-				</div>
+				<textarea rows="5" placeholder="输入企业介绍:简要介绍您的个人业绩，工作情况。" id="Remark3"></textarea>
+			</div>
 			<!--			<button class="mui-btn mui-btn-primary" onclick="return false;" style="float: left; margin-left: 20px;height: 35px;line-height: 15px;">继续添加经历</button>
 --><button id="reg1" class="mui-btn mui-btn-primary" style="float: right; margin-right: 20px;height: 35px;line-height: 15px;margin-bottom: 10px;">保存并下一步</button>&nbsp;&nbsp;
 
@@ -82,7 +82,6 @@
 					//console.log('hidden', e.detail.id);//detail为当前popover元素
 				});
 				//-------------------------------------------------------------------------------------------
-
 				document.getElementById("ruxue").addEventListener('tap', function() {
 					var dDate = new Date();
 					dDate.setFullYear(dDate.getFullYear() - 4, 7, 1);
@@ -123,36 +122,53 @@
 					})
 					//----------------------------------------------------------------------
 				document.getElementById('reg1').onclick = function() {
+					if (/^\s*$/.test(v('startDate')) || /^\s*$/.test(v('endDate')) || /^\s*$/.test(v('Title')) ||  /^\s*$/.test(v('Remark2'))) {
+						alert("有未填写的必填项！");
+						return
+					}
+					
+					
+					
 					var resumeInfo = plus.webview.currentWebview();
-					var data = { 
-						t:10,
-						id: resumeInfo.id.substring(0,resumeInfo.id.length-4),
+					var data = {
+						t: 10,
+						id: resumeInfo.id.substring(0, resumeInfo.id.length - 4),
 						startDate: v('startDate'),
 						endDate: v('endDate'),
 						Title: v('Title'),
 						Remark1: v('Remark1'),
 						Remark2: v('Remark2'),
 						Remark3: v('Remark3')
-					} 
+					}
 					console.log(data.RecuetlyPost)
 					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
 						alert(JSONdata);
 						if (JSONdata != 0) {
 							alert("出现错误！");
-						}else{
-								var extrasId = resumeInfo.id;
-								mui.openWindow({
-									url: 'jianli-5.html',
-									id: resumeInfo.id+'-4',
-									extras: extrasId
-								})
-							}
+						} else {
+							var extrasId = resumeInfo.id;
+							mui.openWindow({
+								url: 'jianli-5.html',
+								id: resumeInfo.id + '-4',
+								extras: extrasId
+							})
+						}
 					});
 
 					function v(ele) {
 						return document.getElementById(ele).value;
 					}
-				}
+				};
+				!(function() {
+					var JSONdata2 = '10542|$|16/04/13 00:00:00|$|16/10/01 00:00:00|$|东东|$|做网站|$|前端|$|业绩';
+					var arr = JSONdata2.split('|$|');
+						document.getElementById("startDate").value = arr[1]
+						document.getElementById("endDate").value = arr[2]
+						document.getElementById("Title").value = arr[3]
+						document.getElementById("Remark1").value = arr[4]
+						document.getElementById("Remark2").value = arr[5]
+						document.getElementById("Remark3").value = arr[6]
+				})();
 			}(mui, document));
 		</script>
 

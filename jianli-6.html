@@ -74,7 +74,12 @@
 					function v(ele) {
 						return document.getElementById(ele).value;
 					}
-				}
+				};
+				(function(){
+						var JSONdata='5252|4061|简历名|真实姓名|男|0|未婚|10年以上|北京市 北京市 东城区|博士|1800 247151|526333257@qq.com|江苏省 苏州市 昆山市|526333257||近期岗位|全职|北京市 北京市 东城区|一万以上每月|0|特长||||||1.00|||False|False|False|False|True|2016-4-13 10:13:52|2016-4-13 10:16:09|0||False|0|0|||)'
+						var arr=JSONdata.split('|');
+						document.getElementById("ContentsSkill").value=arr[20]
+				})()
 			}(mui, document));
 		</script>
 

@@ -32,11 +32,11 @@
 			<br />
 			<form class="mui-input-group">
 				<div class="mui-input-row">
-					<label>简历名称：</label>
+					<label>简历名称<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="简历名" id="title">
 				</div>
 				<div class="mui-input-row">
-					<label>真实姓名：</label>
+					<label>真实姓名<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="真实姓名" id="RealName">
 				</div>
 				<div class="mui-input-row" id="xingbie">
@@ -66,27 +66,27 @@
 					<input type="text" placeholder="请选择婚姻状况" id="hunyan">
 				</div>
 				<div id="jingyan" class="mui-input-row">
-					<label>工作经验：</label>
+					<label>工作经验<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="请选择工作经验" id="gz">
 				</div>
 				<div id="hukou" class="mui-input-row">
-					<label>户口地址：</label>
+					<label>户口地址<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="请选择户口地址" / id="NativePlace">
 				</div>
 				<div id="xueli" class="mui-input-row">
-					<label>学历：</label>
+					<label>学历<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="请选择学历信息" id="EducationLevel">
 				</div>
 				<div class="mui-input-row">
-					<label>联系电话：</label>
+					<label>联系电话<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="手机或电话" id="LinkMobile">
 				</div>
 				<div class="mui-input-row">
-					<label>电子邮箱：</label>
+					<label>电子邮箱<span style="color: red;">*</span>：</label>
 					<input type="email" placeholder="电子邮箱" id="Email">
 				</div>
 				<div id="tongxun" class="mui-input-row">
-					<label>通讯地址：</label>
+					<label>通讯地址<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="请选择通讯地址" id="TongxunAddress">
 				</div>
 				<div class="mui-input-row">
@@ -318,41 +318,67 @@
 				mui.plusReady(function() {
 					coo = plus.navigator.getCookie('id');
 					document.getElementById('reg1').onclick = function() {
-						var data = {
-							t: 6,
-							id: 0,
-							User: coo,
-							title: v('title'),
-							RealName: v('RealName'),
-							sex: v('sex') == '男性' ? true : false,
-							hunyan: v('hunyan') == '未婚' ? 0 : v('hunyan') == '已婚' ? 1 : 2,
-							gz: v('gz'),
-							NativePlace: v('NativePlace'),
-							EducationLevel: v('EducationLevel'),
-							LinkMobile: v('LinkMobile'),
-							Email: v('Email'),
-							TongxunAddress: v('TongxunAddress'),
-							LinkQQ: v('LinkQQ'),
-							Height: 1
-						}
-						jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
-							if (arguments[0] > 0) {
-								alert("出现错误！");
-							} else {
-								var extrasId = arguments[0] * (-1);
-								mui.openWindow({
-									url: 'jianli-2.html',
-									id: arguments[0] * (-1),
-									extras: extrasId
-								})
-							}
-						});
+		if (/^\s*$/.test(v('title')) || /^\s*$/.test(v('title')) || /^\s*$/.test(v('RealName')) || /^\s*$/.test(v('gz')) || /^\s*$/.test(v('NativePlace')) || /^\s*$/.test(v('EducationLevel')) || /^\s*$/.test(v('LinkMobile')) || /^\s*$/.test(v('Email')) || /^\s*$/.test(v('TongxunAddress'))) {
+			alert("有未填写的必填项！");
+			return
+		}
 
-						function v(ele) {
-							console.log(document.getElementById(ele).value);
-							return document.getElementById(ele).value;
+		var resumeInfo = plus.webview.currentWebview();
+		var data = {
+				t: 6,
+				id: isNaN(resumeInfo.id) ? 0 : resumeInfo.id,
+				User: coo,
+				title: v('title'),
+								RealName: v('RealName'),
+								sex: v('sex') == '男性' ? true : false,
+								hunyan: v('hunyan') == '未婚' ? 0 : v('hunyan') == '已婚' ? 1 : 2,
+								gz: v('gz'),
+								NativePlace: v('NativePlace'),
+								EducationLevel: v('EducationLevel'),
+								LinkMobile: v('LinkMobile'),
+								Email: v('Email'),
+								TongxunAddress: v('TongxunAddress'),
+								LinkQQ: v('LinkQQ'),
+								Height: 1
+							}
+							jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
+								if (arguments[0] > 0) {
+									alert("出现错误！");
+								} else {
+									var extrasId = arguments[0] * (-1);
+									mui.openWindow({
+										url: 'jianli-2.html',
+										id: arguments[0] * (-1),
+										extras: extrasId
+									})
+								}
+							});
+
+							function v(ele) {
+								console.log(document.getElementById(ele).value);
+								return document.getElementById(ele).value;
+							}
 						}
-					}
+						//------------------------------------------------------------------
+						!(function() {//daijp
+							var JSONdata = '5252|4061|简历名|真实姓名|男|0|未婚|10年以上|北京市 北京市 东城区|博士|1800 247151|526333257@qq.com|江苏省 苏州市 昆山市|526333257||近期岗位|全职|北京市 北京市 东城区|一万以上每月|0|特长||||||1.00|||False|False|False|False|True|2016-4-13 10:13:52|2016-4-13 10:16:09|0||False|0|0|||)'
+							var arr = JSONdata.split('|');
+							document.getElementById("title").value = arr[2];
+							document.getElementById("RealName").value = arr[3];
+							document.getElementById("sex").value = arr[4]
+							document.getElementById("hunyan").value = arr[6]
+							document.getElementById("gz").value = arr[7]
+							document.getElementById("NativePlace").value = arr[8]
+							document.getElementById("EducationLevel").value = arr[9]
+							document.getElementById("LinkMobile").value = arr[10]
+							document.getElementById("Email").value = arr[11]
+							document.getElementById("TongxunAddress").value = arr[12]
+							document.getElementById("LinkQQ").value = arr[13]
+
+						})()
+						//-----------------------------------------------------------------------
+						
+						
 				});
 			}(mui, document));
 		</script>

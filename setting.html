@@ -292,6 +292,7 @@
 
 	</body>
 	<script src="./js/mui.min.js "></script>
+	<script src="js/allHave.js"></script>
 	<script src="./js/mui.view.js "></script>
 	<script src='./libs/easymob-webim-sdk/jquery-1.11.1.js'></script>
 	<script src='./libs/easymob-webim-sdk/strophe-custom-2.0.0.js'></script>
@@ -408,10 +409,9 @@
 		//退出操作******************
 		document.getElementById('exit').addEventListener('tap', function() {
 			if (mui.os.ios) {
-				app.setState({});
 				mui.openWindow({
-					url: 'login.html',
-					id: 'login',
+					url: 'main.html',
+					id: 'main',
 					show: {
 						aniShow: 'pop-in'
 					},
@@ -419,7 +419,7 @@
 						autoShow: false
 					}
 				});
-				return;
+
 			}
 			var btnArray = [{
 				title: "注销当前账号"
@@ -433,11 +433,11 @@
 				var index = event.index;
 				switch (index) {
 					case 1:
-						app.setState({});
+						
 						plus.navigator.setCookie('userId', null);
 						mui.openWindow({
-							url: 'login.html',
-							id: 'login',
+							url: 'main.html',
+							id: 'main',
 							show: {
 								aniShow: 'pop-in'
 							},

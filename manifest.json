@@ -192,11 +192,12 @@
 					"css/mui.min.css",
 					"fonts/mui.ttf",
 					"css/feedback-page.css",
-					"images/iconfont-tianjia.png"
-				],
-				"refer": [
+					"images/iconfont-tianjia.png",
+					"message.html",
+					"main.html",
 					"login.html"
 				],
+				"refer": [],
 				"priority": 1
 			},
 			"main.html": {
@@ -215,7 +216,8 @@
 					"login.html",
 					"setting.html",
 					"job.html",
-					"message.html"
+					"message.html",
+					"js/allHave.js"
 				],
 				"refer": [
 					"jianli.html",
@@ -280,13 +282,23 @@
 					"images/weixin.png",
 					"js/ajax.js",
 					"app/js/ajax.js",
-					"message.html"
+					"message.html",
+					"main.html",
+					"images/baner/baner2.png",
+					"images/job/logo.png",
+					"images/baner/baner5.png",
+					"setting.html",
+					"css/job.css",
+					"images/baner/baner3.png",
+					"images/baner/baner4.png",
+					"job.html",
+					"login2.html"
 				],
 				"refer": [
 					"unlock.html",
 					"forget_password.html",
-					"main.html",
-					"reg.html"
+					"reg.html",
+					"jobInfo.html"
 				],
 				"priority": 0
 			},
@@ -329,7 +341,9 @@
 					"main.html",
 					"js/ajax.js"
 				],
-				"refer": [],
+				"refer": [
+					"application.html"
+				],
 				"priority": 0
 			},
 			"message.html": {
@@ -341,9 +355,12 @@
 					"css/mui.min.css",
 					"job.html",
 					"login.html",
-					"main.html"
+					"main.html",
+					"setting.html"
 				],
-				"refer": [],
+				"refer": [
+					"resumeList.html"
+				],
 				"priority": 0
 			},
 			"jianli.html": {
@@ -408,7 +425,9 @@
 					"fonts/mui.ttf",
 					"css/job.css",
 					"css/mui.min.css",
-					"job.html"
+					"job.html",
+					"js/ajax.js",
+					"main.html"
 				],
 				"refer": [],
 				"priority": 0
@@ -450,6 +469,65 @@
 					"css/mui.poppicker.css",
 					"css/mui.picker.css",
 					"js/city.data-3.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"login2.html": {
+				"resources": [
+					"login.html",
+					"js/ajax.js",
+					"css/style.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"resumeList.html": {
+				"resources": [
+					"js/ajax.js",
+					"js/app.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/job.css",
+					"css/mui.min.css",
+					"main.html",
+					"job.html",
+					"js/allHave.js"
+				],
+				"refer": [
+					"jianli-1.html",
+					"viewResume.html"
+				],
+				"priority": 0
+			},
+			"jianli-1.html": {
+				"resources": [
+					"js/mui.picker.js",
+					"js/mui.poppicker.js",
+					"css/mui.poppicker.css",
+					"css/mui.picker.css",
+					"js/city.data-3.js",
+					"js/app.js",
+					"js/mui.min.js",
+					"css/job.css",
+					"css/mui.min.css",
+					"js/ajax.js"
+				],
+				"refer": [
+					"jianli-2.html"
+				],
+				"priority": 0
+			},
+			"viewResume.html": {
+				"resources": [
+					"main.html",
+					"js/app.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/job.css",
+					"css/mui.min.css",
+					"js/ajax.js",
+					"message.html"
 				],
 				"refer": [],
 				"priority": 0

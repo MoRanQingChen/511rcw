@@ -6,16 +6,17 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<link href="css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="css/job.css"/>
+		<link rel="stylesheet" type="text/css" href="css/job.css" />
 		<style>
 
 		</style>
 	</head>
+
 	<body>
 		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">投递简历</h1>
-			
+
 		</header>
 		<div class="mui-content">
 			<br />
@@ -23,12 +24,17 @@
 			<span style="color: crimson;">
 					申请职位：
 			</span>
-			
+
 			<ul id="list" class="mui-table-view mui-table-view-chevron">
 				<li class="mui-table-view-cell">
-网站维护一名<br />
-江苏/昆山/开发区<br />
-东东网络科技有限公司
+					<span id="name">
+						
+					</span><br /> <span id="local">
+						
+					</span>
+					<br /> <span id="companty">
+						
+					</span>
 				</li>
 			</ul>
 
@@ -42,48 +48,24 @@
 				<h5>
 					以下是您保存的简历，请选择一份合适该职位的完整简历，点击“立即申请”寄给该公司
 				</h5>
-				
+
 			</div>
 
-			<form class="mui-input-group" style="margin-top: 10px;">
-					<div class="mui-input-row mui-radio mui-left">
-						<label>前端工程师</label>
-						<input name="radio1" type="radio" checked>
-					</div>
-					<div class="mui-input-row mui-radio mui-left">
-						<label>webApp</label>
-						<input name="radio1" type="radio">
-					</div>
+			<form id="resumeList" class="mui-input-group" style="margin-top: 10px;">
 
- 
 			</form>
 			<br />
-				<span style="color: crimson;">
+			<span style="color: crimson;">
 					备注说明：
 				</span>
-				<div class="mui-input-row" style="margin: 10px 5px;">
-					<textarea id="textarea" rows="5" placeholder="我们建议您在递交申请的同时，可以对自己再做一些重点的说明，可以大大提高您的求职成功率！"></textarea>
-				</div>
-			<input type="submit" value="立即申请" style="float: right;margin-right: 15px;"/>
+			<div class="mui-input-row" style="margin: 10px 5px;">
+				<textarea id="textarea" rows="5" placeholder="我们建议您在递交申请的同时，可以对自己再做一些重点的说明，可以大大提高您的求职成功率！"></textarea>
+			</div>
+			<input id="shenqing" type="submit" value="立即申请" style="float: right;margin-right: 15px;" />
 			<div style="width: 100px;height: 100px;"></div>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+
 		</div>
-				<nav class="mui-bar mui-bar-tab">
+		<nav class="mui-bar mui-bar-tab">
 			<a class="mui-tab-item" href="./main.html">
 				<span class="mui-icon mui-icon-home"></span>
 				<span class="mui-tab-label">首页</span>
@@ -103,11 +85,58 @@
 		</nav>
 		<script src="js/mui.min.js "></script>
 		<script src="js/app.js "></script>
+		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			(function($, doc) {
 				$.init();
-				var settings = app.getSettings();
-				var JobId = plus.webview.currentWebview();
+				var arr;
+				var coo;
+				var oRadio;
+				$.plusReady = function() {
+					var settings = app.getSettings();
+					var JobId = plus.webview.currentWebview();
+					arr = JobId.id;
+					arr = arr.split('|')
+					document.getElementById("name").innerHTML = JobId.name;
+					document.getElementById("local").innerHTML = JobId.local;
+					document.getElementById("companty").innerHTML = JobId.companty;
+					coo = plus.navigator.getCookie('id');
+					var data = {
+						t: 5,
+						id: coo,
+					}
+					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
+						var arr2 = JSONdata.split('|');
+						for (var i = 0; i < arr2.length / 2 - 1; i++) {
+							var oLi = document.createElement('div');
+							oLi.className = "mui-input-row mui-radio mui-left";
+							oLi.innerHTML = '<label>' + arr2[3 * i + 2] + '</label><input name="radio" type="radio" value="' + arr2[3 * i+1] + '">';
+							document.getElementById('resumeList').appendChild(oLi);
+						}
+						oRadio = document.getElementById("resumeList").getElementsByTagName('input');
+						oRadio[0].checked = true;
+					});
+				}
+				document.getElementById("shenqing").onclick = function() {
+					var data = {
+						t:14,
+						id: 0,
+						RecruitID: arr[0],
+						MemID: coo,
+						Summary: document.getElementById("textarea").value,
+						resumeID: -1,
+						compddID: arr[1]
+					}
+					for (var i = 0; i < oRadio.length; i++) {
+						if (oRadio[i].checked == true) {
+							data.resumeID = oRadio[i].value;
+							break;
+						}
+					}
+					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
+						alert(JSONdata);
+					})
+				}
 			}(mui, document));
 		</script>
 

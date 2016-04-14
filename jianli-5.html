@@ -31,19 +31,19 @@
 			<br />
 			<form class="mui-input-group" style="margin-bottom: 20px;">
 				<div class="mui-input-row" id="ruxue">
-					<label>开始日期：</label>
+					<label>开始日期<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="选择开始日期" id="startDate">
 				</div>
 				<div class="mui-input-row" id="biye">
-					<label>结束日期：</label>
+					<label>结束日期<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="选择结束日期" id="endDate">
 				</div>
 				<div class="mui-input-row">
-					<label>培训机构：</label>
+					<label>培训机构<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="输入培训机构名称" id="Title">
 				</div>
 				<div class="mui-input-row">
-					<label>培训课程：</label>
+					<label>培训课程<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="输入所培训课程" id="Remark1">
 				</div>
 			</form>
@@ -114,6 +114,13 @@
 					})
 					//----------------------------------------------------------------------
 				document.getElementById('reg1').onclick = function() {
+					document.getElementById('reg1').onclick = function() {
+					if (/^\s*$/.test(v('startDate')) || /^\s*$/.test(v('endDate')) || /^\s*$/.test(v('Title')) || /^\s*$/.test(v('Remark1'))) {
+						alert("有未填写的必填项！");
+						return
+					}
+					
+					
 					var resumeInfo = plus.webview.currentWebview();
 					var data = { 
 						t:11,
@@ -143,6 +150,15 @@
 						return document.getElementById(ele).value;
 					}
 				}
+				!(function(){
+					var JSONdata3='10543|$|16/04/13 00:00:00|$|16/10/01 00:00:00|$|机构|$|课程|$|描述|$|';
+					var arr=JSONdata3.split('|$|');
+						document.getElementById("startDate").value = arr[1]
+						document.getElementById("endDate").value = arr[2]
+						document.getElementById("Title").value = arr[3]
+						document.getElementById("Remark1").value = arr[4]
+						document.getElementById("Remark2").value = arr[5]
+				})()
 			}(mui, document));
 		</script>
 
