@@ -24,6 +24,7 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">我的简历</h1>
 		</header>
 		<div class="mui-content">
@@ -43,7 +44,7 @@
 					<label>学校名称<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="输入学校名称" id="Title">
 				</div>
-				<div class="mui-input-row"> 
+				<div class="mui-input-row">
 					<label>专业名称<span style="color: red;">*</span>：</label>
 					<input type="text" placeholder="输入所学专业" id="Remark1">
 				</div>
@@ -171,12 +172,50 @@
 						});
 					})
 					//----------------------------------------------------------------------
+				/*				var resumeInfo;
+								$.plusReady(function() {
+									resumeInfo = plus.webview.currentWebview();
+													var data = {
+									t: 15,
+									resumeID: resumeInfo.id.substring(0, resumeInfo.id.length - 2)
+								}
+
+								jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
+										var arr = JSONdata.split('|$|');
+										if (arr[5]) {
+											document.getElementById("startDate").value = arr[1];
+											document.getElementById("endDate").value = arr[2];
+											document.getElementById("Title").value = arr[3];
+											document.getElementById("Remark1").value = arr[4];
+											document.getElementById("Remark2").value = arr[5];
+										}
+									})
+								})*/
+				$.plusReady(function() {
+					resumeInfo = plus.webview.currentWebview();
+					var data = {
+						t: 15,
+						resumeID: resumeInfo.id.substring(0, resumeInfo.id.length - 2)
+					}
+					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
+						var arr = JSONdata.split('|$|');
+						if (arr[0]) {
+							document.getElementById("startDate").value = arr[1];
+							document.getElementById("endDate").value = arr[2];
+							document.getElementById("Title").value = arr[3];
+							document.getElementById("Remark1").value = arr[4];
+							document.getElementById("Remark2").value = arr[5];
+						}
+					})
+				});
+				//-------------------------------------------------------
 				document.getElementById('reg1').onclick = function() {
 					if (/^\s*$/.test(v('startDate')) || /^\s*$/.test(v('endDate')) || /^\s*$/.test(v('Title')) || /^\s*$/.test(v('Remark1')) || /^\s*$/.test(v('Remark2'))) {
 						alert("有未填写的必填项！");
 						return
 					}
-					var resumeInfo = plus.webview.currentWebview();
+											this.disabled=true;
+						this.innerHTML="正在提交";
 					var data = {
 						t: 9,
 						id: resumeInfo.id.substring(0, resumeInfo.id.length - 2),
@@ -188,10 +227,11 @@
 					}
 					console.log(data.RecuetlyPost)
 					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
-						alert(JSONdata);
 						if (JSONdata != 0) {
 							alert("出现错误！");
 						} else {
+										                    this.disabled=false;
+						this.innerHTML="保存并下一步";
 							var extrasId = resumeInfo.id;
 							mui.openWindow({
 								url: 'jianli-4.html',
@@ -204,15 +244,11 @@
 					function v(ele) {
 						return document.getElementById(ele).value;
 					}
-				}!(function() {
-					var JSONdata = '10541|$|12/08/01 00:00:00|$|16/10/01 00:00:00|$|江科大|$|金属|$|博士|$|';
-					var arr = JSONdata.split('|$|');
-					document.getElementById("startDate").value = arr[1];
-					document.getElementById("endDate").value = arr[2];
-					document.getElementById("Title").value = arr[3];
-					document.getElementById("Remark1").value = arr[4];
-					document.getElementById("Remark2").value = arr[5];
-				})()
+				};
+				//-------------------------------------------------------------
+				/*				!(function() {
+
+								})()*/
 			}(mui, document));
 		</script>
 

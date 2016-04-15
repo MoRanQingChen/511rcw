@@ -24,6 +24,7 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">我的简历</h1>
 		</header>
 		<div class="mui-content">
@@ -317,18 +318,42 @@
 				//
 				mui.plusReady(function() {
 					coo = plus.navigator.getCookie('id');
+					var ResumeInfo = plus.webview.currentWebview();
+					if (ResumeInfo.Memid) {
+						var data = {
+							t: 4,
+							id: ResumeInfo.Memid,
+							i: ResumeInfo.rows
+						}
+						jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
+							var arr = JSONdata.split('|$|');
+							document.getElementById("title").value = arr[2];
+							document.getElementById("RealName").value = arr[3];
+							document.getElementById("sex").value = arr[4]
+							document.getElementById("hunyan").value = arr[6]
+							document.getElementById("gz").value = arr[7]
+							document.getElementById("NativePlace").value = arr[8]
+							document.getElementById("EducationLevel").value = arr[9]
+							document.getElementById("LinkMobile").value = arr[10]
+							document.getElementById("Email").value = arr[11]
+							document.getElementById("TongxunAddress").value = arr[12]
+							document.getElementById("LinkQQ").value = arr[13]
+						});
+					} //if (ResumeInfo.Memid) 
 					document.getElementById('reg1').onclick = function() {
-		if (/^\s*$/.test(v('title')) || /^\s*$/.test(v('title')) || /^\s*$/.test(v('RealName')) || /^\s*$/.test(v('gz')) || /^\s*$/.test(v('NativePlace')) || /^\s*$/.test(v('EducationLevel')) || /^\s*$/.test(v('LinkMobile')) || /^\s*$/.test(v('Email')) || /^\s*$/.test(v('TongxunAddress'))) {
-			alert("有未填写的必填项！");
-			return
-		}
 
-		var resumeInfo = plus.webview.currentWebview();
-		var data = {
-				t: 6,
-				id: isNaN(resumeInfo.id) ? 0 : resumeInfo.id,
-				User: coo,
-				title: v('title'),
+							if (/^\s*$/.test(v('title')) || /^\s*$/.test(v('title')) || /^\s*$/.test(v('RealName')) || /^\s*$/.test(v('gz')) || /^\s*$/.test(v('NativePlace')) || /^\s*$/.test(v('EducationLevel')) || /^\s*$/.test(v('LinkMobile')) || /^\s*$/.test(v('Email')) || /^\s*$/.test(v('TongxunAddress'))) {
+								alert("有未填写的必填项！");
+								return
+							}
+													this.disabled=true;
+						this.innerHTML="正在提交";
+							var resumeInfo = plus.webview.currentWebview();
+							var data = {
+								t: 6,
+								id: isNaN(resumeInfo.id) ? 0 : resumeInfo.id,
+								User: coo,
+								title: v('title'),
 								RealName: v('RealName'),
 								sex: v('sex') == '男性' ? true : false,
 								hunyan: v('hunyan') == '未婚' ? 0 : v('hunyan') == '已婚' ? 1 : 2,
@@ -345,11 +370,16 @@
 								if (arguments[0] > 0) {
 									alert("出现错误！");
 								} else {
+												                    this.disabled=false;
+						this.innerHTML="保存并下一步";
 									var extrasId = arguments[0] * (-1);
 									mui.openWindow({
 										url: 'jianli-2.html',
 										id: arguments[0] * (-1),
-										extras: extrasId
+										extras: {
+											Memid: ResumeInfo.Memid,
+											rows: ResumeInfo.rows
+										}
 									})
 								}
 							});
@@ -359,26 +389,7 @@
 								return document.getElementById(ele).value;
 							}
 						}
-						//------------------------------------------------------------------
-						!(function() {//daijp
-							var JSONdata = '5252|4061|简历名|真实姓名|男|0|未婚|10年以上|北京市 北京市 东城区|博士|1800 247151|526333257@qq.com|江苏省 苏州市 昆山市|526333257||近期岗位|全职|北京市 北京市 东城区|一万以上每月|0|特长||||||1.00|||False|False|False|False|True|2016-4-13 10:13:52|2016-4-13 10:16:09|0||False|0|0|||)'
-							var arr = JSONdata.split('|');
-							document.getElementById("title").value = arr[2];
-							document.getElementById("RealName").value = arr[3];
-							document.getElementById("sex").value = arr[4]
-							document.getElementById("hunyan").value = arr[6]
-							document.getElementById("gz").value = arr[7]
-							document.getElementById("NativePlace").value = arr[8]
-							document.getElementById("EducationLevel").value = arr[9]
-							document.getElementById("LinkMobile").value = arr[10]
-							document.getElementById("Email").value = arr[11]
-							document.getElementById("TongxunAddress").value = arr[12]
-							document.getElementById("LinkQQ").value = arr[13]
-
-						})()
 						//-----------------------------------------------------------------------
-						
-						
 				});
 			}(mui, document));
 		</script>

@@ -23,6 +23,7 @@
 	</head>
 	<body>
 		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">我的简历</h1>
 		</header>
 		<div class="mui-content">
@@ -66,100 +67,142 @@
 
 		<script>
 			(function($, doc) {
-				$.init();
-				mui('body').on('shown', '.mui-popover', function(e) {
-					//console.log('shown', e.detail.id);//detail为当前popover元素
-				});
-				mui('body').on('hidden', '.mui-popover', function(e) {
-					//console.log('hidden', e.detail.id);//detail为当前popover元素
-				});
-				//-------------------------------------------------------------------------------------------
-				document.getElementById("ruxue").addEventListener('tap', function() {
-					var dDate = new Date();
-					dDate.setFullYear(dDate.getFullYear() - 4, 7, 1);
-					var minDate = new Date();
-					minDate.setFullYear(1940, 0, 1);
-					var maxDate = new Date();
-					maxDate.setFullYear(maxDate.getFullYear(), maxDate.getMonth(), maxDate.getDate());
-					plus.nativeUI.pickDate(function(e) {
-						var d = e.date;
-						document.getElementById("ruxue").getElementsByTagName('input')[0].value = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
-					}, function(e) {
-						document.getElementById("ruxue").getElementsByTagName('input')[0].value = ""
-					}, {
-						title: "请选择日期",
-						date: dDate,
-						minDate: minDate,
-						maxDate: maxDate
-					});
-				})
-				document.getElementById("biye").addEventListener('tap', function() {
-						var dDate = new Date();
-						dDate.setFullYear(dDate.getFullYear(), 9, 1);
-						var minDate = new Date();
-						minDate.setFullYear(1940, 0, 1);
-						var maxDate = new Date();
-						maxDate.setFullYear(maxDate.getFullYear() + 4, maxDate.getMonth(), maxDate.getDate());
-						plus.nativeUI.pickDate(function(e) {
-							var d = e.date;
-							document.getElementById("biye").getElementsByTagName('input')[0].value = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
-						}, function(e) {
-							document.getElementById("biye").getElementsByTagName('input')[0].value = ""
-						}, {
-							title: "请选择日期",
-							date: dDate,
-							minDate: minDate,
-							maxDate: maxDate
-						});
-					})
-					//----------------------------------------------------------------------
-				document.getElementById('reg1').onclick = function() {
-					document.getElementById('reg1').onclick = function() {
-					if (/^\s*$/.test(v('startDate')) || /^\s*$/.test(v('endDate')) || /^\s*$/.test(v('Title')) || /^\s*$/.test(v('Remark1'))) {
-						alert("有未填写的必填项！");
-						return
-					}
+			    $.init();
+			    mui('body').on('shown', '.mui-popover', function(e) {
+			        //console.log('shown', e.detail.id);//detail为当前popover元素
+			    });
+			    mui('body').on('hidden', '.mui-popover', function(e) {
+			        //console.log('hidden', e.detail.id);//detail为当前popover元素
+			    });
+			    //-------------------------------------------------------------------------------------------
+			    document.getElementById("ruxue").addEventListener('tap', function() {
+			        var dDate = new Date();
+			        dDate.setFullYear(dDate.getFullYear() - 4, 7, 1);
+			        var minDate = new Date();
+			        minDate.setFullYear(1940, 0, 1);
+			        var maxDate = new Date();
+			        maxDate.setFullYear(maxDate.getFullYear(), maxDate.getMonth(), maxDate.getDate());
+			        plus.nativeUI.pickDate(function(e) {
+			            var d = e.date;
+			            document.getElementById("ruxue").getElementsByTagName('input')[0].value = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+			        }, function(e) {
+			            document.getElementById("ruxue").getElementsByTagName('input')[0].value = ""
+			        }, {
+			            title: "请选择日期",
+			            date: dDate,
+			            minDate: minDate,
+			            maxDate: maxDate
+			        });
+			    })
+			    document.getElementById("biye").addEventListener('tap', function() {
+			        var dDate = new Date();
+			        dDate.setFullYear(dDate.getFullYear(), 9, 1);
+			        var minDate = new Date();
+			        minDate.setFullYear(1940, 0, 1);
+			        var maxDate = new Date();
+			        maxDate.setFullYear(maxDate.getFullYear() + 4, maxDate.getMonth(), maxDate.getDate());
+			        plus.nativeUI.pickDate(function(e) {
+			            var d = e.date;
+			            document.getElementById("biye").getElementsByTagName('input')[0].value = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+			        }, function(e) {
+			            document.getElementById("biye").getElementsByTagName('input')[0].value = ""
+			        }, {
+			            title: "请选择日期",
+			            date: dDate,
+			            minDate: minDate,
+			            maxDate: maxDate
+			        });
+			    })
+			    //----------------------------------------------------------------------
+			    document.getElementById('reg1').onclick = function() {
+			        document.getElementById('reg1').onclick = function() {
+			            if (/^\s*$/.test(v('startDate')) || /^\s*$/.test(v('endDate')) || /^\s*$/.test(v('Title')) || /^\s*$/.test(v('Remark1'))) {
+			                alert("有未填写的必填项！");
+			                return
+			            }
 					
-					
-					var resumeInfo = plus.webview.currentWebview();
-					var data = { 
-						t:11,
-						id: resumeInfo.id.substring(0,resumeInfo.id.length-6),
-						startDate: v('startDate'),
-						endDate: v('endDate'),
-						Title: v('Title'),
-						Remark1: v('Remark1'),
-						Remark2: v('Remark2')
-					} 
-					console.log(data.RecuetlyPost)
-					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
-						alert(JSONdata);
-						if (JSONdata != 0) {
-							alert("出现错误！");
-						}else{
-								var extrasId = resumeInfo.id;
-								mui.openWindow({
-									url: 'jianli-6.html',
-									id: resumeInfo.id+'-5',
-									extras: extrasId
-								})
-							}
-					});
+											this.disabled=true;
+						this.innerHTML="正在提交";
+			            var resumeInfo = plus.webview.currentWebview();
+			            var data = { 
+			                t:11,
+			                id: resumeInfo.id.substring(0,resumeInfo.id.length-6),
+			                startDate: v('startDate'),
+			                endDate: v('endDate'),
+			                Title: v('Title'),
+			                Remark1: v('Remark1'),
+			                Remark2: v('Remark2')
+			            } 
+			            console.log(data.RecuetlyPost)
+			            jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
+			                if (JSONdata != 0) {
+			                    alert("出现错误！");
+			                }else{
+			                    var extrasId = resumeInfo.id;
+			                    this.disabled=false;
+						this.innerHTML="保存并下一步";
+			                    mui.openWindow({
+			                        url: 'main.html',
+			                        id: 'main'
+			                    })
+			                }
+			            });
 
-					function v(ele) {
-						return document.getElementById(ele).value;
+			            function v(ele) {
+			                return document.getElementById(ele).value;
+			            }
+			        };
+/*			    $.plusReady(function() {
+			    	alert(11)
+					resumeInfo = plus.webview.currentWebview();
+					var data2 = {
+						t: 17,
+						resumeID: resumeInfo.id+'-5'
 					}
-				}
-				!(function(){
-					var JSONdata3='10543|$|16/04/13 00:00:00|$|16/10/01 00:00:00|$|机构|$|课程|$|描述|$|';
-					var arr=JSONdata3.split('|$|');
-						document.getElementById("startDate").value = arr[1]
-						document.getElementById("endDate").value = arr[2]
-						document.getElementById("Title").value = arr[3]
-						document.getElementById("Remark1").value = arr[4]
-						document.getElementById("Remark2").value = arr[5]
-				})()
-			}(mui, document));
+					console.log(data2.resumeID)
+					jp("http://www.511rcw.com/app/AppHandler.ashx", data2, function(JSONdata) {
+						var arr = JSONdata.split('|$|');
+						if (arr[0]) {
+			            document.getElementById("startDate").value = arr[1]
+			            document.getElementById("endDate").value = arr[2]
+			            document.getElementById("Title").value = arr[3]
+			            document.getElementById("Remark1").value = arr[4]
+			            document.getElementById("Remark2").value = arr[5]
+						}
+					})
+				}); */
+			        
+			        
+/*			        !(function(){
+			            var JSONdata3='10543|$|16/04/13 00:00:00|$|16/10/01 00:00:00|$|机构|$|课程|$|描述|$|';
+			            var arr=JSONdata3.split('|$|');
+			            document.getElementById("startDate").value = arr[1]
+			            document.getElementById("endDate").value = arr[2]
+			            document.getElementById("Title").value = arr[3]
+			            document.getElementById("Remark1").value = arr[4]
+			            document.getElementById("Remark2").value = arr[5]
+			        })()*/
+			    }
+			})(mui, document);
+			mui.plusReady(function() {
+					resumeInfo = plus.webview.currentWebview();
+					var data2 = {
+						t: 17, 
+						resumeID: resumeInfo.id.substring(0,resumeInfo.id.length-6)
+					}
+					console.log(data2.resumeID)
+					jp("http://www.511rcw.com/app/AppHandler.ashx", data2, function(JSONdata) {
+						var arr = JSONdata.split('|$|');
+						if (arr[0]) {
+			            document.getElementById("startDate").value = arr[1]
+			            document.getElementById("endDate").value = arr[2]
+			            document.getElementById("Title").value = arr[3]
+			            document.getElementById("Remark1").value = arr[4]
+			            document.getElementById("Remark2").value = arr[5]
+						}
+					})
+				}); 
+
 		</script>
 
 	</body>

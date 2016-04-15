@@ -18,7 +18,6 @@
 			.mui-view,
 			.mui-pages,
 			.mui-page,
-			.mui-page-content {
 				position: absolute;
 				left: 0;
 				right: 0;
@@ -433,8 +432,8 @@
 				var index = event.index;
 				switch (index) {
 					case 1:
-						
-						plus.navigator.setCookie('userId', null);
+						app.setState({});
+						plus.navigator.setCookie('id', null);
 						mui.openWindow({
 							url: 'main.html',
 							id: 'main',

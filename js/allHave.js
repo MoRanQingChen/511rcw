@@ -1,5 +1,4 @@
 document.getElementById("nav-home").addEventListener('tap', function() {
-
 			mui.openWindow({
 				url: 'main.html',
 				id: 'main'

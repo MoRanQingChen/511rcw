@@ -22,6 +22,7 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">简历列表</h1>
 		</header>
 		<div class="mui-content">
@@ -32,24 +33,6 @@
 
 			<button id="newResume" style="margin-top: 30px;" class="mui-btn mui-btn-success mui-btn-block mui-icon mui-icon-plus">新建简历</button>
 		</div>
-		<nav class="mui-bar mui-bar-tab">
-			<a class="mui-tab-item" href="./main.html" id="nav-home">
-				<span class="mui-icon mui-icon-home"></span>
-				<span class="mui-tab-label">首页</span>
-			</a>
-			<a class="mui-tab-item" href="./job.html" id="nav-job">
-				<span class="mui-icon mui-icon-contact "></span>
-				<span class="mui-tab-label ">职位</span>
-			</a>
-			<a class="mui-tab-item  mui-active" href="./message.html" id="nav-message">
-				<span class="mui-icon mui-icon-chat"></span>
-				<span class="mui-tab-label">消息</span>
-			</a>
-			<a class="mui-tab-item" href="./setting.html" id="nav-setting">
-				<span class="mui-icon mui-icon-gear "></span>
-				<span class="mui-tab-label ">设置</span>
-			</a>
-		</nav>
 		<script src="js/mui.min.js "></script>
 		<script src="js/app.js "></script>
 		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
@@ -58,15 +41,16 @@
 			(function($, doc) {
 				$.init();
 				var settings = app.getSettings();
-				//
+				$.plusReady(function(){
+				var coo = plus.navigator.getCookie('id');
 				var data = {
 					t: 5,
-					id: 4061
+					id: coo
 				}
 				jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
 					console.log(JSONdata)
-					var arr = JSONdata.split('|');
-					for (var i = 0; i < arr.length / 2 - 1; i++) {
+					var arr = JSONdata.split('|$|');
+					for (var i = 0; i < arr.length / 3; i++) {
 						var oLi = document.createElement('li');
 						oLi.className = "mui-table-view-cell";
 						oLi.innerHTML = '<div class="mui-slider-right mui-disabled"><a class="mui-btn mui-btn-grey viw" id="' + arr[3 * i] + '">预览</a><a class="mui-btn mui-btn-yellow edt">编辑</a><a class="mui-btn mui-btn-red del" id="' + arr[3 * i + 1] + '">删除</a></div><div class="mui-slider-handle"><div class="mui-table-cell">' + arr[3 * i + 2] + '</div></div>'
@@ -79,6 +63,7 @@
 						var resumeID = del[i].id
 						del[i].addEventListener('tap', function() {
 							var _this = this;
+							alert(_this.id)
 							var btnArray = ['否', '是'];
 							mui.confirm('确认要删除此简历？', '511人才网', btnArray, function(e) {
 								if (e.index == 1) {
@@ -94,14 +79,18 @@
 								}
 							})
 						})
+						var rows = viw[i].id;
 						edt[i].addEventListener('tap', function() {
 							mui.openWindow({
 								url: 'jianli-1.html',
-								id: resumeID
+								id: resumeID,
+								extras: {
+									Memid: data.id,
+									rows: rows
+								}
 							})
 						})
 						viw[i].addEventListener('tap', function() {
-							var rows = this.id;
 							mui.openWindow({
 								url: 'viewResume.html',
 								id: "viewResume",
@@ -113,7 +102,9 @@
 						})
 					}
 				});
-				document.getElementById('newResume').onclick = function() {
+				
+				})
+					document.getElementById('newResume').onclick = function() {
 						mui.openWindow({
 							url: 'jianli-1.html',
 							id: 0

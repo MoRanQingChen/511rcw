@@ -24,6 +24,7 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">我的简历</h1>
 		</header>
 		<div class="mui-content">
@@ -53,9 +54,20 @@
 				</div>
 
 			</form>
-			<div class="mui-button-row" style="margin-top: 10px;">
-				<button class="mui-btn mui-btn-primary" id="reg1" style="float: right; margin-right: 20px;height: 35px;line-height: 15px;">保存并下一步</button>&nbsp;&nbsp;
+
+			<br /> 三：技能特长
+			<br />
+			<br />
+
+			<div class="mui-input-row" style="margin:0px;margin-top: -10px;">
+				<textarea rows="5" placeholder="请您对自己做一个简短说明，简明扼要地描述您的职业优势，让用人单位快速地了解您！" id="ContentsSkill"></textarea>
 			</div>
+			<!--			<button class="mui-btn mui-btn-primary" onclick="return false;" style="float: left; margin-left: 20px;height: 35px;line-height: 15px;">继续添加经历</button>
+--><button id="reg1" class="mui-btn mui-btn-primary" style="float: right; margin-right: 20px;height: 35px;line-height: 15px;margin-bottom: 10px;">保存并下一步</button>&nbsp;&nbsp;
+
+		</div>
+		<div class="mui-content">
+
 		</div>
 		<script src="js/mui.min.js "></script>
 		<script src="js/app.js "></script>
@@ -168,13 +180,12 @@
 				//--------------------------------------------------------------------------
 				//--------------------------------------------------------
 				document.getElementById('reg1').onclick = function() {
-if(/^\s*$/.test(v('yixiang'))||/^\s*$/.test(v('HopeType'))||/^\s*$/.test(v('HopeZone'))||/^\s*$/.test(v('HopeMonthFee'))){
-alert("有未填写的必填项！");
-			return
-		}
-					
-					
-					
+					if (/^\s*$/.test(v('yixiang')) || /^\s*$/.test(v('HopeType')) || /^\s*$/.test(v('HopeZone')) || /^\s*$/.test(v('HopeMonthFee'))) {
+						alert("有未填写的必填项！");
+						return
+					}
+											this.disabled=true;
+						this.innerHTML="正在提交";
 					var resumeInfo = plus.webview.currentWebview();
 					var data = {
 						t: 7,
@@ -185,12 +196,12 @@ alert("有未填写的必填项！");
 						HopeMonthFee: v('HopeMonthFee'),
 						zhiwei: 0 //待修改！！！！！
 					}
-					console.log(data.RecuetlyPost)
 					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
-						alert(JSONdata);
 						if (JSONdata != 0) {
 							alert("出现错误！");
 						} else {
+										                    this.disabled=false;
+						this.innerHTML="保存并下一步";
 							var extrasId = resumeInfo.id;
 							console.log(extrasId);
 							mui.openWindow({
@@ -199,22 +210,44 @@ alert("有未填写的必填项！");
 								extras: extrasId
 							})
 						}
+						var data = {
+						t: 8,
+						id: resumeInfo.id,
+						ContentsSkill: v('ContentsSkill')
+						}
+						console.log(data.RecuetlyPost)
+						jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
+							if (JSONdata != 0) {
+								alert("出现错误！");
+							}
+						});
 					});
 
 					function v(ele) {
 						return document.getElementById(ele).value;
 					}
 				}
-				!(function() {
-					var JSONdata = '5252|4061|简历名|真实姓名|男|0|未婚|10年以上|北京市 北京市 东城区|博士|1800 247151|526333257@qq.com|江苏省 苏州市 昆山市|526333257||近期岗位|全职|北京市 北京市 东城区|一万以上每月|0|特长||||||1.00|||False|False|False|False|True|2016-4-13 10:13:52|2016-4-13 10:16:09|0||False|0|0|||)'
-					var arr = JSONdata.split('|');
-							document.getElementById("RecuetlyPost").value = arr[15];
-							document.getElementById("HopeType").value = arr[16];
-							document.getElementById("HopeZone").value = arr[17]
-							document.getElementById("HopeMonthFee").value = arr[18]
-							document.getElementById("yixiang").value = arr[19]
-				})();
-			}(mui, document));
+				$.plusReady(function() {
+					var resumeInfo = plus.webview.currentWebview();
+					var data = {
+						t: 4,
+						id: resumeInfo.Memid,
+						i: resumeInfo.rows
+					}
+					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
+						var arr = JSONdata.split('|$|');
+						for (var i = 0; i < arr.length; i++) {
+							if (typeof arr[i] == undefined) arr[i] = '未填写';
+						}
+						document.getElementById("RecuetlyPost").value = arr[15];
+						document.getElementById("HopeType").value = arr[16];
+						document.getElementById("HopeZone").value = arr[17]
+						document.getElementById("HopeMonthFee").value = arr[18]
+						document.getElementById("yixiang").value = arr[19]
+						document.getElementById("ContentsSkill").value = arr[20]
+					});
+				})
+			})(mui, document);
 		</script>
 	</body>
 

@@ -321,7 +321,8 @@
 					"app/js/ajax.js",
 					"css/app.css",
 					"js/ajax.js",
-					"message.html"
+					"message.html",
+					"js/allHave.js"
 				],
 				"refer": [
 					"jobInfo.html"
@@ -356,7 +357,8 @@
 					"job.html",
 					"login.html",
 					"main.html",
-					"setting.html"
+					"setting.html",
+					"js/allHave.js"
 				],
 				"refer": [
 					"resumeList.html"
@@ -451,7 +453,18 @@
 				"priority": 0
 			},
 			"jianli-5.html": {
-				"resources": [],
+				"resources": [
+					"js/mui.picker.js",
+					"js/app.js",
+					"js/mui.min.js",
+					"js/mui.poppicker.js",
+					"css/job.css",
+					"css/mui.min.css",
+					"js/ajax.js",
+					"css/mui.poppicker.css",
+					"css/mui.picker.css",
+					"js/city.data-3.js"
+				],
 				"refer": [
 					"jianli-6.html"
 				],
@@ -496,7 +509,8 @@
 				],
 				"refer": [
 					"jianli-1.html",
-					"viewResume.html"
+					"viewResume.html",
+					"setting.html"
 				],
 				"priority": 0
 			},

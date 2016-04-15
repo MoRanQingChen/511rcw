@@ -403,7 +403,7 @@
 				<span class="mui-icon mui-icon-home"></span>
 				<span class="mui-tab-label">首页</span>
 			</a>
-			<a class="mui-tab-item mui-active" href="./job.html" id="nav-job">
+			<a class="mui-tab-item mui-active2" href="./job.html" id="nav-job">
 				<span class="mui-icon mui-icon-contact "></span>
 				<span class="mui-tab-label ">职位</span>
 			</a>
@@ -480,7 +480,7 @@
 					
 					var flag = document.createDocumentFragment();
 					for (var i in JSONdata) {
-						var arr = JSONdata[i].split('|');
+						var arr = JSONdata[i].split('|$|');
 						var oLi = document.createElement("li");
 						oLi.className = "mui-table-view-cell mui-media";
 						if (arr[1] != undefined) { 
