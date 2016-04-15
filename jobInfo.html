@@ -263,7 +263,7 @@
 								}, 0);
 								qitazhiwei.appendChild(oLi)
 							}
-							document.getElementById("apply").onclick = function() {
+							document.getElementById("apply").addEventListener('tap',function() {
 								arr.push('21')
 								var coo = plus.navigator.getCookie('id'); 
 								if(coo){
@@ -283,7 +283,7 @@
 									id: 'login.html'
 								})
 								}
-							}
+							})
 						}
 					});
 					var settingButton = doc.getElementById('setting');
@@ -305,18 +305,7 @@
 					//--
 					$.oldBack = mui.back;
 					var backButtonPress = 0;
-					$.back = function(event) {
-						backButtonPress++;
-						if (backButtonPress > 1) {
-							plus.runtime.quit();
-						} else {
-							plus.nativeUI.toast('再按一次退出应用');
-						}
-						setTimeout(function() {
-							backButtonPress = 0;
-						}, 1000);
-						return false;
-					};
+					
 				});
 			}(mui, document));
 			document.querySelectorAll("#segmentedControl>a")[0].addEventListener('tap', function() {

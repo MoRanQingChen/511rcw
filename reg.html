@@ -139,7 +139,7 @@
 			}(mui, document));
 			var getReg = document.querySelector("#getReg");
 			var reg = document.querySelector("#reg")
-			getReg.onclick = function() {
+			getReg.addEventListener('tap',function() {
 				var _this = this;
 				this.disabled = true;
 				this.innerText = "等待五秒，未收到可再次发送";
@@ -148,7 +148,7 @@
 					_this.disabled = false;
 					reg.style.display = "block"
 				}, 5000)
-			}
+			})
 		</script>
 
 	</body>

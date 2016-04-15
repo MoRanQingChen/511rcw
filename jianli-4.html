@@ -122,7 +122,7 @@
 						});
 					})
 					//----------------------------------------------------------------------
-				document.getElementById('reg1').onclick = function() {
+					document.getElementById('reg1').addEventListener('tap',function() {
 					if (/^\s*$/.test(v('startDate')) || /^\s*$/.test(v('endDate')) || /^\s*$/.test(v('Title')) || /^\s*$/.test(v('Remark2'))) {
 						alert("有未填写的必填项！");
 						return
@@ -152,14 +152,15 @@
 								id: resumeInfo.id + '-4',
 								extras: extrasId
 							})
-						}
+						} 
 					});
 
 					function v(ele) {
 						return document.getElementById(ele).value;
 					}
 				};
-				$.plusReady(function() {
+				)
+					$.plusReady(function() {
 					resumeInfo = plus.webview.currentWebview();
 					var data = {
 						t: 16,

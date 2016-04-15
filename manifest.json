@@ -361,7 +361,9 @@
 					"js/allHave.js"
 				],
 				"refer": [
-					"resumeList.html"
+					"resumeList.html",
+					"toudifankui.html",
+					"toudijilu.html"
 				],
 				"priority": 0
 			},
@@ -542,6 +544,30 @@
 					"css/mui.min.css",
 					"js/ajax.js",
 					"message.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"toudifankui.html": {
+				"resources": [
+					"js/app.js",
+					"js/mui.min.js",
+					"css/job.css",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"js/ajax.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"toudijilu.html": {
+				"resources": [
+					"js/app.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/job.css",
+					"css/mui.min.css",
+					"js/ajax.js"
 				],
 				"refer": [],
 				"priority": 0

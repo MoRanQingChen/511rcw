@@ -340,7 +340,7 @@
 							document.getElementById("LinkQQ").value = arr[13]
 						});
 					} //if (ResumeInfo.Memid) 
-					document.getElementById('reg1').onclick = function() {
+					document.getElementById('reg1').addEventListener('tap',function() {
 
 							if (/^\s*$/.test(v('title')) || /^\s*$/.test(v('title')) || /^\s*$/.test(v('RealName')) || /^\s*$/.test(v('gz')) || /^\s*$/.test(v('NativePlace')) || /^\s*$/.test(v('EducationLevel')) || /^\s*$/.test(v('LinkMobile')) || /^\s*$/.test(v('Email')) || /^\s*$/.test(v('TongxunAddress'))) {
 								alert("有未填写的必填项！");
@@ -388,7 +388,7 @@
 								console.log(document.getElementById(ele).value);
 								return document.getElementById(ele).value;
 							}
-						}
+						})
 						//-----------------------------------------------------------------------
 				});
 			}(mui, document));

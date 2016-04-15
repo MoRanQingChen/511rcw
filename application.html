@@ -78,7 +78,7 @@
 					var settings = app.getSettings();
 					var JobId = plus.webview.currentWebview();
 					arr = JobId.id;
-					arr = arr.split('|')
+					arr = arr.split('|$|')
 					document.getElementById("name").innerHTML = JobId.name;
 					document.getElementById("local").innerHTML = JobId.local;
 					document.getElementById("companty").innerHTML = JobId.companty;
@@ -88,8 +88,8 @@
 						id: coo,
 					}
 					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
-						var arr2 = JSONdata.split('|');
-						for (var i = 0; i < arr2.length / 2 - 1; i++) {
+						var arr2 = JSONdata.split('|$|');
+						for (var i = 0; i < arr2.length / 3; i++) {
 							var oLi = document.createElement('div');
 							oLi.className = "mui-input-row mui-radio mui-left";
 							oLi.innerHTML = '<label>' + arr2[3 * i + 2] + '</label><input name="radio" type="radio" value="' + arr2[3 * i+1] + '">';
@@ -99,7 +99,10 @@
 						oRadio[0].checked = true;
 					});
 				}
-				document.getElementById("shenqing").onclick = function() {
+				document.getElementById("shenqing").addEventListener('tap',function() {
+					for(){
+						
+					}
 					var data = {
 						t:14,
 						id: 0,
@@ -118,7 +121,7 @@
 					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
 
 					})
-				}
+				})
 			}(mui, document));
 		</script>
 

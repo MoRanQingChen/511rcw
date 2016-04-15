@@ -179,7 +179,7 @@
 				}, false);
 				//--------------------------------------------------------------------------
 				//--------------------------------------------------------
-				document.getElementById('reg1').onclick = function() {
+				document.getElementById('reg1').addEventListener('tap',function() {
 					if (/^\s*$/.test(v('yixiang')) || /^\s*$/.test(v('HopeType')) || /^\s*$/.test(v('HopeZone')) || /^\s*$/.test(v('HopeMonthFee'))) {
 						alert("有未填写的必填项！");
 						return
@@ -227,6 +227,7 @@
 						return document.getElementById(ele).value;
 					}
 				}
+			)
 				$.plusReady(function() {
 					var resumeInfo = plus.webview.currentWebview();
 					var data = {

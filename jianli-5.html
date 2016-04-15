@@ -114,7 +114,7 @@
 			        });
 			    })
 			    //----------------------------------------------------------------------
-			    document.getElementById('reg1').onclick = function() {
+			    document.getElementById('reg1').addEventListener('tap',function() {
 			        document.getElementById('reg1').onclick = function() {
 			            if (/^\s*$/.test(v('startDate')) || /^\s*$/.test(v('endDate')) || /^\s*$/.test(v('Title')) || /^\s*$/.test(v('Remark1'))) {
 			                alert("有未填写的必填项！");
@@ -144,7 +144,7 @@
 			                    mui.openWindow({
 			                        url: 'main.html',
 			                        id: 'main'
-			                    })
+			                    }) 
 			                }
 			            });
 
@@ -183,6 +183,7 @@
 			            document.getElementById("Remark2").value = arr[5]
 			        })()*/
 			    }
+			)
 			})(mui, document);
 			mui.plusReady(function() {
 					resumeInfo = plus.webview.currentWebview();
