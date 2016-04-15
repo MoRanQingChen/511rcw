@@ -162,7 +162,7 @@
 						});
 					} else if (settings.autoLogin && state.token) {
 						toMain();
-					}/* else {
+					} else {
 						app.setState(null);
 						//第三方登录
 						var authBtns = ['qihoo', 'weixin', 'sinaweibo', 'qq']; //配置业务支持的第三方登录
@@ -211,7 +211,7 @@
 							plus.nativeUI.toast("获取登录认证失败：" + e.message);
 						});
 					}
-					*/// close splash
+					// close splash
 					setTimeout(function() {
 						//关闭 splash
 						plus.navigator.closeSplashscreen();
@@ -233,7 +233,7 @@
 						this.disabled = true;
 						this.innerHTML = "登陆中..."
 						jp("http://www.511rcw.com/app/AppHandler.ashx", loginInfo, function(data) {
-							if (data.success) {
+							if (data.success!='false') {
 								plus.nativeUI.toast("登陆成功");
 								//								plus.navigator.setCookie('user', user:accountBox.value);
 								plus.navigator.setCookie('id', data.success);

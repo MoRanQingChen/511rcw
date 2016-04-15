@@ -137,7 +137,7 @@
 			            jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
 			                if (JSONdata != 0) {
 			                    alert("出现错误！");
-			                }else{
+			                }else{ 
 			                    var extrasId = resumeInfo.id;
 			                    this.disabled=false;
 						this.innerHTML="保存并下一步";
@@ -152,7 +152,7 @@
 			                return document.getElementById(ele).value;
 			            }
 			        };
-/*			    $.plusReady(function() {
+/*			    $.plusReady(function() { 
 			    	alert(11)
 					resumeInfo = plus.webview.currentWebview();
 					var data2 = {

@@ -78,7 +78,7 @@
 					var settings = app.getSettings();
 					var JobId = plus.webview.currentWebview();
 					arr = JobId.id;
-					arr = arr.split('|$|')
+					arr = arr.split('|')
 					document.getElementById("name").innerHTML = JobId.name;
 					document.getElementById("local").innerHTML = JobId.local;
 					document.getElementById("companty").innerHTML = JobId.companty;
@@ -100,9 +100,6 @@
 					});
 				}
 				document.getElementById("shenqing").addEventListener('tap',function() {
-					for(){
-						
-					}
 					var data = {
 						t:14,
 						id: 0,
@@ -112,6 +109,8 @@
 						resumeID: -1,
 						compddID: arr[1]
 					}
+					console.log(arr[0])
+					console.log(arr[1])
 					for (var i = 0; i < oRadio.length; i++) {
 						if (oRadio[i].checked == true) {
 							data.resumeID = oRadio[i].value;
@@ -119,7 +118,8 @@
 						}
 					}
 					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
-
+						alert("投递成功");
+						mui.back();
 					})
 				})
 			}(mui, document));

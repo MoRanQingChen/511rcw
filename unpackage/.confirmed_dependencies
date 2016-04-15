@@ -68,7 +68,8 @@
 			"main.html",
 			"pullrefresh_sub.html",
 			"message.html",
-			"jobInfo.html"
+			"jobInfo.html",
+			"setting.html"
 		],
 		"resources": [
 			"images/job/logo.png",
@@ -144,7 +145,8 @@
 			"css/mui.min.css",
 			"message.html",
 			"main.html",
-			"login.html"
+			"login.html",
+			"js/allHave.js"
 		],
 		"refer": [
 			"login.html",
@@ -230,7 +232,8 @@
 			"css/mui.poppicker.css",
 			"css/mui.picker.css",
 			"js/city.data-3.js",
-			"js/ajax.js"
+			"js/ajax.js",
+			"fonts/mui.ttf"
 		],
 		"refer": [
 			"jianli-4.html"
@@ -262,7 +265,8 @@
 			"js/app.js",
 			"js/mui.min.js",
 			"css/job.css",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"fonts/mui.ttf"
 		],
 		"refer": [
 			"jianli-5.html"

@@ -122,13 +122,13 @@
 						});
 					})
 					//----------------------------------------------------------------------
-					document.getElementById('reg1').addEventListener('tap',function() {
+				document.getElementById('reg1').addEventListener('tap', function(){
 					if (/^\s*$/.test(v('startDate')) || /^\s*$/.test(v('endDate')) || /^\s*$/.test(v('Title')) || /^\s*$/.test(v('Remark2'))) {
 						alert("有未填写的必填项！");
 						return
 					}
-											this.disabled=true;
-						this.innerHTML="正在提交";
+					this.disabled = true;
+					this.innerHTML = "正在提交";
 					var resumeInfo = plus.webview.currentWebview();
 					var data = {
 						t: 10,
@@ -144,23 +144,22 @@
 						if (JSONdata != 0) {
 							alert("出现错误！");
 						} else {
-										                    this.disabled=false;
-						this.innerHTML="保存并下一步";
+							this.disabled = false;
+							this.innerHTML = "保存并下一步";
 							var extrasId = resumeInfo.id;
 							mui.openWindow({
 								url: 'jianli-5.html',
 								id: resumeInfo.id + '-4',
 								extras: extrasId
 							})
-						} 
+						}
 					});
 
 					function v(ele) {
 						return document.getElementById(ele).value;
 					}
-				};
-				)
-					$.plusReady(function() {
+				})
+				$.plusReady(function() {
 					resumeInfo = plus.webview.currentWebview();
 					var data = {
 						t: 16,

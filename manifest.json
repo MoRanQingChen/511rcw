@@ -195,7 +195,8 @@
 					"images/iconfont-tianjia.png",
 					"message.html",
 					"main.html",
-					"login.html"
+					"login.html",
+					"js/allHave.js"
 				],
 				"refer": [],
 				"priority": 1
@@ -325,7 +326,8 @@
 					"js/allHave.js"
 				],
 				"refer": [
-					"jobInfo.html"
+					"jobInfo.html",
+					"setting.html"
 				],
 				"priority": 0
 			},
@@ -415,7 +417,8 @@
 					"css/mui.poppicker.css",
 					"css/mui.picker.css",
 					"js/city.data-3.js",
-					"js/ajax.js"
+					"js/ajax.js",
+					"fonts/mui.ttf"
 				],
 				"refer": [
 					"jianli-4.html"
@@ -447,7 +450,8 @@
 					"js/app.js",
 					"js/mui.min.js",
 					"css/job.css",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"fonts/mui.ttf"
 				],
 				"refer": [
 					"jianli-5.html"
