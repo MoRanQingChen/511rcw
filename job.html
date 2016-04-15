@@ -617,39 +617,25 @@
 					console.log(data.page)
 					addJob();
 				});
+				$.plusReady(function() {
+					$.oldBack = mui.back;
+					var backButtonPress = 0;
+					$.back = function(event) {
+						backButtonPress++;
+						if (backButtonPress > 1) {
+							plus.runtime.quit();
+						} else {
+							plus.nativeUI.toast('再按一次退出应用');
+						}
+						setTimeout(function() {
+							backButtonPress = 0;
+						}, 1000);
+						return false;
+					};
+				});
 			})(mui, document);
 		</script>
 
-		<script>
-			mui.init({
-				pullRefresh: {
-					container: '#pullrefresh',
-					down: {},
-					up: {}
-				}
-			});
-			/**
-			 * 下拉刷新具体业务实现
-			 */
-			function pulldownRefresh() {}
-			var count = 0;
-			/**
-			 * 上拉加载具体业务实现
-			 */
-			function pullupRefresh() {
-				//下拉刷新
-			}
-			if (mui.os.plus) {
-				mui.plusReady(function() {
-					setTimeout(function() {
-						mui('#pullrefresh').pullRefresh().pullupLoading();
-					}, 1000);
-				});
-			} else {
-				mui.ready(function() {
-					mui('#pullrefresh').pullRefresh().pullupLoading();
-				});
-			}
-		</script>
+
 	</body>
 </html>
