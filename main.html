@@ -6,10 +6,11 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<link href="css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="css/job.css"/>
+		<link rel="stylesheet" type="text/css" href="css/job.css" />
 		<style>
 			ul {
-				font-size: 14px;http://127.0.0.1:8020/app/main.html#
+				font-size: 14px;
+				http: //127.0.0.1:8020/app/main.html#
 				color: #8f8f94;
 			}
 			
@@ -26,7 +27,7 @@
 			<h1 class="mui-title">511人才网</h1>
 			<button class=" mui-pull-right mui-btn-link"><a href="login.html">登陆</button>
 		</header>
-		
+
 		<div class="mui-content">
 			<div class="mui-input-row mui-search" style="margin: 15px;margin-bottom: 0;">
 				<input type="search" class="mui-input-clear" placeholder="请输入公司名或职位名">
@@ -64,32 +65,32 @@
 		</div>
 
 		<ul class="mui-table-view mui-grid-view" style="padding: 0;">
-			<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-right: 1px solid #DDD;" onclick="getCookie()">
-				<a href="#"  >
-					<div class="mui-media-body" style="height: 40px;">
+			<li class="mui-table-view-cell mui-media mui-col-xs-6 weikai" style="border-right: 1px solid #DDD;">
+				<a href="#">
+					<div class="mui-media-body " style="height: 40px;">
 						我的收藏<span class="mui-icon mui-icon-star"></span>
 					</div>
 				</a>
 			</li>
-			<li class="mui-table-view-cell mui-media mui-col-xs-6">
+			<li class="mui-table-view-cell mui-media mui-col-xs-6 " id="jianliguanli">
 				<a href="#">
-					
-					<div class="mui-media-body"  style="height: 40px;">
+
+					<div class="mui-media-body" style="height: 40px;" >
 						简历管理<span class="mui-icon mui-icon-compose"></span>
 					</div>
 				</a>
 			</li>
-			<li class="mui-table-view-cell mui-media mui-col-xs-6" onclick="openJianli()"> 
-				<a href="#"  style="border-right: 1px solid #DDD;border-top: 1px solid #DDD;">
-					<div class="mui-media-body"  style="height: 40px;">
-						精英职位<span class="mui-icon mui-icon-personadd"></span>
+			<li class="mui-table-view-cell mui-media mui-col-xs-6" id="jianlifankui">
+				<a href="#" style="border-right: 1px solid #DDD;border-top: 1px solid #DDD;">
+					<div class="mui-media-body" style="height: 40px;">
+						简历反馈<span class="mui-icon mui-icon-personadd"></span>
 					</div>
 				</a>
 			</li>
-			<li class="mui-table-view-cell mui-media mui-col-xs-6">
-				<a href="#"  style="border-top: 1px solid #DDD;">
-					
-					<div class="mui-media-body"  style="height: 40px;">
+			<li class="mui-table-view-cell mui-media mui-col-xs-6 weikai">
+				<a href="#" style="border-top: 1px solid #DDD;">
+
+					<div class="mui-media-body" style="height: 40px;">
 						职场充电<span class="mui-icon mui-icon-spinner"></span>
 					</div>
 				</a>
@@ -99,10 +100,12 @@
 		<ul id="jobs" class="mui-table-view">
 
 		</ul>
-		
+
 		<h4>职场正能量</h4>
-		
-		<div style="margin-bottom: 50px;"><p style="font-size: 12px;">511人才网</p></div>
+
+		<div style="margin-bottom: 50px;">
+			<p style="font-size: 12px;">511人才网</p>
+		</div>
 		<nav class="mui-bar mui-bar-tab">
 			<a class="mui-tab-item mui-active2" href="#" id="nav-home">
 				<span class="mui-icon mui-icon-home"></span>
@@ -125,32 +128,43 @@
 		<script src="js/app.js "></script>
 		<script src="js/allHave.js"></script>
 		<script>
-		
-			function getCookie(){
-				var coo=plus.navigator.getCookie('id');
-			} 
-			function openJianli(){
-						mui.openWindow({
-							url:'jianli.html',
-							id:'jianli'
-						})
+			function getCookie() {
+				var coo = plus.navigator.getCookie('id');
 			}
-			var JSONdata={"0":"1750|业务员|5000~10000元/月|江苏省/昆山/所有县|昆山德信致远环境科技有限公司","1":"1751|钣金设计师|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司","2":"1752|采购员|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司","3":"1753|销售工程师|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司","4":"1754|品质主管|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司","5":"1755|外贸业务- 急|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司","6":"1759| 平面设计|5000~10000元/月|江苏省/昆山/所有县|昆山华翔汽车销售服务有限公司","7":"1760|人事助理|3000~5000元/月|江苏省/昆山/所有县|昆山华翔汽车销售服务有限公司","8":"1761|市场专员|3000~5000元/月|江苏省/昆山/所有县|昆山华翔汽车销售服务有限公司","9":"1762|客服中心主管|面议|//|昆山华翔汽车销售服务有限公司"}
-			var flag=document.createDocumentFragment();
-			for(var i=0;i<10;i++){
-				var arr=JSONdata[i].split('|');
-				var oLi=document.createElement("li");
-				oLi.className="mui-table-view-cell mui-media";
-				oLi.innerHTML="<a href='./main.html'>"+
-				"<img class='mui-media-object mui-pull-left' src='images/job/logo.png'>"+
-				"<div class='mui-media-body'>"+
-				arr[1]+
-				"<span id='value'>"+arr[2]+"</span>"+
-				"<p class='mui-ellipsis'>"+arr[4]+
-				"</br><span id='address'>"+arr[3]+"</span>"+
-				"</p>"+ 
-				"</div>"+
-				"</a>";
+
+			function openJianli() {
+				mui.openWindow({
+					url: 'jianli.html',
+					id: 'jianli'
+				})
+			}
+			var JSONdata = {
+				"0": "1750|业务员|5000~10000元/月|江苏省/昆山/所有县|昆山德信致远环境科技有限公司",
+				"1": "1751|钣金设计师|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司",
+				"2": "1752|采购员|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司",
+				"3": "1753|销售工程师|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司",
+				"4": "1754|品质主管|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司",
+				"5": "1755|外贸业务- 急|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司",
+				"6": "1759| 平面设计|5000~10000元/月|江苏省/昆山/所有县|昆山华翔汽车销售服务有限公司",
+				"7": "1760|人事助理|3000~5000元/月|江苏省/昆山/所有县|昆山华翔汽车销售服务有限公司",
+				"8": "1761|市场专员|3000~5000元/月|江苏省/昆山/所有县|昆山华翔汽车销售服务有限公司",
+				"9": "1762|客服中心主管|面议|//|昆山华翔汽车销售服务有限公司"
+			}
+			var flag = document.createDocumentFragment();
+			for (var i = 0; i < 10; i++) {
+				var arr = JSONdata[i].split('|');
+				var oLi = document.createElement("li");
+				oLi.className = "mui-table-view-cell mui-media";
+				oLi.innerHTML = "<a href='./main.html'>" +
+					"<img class='mui-media-object mui-pull-left' src='images/job/logo.png'>" +
+					"<div class='mui-media-body'>" +
+					arr[1] +
+					"<span id='value'>" + arr[2] + "</span>" +
+					"<p class='mui-ellipsis'>" + arr[4] +
+					"</br><span id='address'>" + arr[3] + "</span>" +
+					"</p>" +
+					"</div>" +
+					"</a>";
 				flag.appendChild(oLi);
 			}
 			document.getElementById("jobs").appendChild(flag);
@@ -162,7 +176,7 @@
 				window.addEventListener('show', function() {
 					var state = app.getState();
 					account.innerText = state.account;
-				}, false); 
+				}, false);
 				$.plusReady(function() {
 					$.oldBack = mui.back;
 					var backButtonPress = 0;
@@ -179,6 +193,42 @@
 						return false;
 					};
 				});
+				//------------------------------------------------暂未开放
+				var weikai = document.getElementsByClassName('weikai');
+				for (var i = 0; i < weikai.length; i++) {
+					weikai[i].addEventListener('tap', function() {
+						alert('该功能暂未开放，敬请期待');
+					})
+				}
+				//------------------------------------------------简历管理
+				var jianliguanli = document.getElementById("jianliguanli");
+				jianliguanli.addEventListener('tap', a(function() {
+					$.openWindow({
+						url: 'resumeList.html'
+					})
+				}))
+				document.getElementById("jianlifankui").addEventListener('tap',a(function(){
+					$.openWindow({
+						url: 'toudifankui.html'
+					})
+				}))
+				function a(b) {
+					return function() {
+						var coo = plus.navigator.getCookie('id');
+						if (coo) {
+							b();
+						} else {
+							var btnArray = ['取消', '登陆'];
+							mui.confirm('您还未登陆，是否立即登陆？', '511人才网', btnArray, function(e) {
+								if (e.index == 1) {
+									$.openWindow({
+										url: 'login.html'
+									})
+								}
+							})
+						}
+					}
+				}
 			}(mui, document));
 		</script>
 

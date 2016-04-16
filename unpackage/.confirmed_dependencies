@@ -24,7 +24,9 @@
 			"jianli.html",
 			"jianli-3.html",
 			"jianli-4.html",
-			"message.html"
+			"message.html",
+			"resumeList.html",
+			"toudifankui.html"
 		]
 	},
 	"login.html": {

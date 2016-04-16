@@ -133,39 +133,40 @@
 						};
 					});
 					//----------------------------------------------------------------
-					var coo = plus.navigator.getCookie('id');
-					if (coo) { //所有按钮写在这里
-						document.getElementById("myResume").addEventListener('tap', function() {
+					function a(b) {
+						return function() {
+							var coo = plus.navigator.getCookie('id');
+							if (coo) {
+								b();
+							} else {
+								var btnArray = ['取消', '登陆'];
+								mui.confirm('您还未登陆，是否立即登陆？', '511人才网', btnArray, function(e) {
+									if (e.index == 1) {
+									}
+								})
+							}
+						}
+					}
+					document.getElementById("myResume").addEventListener('tap', a(function() {
 							$.openWindow({
 								url: 'resumeList.html'
 							})
-						})
-						document.getElementById("fankui").addEventListener('tap', function() {
+						}));
+					document.getElementById("fankui").addEventListener('tap', a(function() {
 							$.openWindow({
 								url: 'toudifankui.html'
 							})
-						});
-						document.getElementById("jilu").addEventListener('tap', function() {
+						}));
+					document.getElementById("jilu").addEventListener('tap', a(function() {
 							$.openWindow({
 								url: 'toudijilu.html'
-							})
-						})
-					} else {
+							}) 
+						}));
+					var coo = plus.navigator.getCookie('id');
+					if (!coo)  {
 						var flag = document.createDocumentFragment();
 						flag.innerHTML = '<br /><h4 style="text-align: center;">登陆一下，与511零距离接触</h4><a href="./login.html">	<button class="mui-btn mui-btn-block mui-btn-positive" style="width: 90%;height: 30px;line-height: 10px;margin: 0 auto;">马上button></a>'
 						document.getElementById("content").appendChild(flag)
-
-						function a() {
-							var btnArray = ['取消', '登陆'];
-							mui.confirm('您还未登陆，是否立即登陆？', '511人才网', btnArray, function(e) {
-								if (e.index == 1) {
-									
-								}
-							})
-						}
-						document.getElementById("myResume").addEventListener('tap', a);
-						document.getElementById("fankui").addEventListener('tap', a);
-						document.getElementById("jilu").addEventListener('tap', a);
 					}
 					//---------------------------------------------------------------
 					//“暂未开放”提示

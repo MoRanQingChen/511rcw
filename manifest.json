@@ -223,7 +223,9 @@
 				"refer": [
 					"jianli.html",
 					"jianli-3.html",
-					"jianli-4.html"
+					"jianli-4.html",
+					"resumeList.html",
+					"toudifankui.html"
 				],
 				"priority": 1
 			},
