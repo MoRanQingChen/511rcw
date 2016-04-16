@@ -293,7 +293,8 @@
 					"images/baner/baner3.png",
 					"images/baner/baner4.png",
 					"job.html",
-					"login2.html"
+					"login2.html",
+					"js/mengban.js"
 				],
 				"refer": [
 					"unlock.html",
@@ -532,7 +533,8 @@
 					"js/mui.min.js",
 					"css/job.css",
 					"css/mui.min.css",
-					"js/ajax.js"
+					"js/ajax.js",
+					"fonts/mui.ttf"
 				],
 				"refer": [
 					"jianli-2.html"

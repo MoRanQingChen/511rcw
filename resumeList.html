@@ -26,7 +26,7 @@
 			<h1 class="mui-title">简历列表</h1>
 		</header>
 		<div class="mui-content">
-			<h5 class="mui-content-padded" style="margin: 15px 10px;">向左拖拽(滑动)进行更多操作</h5>
+			<h5 class="mui-content-padded" style="margin: 15px 10px;color: crimson;">向左拖拽简历(滑动)进行更多操作</h5>
 			<ul id="resumeList" class="mui-table-view">
 
 			</ul>
@@ -59,6 +59,7 @@
 					var edt = document.getElementsByClassName('edt');
 					var del = document.getElementsByClassName('del');
 					var viw = document.getElementsByClassName('viw');
+					var cell = document.getElementsByClassName('mui-table-view-cell');
 					for (var i = 0; i < del.length; i++) {
 						var resumeID = del[i].id
 						del[i].addEventListener('tap', function() {
@@ -90,7 +91,7 @@
 								}
 							})
 						})
-						viw[i].addEventListener('tap', function() {
+						function a(){
 							mui.openWindow({
 								url: 'viewResume.html',
 								id: "viewResume",
@@ -99,7 +100,9 @@
 									rows: rows
 								}
 							})
-						})
+						}
+						viw[i].addEventListener('tap',a)
+						cell[i].addEventListener('tap',a)
 					}
 				});
 				

@@ -47,22 +47,22 @@
 			</ul>
 			<br />
 			<ul class="mui-table-view mui-table-view-chevron">
-				<li class="mui-table-view-cell">
+				<li class="mui-table-view-cell weikai">
 					<a class="mui-navigate-right">
 						<span class="mui-icon mui-icon-star"></span>职位收藏夹
 					</a>
 				</li>
-				<li class="mui-table-view-cell">
+				<li class="mui-table-view-cell weikai">
 					<a class="mui-navigate-right">
 						<span class="mui-icon mui-icon-map"></span>收藏的企业
 					</a>
 				</li>
-				<li class="mui-table-view-cell">
+				<li class="mui-table-view-cell weikai">
 					<a class="mui-navigate-right">
 						<span class="mui-icon mui-icon-videocam"></span>职场正能量收藏
 					</a>
 				</li>
-				<li class="mui-table-view-cell">
+				<li class="mui-table-view-cell weikai">
 					<a class="mui-navigate-right">
 						<span class="mui-icon mui-icon-compose"></span>正能量文章收藏
 					</a>
@@ -70,13 +70,13 @@
 			</ul>
 			<br />
 			<ul class="mui-table-view mui-table-view-chevron" style="margin-bottom: 50px;">
-				<li class="mui-table-view-cell">
+				<li class="mui-table-view-cell weikai">
 					<a class="mui-navigate-right">
 						<span class="mui-icon mui-icon-email"></span>系统消息
 					</a>
 				</li>
 				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right">
+					<a class="mui-navigate-right weikai">
 						<span class="mui-icon mui-icon-pengyouquan"></span>视听推荐
 					</a>
 				</li>
@@ -154,8 +154,28 @@
 						var flag = document.createDocumentFragment();
 						flag.innerHTML = '<br /><h4 style="text-align: center;">登陆一下，与511零距离接触</h4><a href="./login.html">	<button class="mui-btn mui-btn-block mui-btn-positive" style="width: 90%;height: 30px;line-height: 10px;margin: 0 auto;">马上button></a>'
 						document.getElementById("content").appendChild(flag)
+						
+						function a(){
+							alert('未登录')
+						}
+						document.getElementById("myResume").addEventListener('tap',a);
+						document.getElementById("fankui").addEventListener('tap',a);
+						document.getElementById("jilu").addEventListener('tap',a);
+						
+						
+						
+						
 					}
 					//---------------------------------------------------------------
+					//“暂未开放”提示
+					var weikai=document.getElementsByClassName('weikai');
+					for(var i=0;i<weikai.length;i++){
+						weikai[i].addEventListener('tap',function(){
+							alert('该功能暂未开放，敬请期待')
+						})
+					}
+					
+					
 				});
 			}(mui, document));
 		</script>
