@@ -345,7 +345,8 @@
 					"js/ajax.js"
 				],
 				"refer": [
-					"application.html"
+					"application.html",
+					"login.html"
 				],
 				"priority": 0
 			},

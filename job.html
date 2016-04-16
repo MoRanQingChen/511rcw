@@ -367,7 +367,7 @@
 						<input id="inputKey" type="search" class="mui-input-clear" placeholder="请输入公司名或职位名" style="width:90%;margin: 10px auto;">
 					</li>
 					<li class="mui-table-view-cell">
-						<a id="hangwei">行位类别</a>
+						<a id="hangwei">行业类别</a>
 					</li>
 					<li class="mui-table-view-cell">
 						<a id="zhiwei">职位类别</a>
@@ -635,7 +635,37 @@
 				});
 			})(mui, document);
 		</script>
-
+		<script>
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {},
+					up: {}
+				}
+			});
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {}
+			var count = 0;
+			/**
+			 * 上拉加载具体业务实现
+			 */
+			function pullupRefresh() {
+				//下拉刷新
+			}
+			if (mui.os.plus) {
+				mui.plusReady(function() {
+					setTimeout(function() {
+						mui('#pullrefresh').pullRefresh().pullupLoading();
+					}, 1000);
+				});
+			} else {
+				mui.ready(function() {
+					mui('#pullrefresh').pullRefresh().pullupLoading();
+				});
+			}
+		</script>
 
 	</body>
 </html>

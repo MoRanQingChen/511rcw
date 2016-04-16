@@ -170,7 +170,8 @@
 		"refer": [
 			"setting.html",
 			"main.html",
-			"application.html"
+			"application.html",
+			"login.html"
 		]
 	},
 	"reg.html": {
