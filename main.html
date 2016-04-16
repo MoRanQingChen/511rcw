@@ -151,7 +151,7 @@
 				"9": "1762|客服中心主管|面议|//|昆山华翔汽车销售服务有限公司"
 			}
 			var flag = document.createDocumentFragment();
-			for (var i = 0; i < 10; i++) {
+			for(var i in JSONdata){
 				var arr = JSONdata[i].split('|');
 				var oLi = document.createElement("li");
 				oLi.className = "mui-table-view-cell mui-media";

@@ -415,17 +415,18 @@
 				<span class="mui-icon mui-icon-gear "></span>
 				<span class="mui-tab-label ">设置</span>
 			</a>
-		</nav>
-		<script src="./js/mui.min.js"></script>
-		
+		</nav> 
+		<script src="./js/mui.min.js"></script> 
 		<script src="./js/mui.picker.js"></script>
 		<script src="./js/mui.poppicker.js"></script>
 		<script src="./js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/hangwei.js" type="text/javascript" charset="utf-8"></script>
-		<!--<script src="js/zhiwei.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/zhiwei.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/ajax.js"></script>
 		<script src="js/allHave.js"></script>
-		<script>
+		<script> 
+							var trade;
+					var jobtype;
 			mui.init({
 				swipeBack: true //启用右滑关闭功能
 			});
@@ -516,8 +517,8 @@
 					oLi.className = "mui-next";
 					oLi.innerHTML = "<a>&raquo;</a>"
 					yema.appendChild(oLi);
-					//							console.log(jobsCount)
-					//					document.querySelector(".mui-pagination:nth-child(1)").style.background="red";
+					//console.log(jobsCount)
+					//document.querySelector(".mui-pagination:nth-child(1)").style.background="red";
 					var jobInfoHref = document.querySelectorAll(".jobInfoHref")
 
 					for (var i = 0; i < jobInfoHref.length; i++) {
@@ -536,10 +537,13 @@
 				addJob()
 					//搜索按钮
 				var inputKey = document.getElementById("inputKey");
-				document.getElementById("heighSearch").addEventListener('tap', function() {
+				document.getElementById("heighSearch").addEventListener('tap', function() { 
+
 					data = {
 						t: 2,
 						key: inputKey.value,
+						trade:trade||"",
+						jobtype:jobtype||"",
 						page: 0
 					};
 					addJob();
@@ -548,7 +552,9 @@
 					document.getElementById("heighSearch").innerHTML='搜索中...'
 				});
 				$.init();
+				//----------------------------------------------------------------------------------------
 				$.ready(function() {
+
 					var cityPicker1 = new $.PopPicker({
 						layer: 1
 					});
@@ -557,12 +563,16 @@
 					var cityResult3 = doc.getElementById('cityResult3');
 					hangwei.addEventListener('tap', function(event) {
 						cityPicker1.show(function(items) {
-							hangwei.innerText = (items[0] || {}).text + " ";
-							cityPicker1.setData((items[0] || {}).children)
-								//							hangwei.innerText
+							
+							
+								//hangwei.innerText
 								//返回 false 可以阻止选择框的关闭
 							if ((items[0] || {}).children) {
+								cityPicker1.setData((items[0] || {}).children)
 								return false
+							}else{
+								hangwei.innerText = (items[0] || {}).text + " ";
+								trade=(items[0] || {}).value
 							}
 							cityPicker1.setData(hangweiData);
 						});
@@ -570,20 +580,24 @@
 					//------------------------------------
 					var cityPicker2 = new $.PopPicker({
 						layer: 1
-					});
-					cityPicker2.setData(zhiweiData);
+					}); 
+					cityPicker2.setData(zhiweiData); 
 					var zhiwei = doc.getElementById('zhiwei');
 					var cityResult3 = doc.getElementById('cityResult3');
 					zhiwei.addEventListener('tap', function(event) {
 						cityPicker2.show(function(items) {
-							zhiwei.innerText = (items[0] || {}).text + " ";
-							cityPicker2.setData((items[0] || {}).children)
+							
+							
 								//							hangwei.innerText
 								//返回 false 可以阻止选择框的关闭
 							if ((items[0] || {}).children) {
+								cityPicker2.setData((items[0] || {}).children)
 								return false
+							}else{
+								zhiwei.innerText = (items[0] || {}).text + " ";
+								jobtype=(items[0] || {}).value
 							}
-							cityPicker2.setData(hangweiData);
+							cityPicker2.setData(zhiweiData);
 						});
 					}, false);
 					//级联示例 

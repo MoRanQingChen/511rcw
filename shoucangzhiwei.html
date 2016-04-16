@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/job.css" />
+		<style>
+			ul {
+				font-size: 14px;
+				color: #8f8f94;
+			}
+			
+			.mui-btn {
+				padding: 10px;
+				http: //127.0.0.1:8020/app/main.html#
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">收藏的职位</h1>
+		</header>
+		<div class="mui-content">
+			<br />
+		收藏的职位
+						<ul class="mui-table-view" id="zhiwei">
+
+						</ul>
+						<ul class="mui-table-view" id="qiye">
+
+						</ul>
+		</div>
+		<script src="js/mui.min.js "></script>
+		<script src="js/app.js "></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				var settings = app.getSettings();
+				var account = doc.getElementById('account');;
+				(function() {
+					var JSONdata = {
+						"0": "1|$|公司id|$|苏州东东网络科技有限公司|$|公司地址",
+						"1": "2|$|苏州东东网络科技有限公司",
+						"2": "3|$|苏州东东网络科技有限公司",
+						"3": "4|$|苏州东东网络科技有限公司",
+						"4": "5|$|苏州东东网络科技有限公司"
+					}
+					var flag=document.createDocumentFragment();
+					for (var i in JSONdata) {
+						var arr = JSONdata[i].split('|$|');
+						var oLi = document.createElement("li");
+						oLi.className = "mui-table-view-cell mui-media";
+						if (arr[1] != undefined) {
+							oLi.innerHTML = "<a class='jobInfoHref' id='" + arr[0] + "' href='#'>" +
+								"<img class='mui-media-object mui-pull-left' src='images/job/logo.png'>" +
+								"<div class='mui-media-body'>" +
+								arr[1] +
+								"<span id='value'>" + arr[2] + "</span>" +
+								"<p class='mui-ellipsis'>" + arr[4] +
+								"</br><span id='address'>" + arr[3] + "</span>" +
+								"</p>" +
+								"</div>" +
+								"</a>";
+							flag.appendChild(oLi);
+						}
+					}
+					document.getElementById("qiye").appendChild(flag);
+				})()
+			}(mui, document));
+		</script>
+
+	</body>
+
+</html>
