@@ -102,7 +102,7 @@
 			</a>
 		</nav>
 		<script src="js/mui.min.js "></script>
-		
+
 		<script src="js/app.js "></script>
 		<script src="js/allHave.js"></script>
 		<script>
@@ -117,24 +117,24 @@
 				}, false);
 				$.plusReady(function() {
 					$.plusReady(function() {
-					$.oldBack = mui.back;
-					var backButtonPress = 0;
-					$.back = function(event) {
-						backButtonPress++;
-						if (backButtonPress > 1) {
-							plus.runtime.quit();
-						} else {
-							plus.nativeUI.toast('再按一次退出应用');
-						}
-						setTimeout(function() {
-							backButtonPress = 0;
-						}, 1000);
-						return false;
-					};
-				});
+						$.oldBack = mui.back;
+						var backButtonPress = 0;
+						$.back = function(event) {
+							backButtonPress++;
+							if (backButtonPress > 1) {
+								plus.runtime.quit();
+							} else {
+								plus.nativeUI.toast('再按一次退出应用');
+							}
+							setTimeout(function() {
+								backButtonPress = 0;
+							}, 1000);
+							return false;
+						};
+					});
 					//----------------------------------------------------------------
 					var coo = plus.navigator.getCookie('id');
-					if (coo) {//所有按钮写在这里
+					if (coo) { //所有按钮写在这里
 						document.getElementById("myResume").addEventListener('tap', function() {
 							$.openWindow({
 								url: 'resumeList.html'
@@ -145,7 +145,7 @@
 								url: 'toudifankui.html'
 							})
 						});
-						document.getElementById("jilu").addEventListener('tap',function(){
+						document.getElementById("jilu").addEventListener('tap', function() {
 							$.openWindow({
 								url: 'toudijilu.html'
 							})
@@ -154,28 +154,27 @@
 						var flag = document.createDocumentFragment();
 						flag.innerHTML = '<br /><h4 style="text-align: center;">登陆一下，与511零距离接触</h4><a href="./login.html">	<button class="mui-btn mui-btn-block mui-btn-positive" style="width: 90%;height: 30px;line-height: 10px;margin: 0 auto;">马上button></a>'
 						document.getElementById("content").appendChild(flag)
-						
-						function a(){
-							alert('未登录')
+
+						function a() {
+							var btnArray = ['取消', '登陆'];
+							mui.confirm('您还未登陆，是否立即登陆？', '511人才网', btnArray, function(e) {
+								if (e.index == 1) {
+									
+								}
+							})
 						}
-						document.getElementById("myResume").addEventListener('tap',a);
-						document.getElementById("fankui").addEventListener('tap',a);
-						document.getElementById("jilu").addEventListener('tap',a);
-						
-						
-						
-						
+						document.getElementById("myResume").addEventListener('tap', a);
+						document.getElementById("fankui").addEventListener('tap', a);
+						document.getElementById("jilu").addEventListener('tap', a);
 					}
 					//---------------------------------------------------------------
 					//“暂未开放”提示
-					var weikai=document.getElementsByClassName('weikai');
-					for(var i=0;i<weikai.length;i++){
-						weikai[i].addEventListener('tap',function(){
+					var weikai = document.getElementsByClassName('weikai');
+					for (var i = 0; i < weikai.length; i++) {
+						weikai[i].addEventListener('tap', function() {
 							alert('该功能暂未开放，敬请期待')
 						})
 					}
-					
-					
 				});
 			}(mui, document));
 		</script>

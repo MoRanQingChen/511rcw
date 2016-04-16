@@ -8,7 +8,13 @@
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="css/job.css" />
 		<style>
-
+			#mengban{
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				background-color: rgba(0,0,0,.2);
+				z-index: 998;
+			}
 		</style>
 	</head>
 
@@ -18,6 +24,7 @@
 			<h1 class="mui-title">投递简历</h1>
 
 		</header>
+		<div id="mengban" style="display: none;"></div>
 		<div class="mui-content">
 			<br />
 			<br />
@@ -100,6 +107,8 @@
 					});
 				}
 				document.getElementById("shenqing").addEventListener('tap',function() {
+					var mengban=document.getElementById("mengban");
+					mengban.style.display='block';
 					var data = {
 						t:14,
 						id: 0,
@@ -118,7 +127,9 @@
 						}
 					}
 					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
+						mengban.style.display='none';
 						alert("投递成功");
+						
 						mui.back();
 					})
 				})

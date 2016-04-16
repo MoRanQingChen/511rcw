@@ -63,8 +63,8 @@
 					for (var i = 0; i < del.length; i++) {
 						var resumeID = del[i].id
 						del[i].addEventListener('tap', function() {
+							event.stopPropagation()
 							var _this = this;
-							alert(_this.id)
 							var btnArray = ['否', '是'];
 							mui.confirm('确认要删除此简历？', '511人才网', btnArray, function(e) {
 								if (e.index == 1) {
@@ -82,6 +82,7 @@
 						})
 						var rows = viw[i].id;
 						edt[i].addEventListener('tap', function() {
+							event.stopPropagation()
 							mui.openWindow({
 								url: 'jianli-1.html',
 								id: resumeID,
