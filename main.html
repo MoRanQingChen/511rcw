@@ -25,12 +25,12 @@
 		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">511人才网</h1>
-			<button class=" mui-pull-right mui-btn-link"><a href="login.html">登陆</button>
+			<button class=" mui-pull-right mui-btn-link"><a href="login.html">登陆</a></button>
 		</header>
 
 		<div class="mui-content">
 			<div class="mui-input-row mui-search" style="margin: 15px;margin-bottom: 0;">
-				<input type="search" class="mui-input-clear" placeholder="请输入公司名或职位名">
+				<input type="search" class="mui-input-clear" placeholder="请输入职位名">
 			</div>
 			<div id="slider" class="mui-slider">
 				<div class="mui-slider-group mui-slider-loop">
@@ -127,6 +127,7 @@
 		<script src="js/mui.min.js "></script>
 		<script src="js/app.js "></script>
 		<script src="js/allHave.js"></script>
+		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			function getCookie() {
 				var coo = plus.navigator.getCookie('id');
@@ -138,24 +139,14 @@
 					id: 'jianli'
 				})
 			}
-			var JSONdata = {
-				"0": "1750|业务员|5000~10000元/月|江苏省/昆山/所有县|昆山德信致远环境科技有限公司",
-				"1": "1751|钣金设计师|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司",
-				"2": "1752|采购员|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司",
-				"3": "1753|销售工程师|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司",
-				"4": "1754|品质主管|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司",
-				"5": "1755|外贸业务- 急|面议|江苏省/昆山/所有县|昆山德信致远环境科技有限公司",
-				"6": "1759| 平面设计|5000~10000元/月|江苏省/昆山/所有县|昆山华翔汽车销售服务有限公司",
-				"7": "1760|人事助理|3000~5000元/月|江苏省/昆山/所有县|昆山华翔汽车销售服务有限公司",
-				"8": "1761|市场专员|3000~5000元/月|江苏省/昆山/所有县|昆山华翔汽车销售服务有限公司",
-				"9": "1762|客服中心主管|面议|//|昆山华翔汽车销售服务有限公司"
-			}
-			var flag = document.createDocumentFragment();
+			//----------------------------------------------------------------------推荐职位
+			jp("http://www.511rcw.com/app/AppHandler.ashx", {t:26}, function(a,JSONdata) {
+				var flag = document.createDocumentFragment();
 			for(var i in JSONdata){
-				var arr = JSONdata[i].split('|');
+				var arr = JSONdata[i].split('|$|');
 				var oLi = document.createElement("li");
 				oLi.className = "mui-table-view-cell mui-media";
-				oLi.innerHTML = "<a href='./main.html'>" +
+				oLi.innerHTML = "<a href='#'>" +
 					"<img class='mui-media-object mui-pull-left' src='images/job/logo.png'>" +
 					"<div class='mui-media-body'>" +
 					arr[1] +
@@ -166,8 +157,17 @@
 					"</div>" +
 					"</a>";
 				flag.appendChild(oLi);
+				;(function(i){
+									oLi.addEventListener('tap',function(){
+					mui.openWindow('jobInfo.html',i)
+				})
+				})(arr[0]);
+				
+
 			}
 			document.getElementById("jobs").appendChild(flag);
+			})
+			
 			(function($, doc) {
 				$.init();
 				var settings = app.getSettings();

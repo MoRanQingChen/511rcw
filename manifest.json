@@ -218,14 +218,16 @@
 					"setting.html",
 					"job.html",
 					"message.html",
-					"js/allHave.js"
+					"js/allHave.js",
+					"js/ajax.js"
 				],
 				"refer": [
 					"jianli.html",
 					"jianli-3.html",
 					"jianli-4.html",
 					"resumeList.html",
-					"toudifankui.html"
+					"toudifankui.html",
+					"jobInfo.html"
 				],
 				"priority": 1
 			},

@@ -318,7 +318,8 @@
 			}
 			
 			#info {
-				padding: 20px 10px;010
+				padding: 20px 10px;
+				010
 			}
 			
 			#top-search {
@@ -415,8 +416,8 @@
 				<span class="mui-icon mui-icon-gear "></span>
 				<span class="mui-tab-label ">设置</span>
 			</a>
-		</nav> 
-		<script src="./js/mui.min.js"></script> 
+		</nav>
+		<script src="./js/mui.min.js"></script>
 		<script src="./js/mui.picker.js"></script>
 		<script src="./js/mui.poppicker.js"></script>
 		<script src="./js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
@@ -424,9 +425,9 @@
 		<script src="js/zhiwei.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/ajax.js"></script>
 		<script src="js/allHave.js"></script>
-		<script> 
-							var trade;
-					var jobtype;
+		<script>
+			var trade;
+			var jobtype;
 			mui.init({
 				swipeBack: true //启用右滑关闭功能
 			});
@@ -475,16 +476,14 @@
 				yema.innerHTML = "<li class='mui-previous mui-disabled'><a href='#'>&laquo;</a></li>";
 				table.innerHTML = "";
 				jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(num, JSONdata) {
-					document.getElementById("heighSearch").disabled=false;
-					document.getElementById("heighSearch").innerHTML='搜索'
-					
-					
+					document.getElementById("heighSearch").disabled = false;
+					document.getElementById("heighSearch").innerHTML = '搜索'
 					var flag = document.createDocumentFragment();
 					for (var i in JSONdata) {
 						var arr = JSONdata[i].split('|$|');
 						var oLi = document.createElement("li");
 						oLi.className = "mui-table-view-cell mui-media";
-						if (arr[1] != undefined) { 
+						if (arr[1] != undefined) {
 							oLi.innerHTML = "<a class='jobInfoHref' id='" + arr[0] + "' href='#'>" +
 								"<img class='mui-media-object mui-pull-left' src='images/job/logo.png'>" +
 								"<div class='mui-media-body'>" +
@@ -520,41 +519,38 @@
 					//console.log(jobsCount)
 					//document.querySelector(".mui-pagination:nth-child(1)").style.background="red";
 					var jobInfoHref = document.querySelectorAll(".jobInfoHref")
-
 					for (var i = 0; i < jobInfoHref.length; i++) {
 						jobInfoHref[i].addEventListener('tap', function(event) {
-						var extrasId = this.id
-						mui.openWindow({
-							url:'jobInfo.html',
-							id:this.id,
-							extras:extrasId
-						})
-						},0);  
+							var extrasId = this.id
+							mui.openWindow({
+								url: 'jobInfo.html',
+								id: this.id,
+								extras: extrasId
+							})
+						}, 0);
 					}
-				}); 
+				});
 			}
 			(function($, doc) {
 				addJob()
 					//搜索按钮
 				var inputKey = document.getElementById("inputKey");
-				document.getElementById("heighSearch").addEventListener('tap', function() { 
-
+				document.getElementById("heighSearch").addEventListener('tap', function() {
 					data = {
 						t: 2,
 						key: inputKey.value,
-						trade:trade||"",
-						jobtype:jobtype||"",
+						trade: trade || "",
+						jobtype: jobtype || "",
 						page: 0
 					};
 					addJob();
 					toggleMenu();
-					document.getElementById("heighSearch").disabled=true;
-					document.getElementById("heighSearch").innerHTML='搜索中...'
+					document.getElementById("heighSearch").disabled = true;
+					document.getElementById("heighSearch").innerHTML = '搜索中...'
 				});
 				$.init();
 				//----------------------------------------------------------------------------------------
 				$.ready(function() {
-
 					var cityPicker1 = new $.PopPicker({
 						layer: 1
 					});
@@ -563,16 +559,14 @@
 					var cityResult3 = doc.getElementById('cityResult3');
 					hangwei.addEventListener('tap', function(event) {
 						cityPicker1.show(function(items) {
-							
-							
-								//hangwei.innerText
-								//返回 false 可以阻止选择框的关闭
+							//hangwei.innerText
+							//返回 false 可以阻止选择框的关闭
 							if ((items[0] || {}).children) {
 								cityPicker1.setData((items[0] || {}).children)
 								return false
-							}else{
+							} else {
 								hangwei.innerText = (items[0] || {}).text + " ";
-								trade=(items[0] || {}).value
+								trade = (items[0] || {}).value
 							}
 							cityPicker1.setData(hangweiData);
 						});
@@ -580,22 +574,20 @@
 					//------------------------------------
 					var cityPicker2 = new $.PopPicker({
 						layer: 1
-					}); 
-					cityPicker2.setData(zhiweiData); 
+					});
+					cityPicker2.setData(zhiweiData);
 					var zhiwei = doc.getElementById('zhiwei');
 					var cityResult3 = doc.getElementById('cityResult3');
 					zhiwei.addEventListener('tap', function(event) {
 						cityPicker2.show(function(items) {
-							
-							
-								//							hangwei.innerText
-								//返回 false 可以阻止选择框的关闭
+							//							hangwei.innerText
+							//返回 false 可以阻止选择框的关闭
 							if ((items[0] || {}).children) {
 								cityPicker2.setData((items[0] || {}).children)
 								return false
-							}else{
+							} else {
 								zhiwei.innerText = (items[0] || {}).text + " ";
-								jobtype=(items[0] || {}).value
+								jobtype = (items[0] || {}).value
 							}
 							cityPicker2.setData(zhiweiData);
 						});
@@ -616,16 +608,15 @@
 					}, false);
 				});
 				//---------------------------------------
-				$('.mui-pagination').on('tap', 'a', function() {//页码
+				$('.mui-pagination').on('tap', 'a', function() { //页码
 					console.log(this.innerHTML)
 					if (this.innerHTML == "»") {
 						data.page++;
-					} else if (this.innerHTML == "«" && data.page > 0) { 
+					} else if (this.innerHTML == "«" && data.page > 0) {
 						data.page--;
-					} else{
-						if(allPage>5&&this.innerHTML>3&&this.innerHTML<allPage-2){
-							
-						} 
+					} else {
+						if (allPage > 5 && this.innerHTML > 3 && this.innerHTML < allPage - 2) {
+						}
 						data.page = this.innerHTML - 1;
 					}
 					console.log(data.page)
@@ -682,4 +673,5 @@
 		</script>
 
 	</body>
+
 </html>

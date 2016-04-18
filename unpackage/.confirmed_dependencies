@@ -15,7 +15,8 @@
 			"job.html",
 			"setting.html",
 			"message.html",
-			"js/allHave.js"
+			"js/allHave.js",
+			"js/ajax.js"
 		],
 		"refer": [
 			"job.html",
@@ -26,7 +27,8 @@
 			"jianli-4.html",
 			"message.html",
 			"resumeList.html",
-			"toudifankui.html"
+			"toudifankui.html",
+			"jobInfo.html"
 		]
 	},
 	"login.html": {
