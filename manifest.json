@@ -227,7 +227,8 @@
 					"jianli-4.html",
 					"resumeList.html",
 					"toudifankui.html",
-					"jobInfo.html"
+					"jobInfo.html",
+					"wodeshoucang.html"
 				],
 				"priority": 1
 			},
@@ -579,6 +580,48 @@
 					"css/job.css",
 					"css/mui.min.css",
 					"js/ajax.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"wodeshoucang.html": {
+				"resources": [
+					"js/app.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/job.css",
+					"css/mui.min.css"
+				],
+				"refer": [
+					"shoucangzhiwei.html",
+					"shoucangqiye.html"
+				],
+				"priority": 0
+			},
+			"shoucangzhiwei.html": {
+				"resources": [
+					"js/app.js",
+					"images/job/logo.png",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/job.css",
+					"css/mui.min.css",
+					"js/ajax.js"
+				],
+				"refer": [
+					"jobInfo.html"
+				],
+				"priority": 0
+			},
+			"shoucangqiye.html": {
+				"resources": [
+					"images/job/logo.png",
+					"js/ajax.js",
+					"js/app.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/job.css",
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0

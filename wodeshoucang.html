@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<link href="css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="css/job.css"/>
+		<link rel="stylesheet" type="text/css" href="css/job.css" />
 		<style>
 			ul {
 				font-size: 14px;
@@ -19,6 +19,7 @@
 			}
 		</style>
 	</head>
+
 	<body>
 		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
@@ -26,15 +27,15 @@
 		</header>
 		<br />
 		<div class="mui-content">
-						<ul class="mui-table-view mui-table-view-chevron">
-				<li class="mui-table-view-cell">
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell" id="zhiweishouchang">
 					<a class="mui-navigate-right">
-						<span class="mui-icon mui-icon-star" id="zhiweishouchang"></span>职位收藏夹
+						<span class="mui-icon mui-icon-star"></span>职位收藏夹
 					</a>
 				</li>
-				<li class="mui-table-view-cell">
+				<li class="mui-table-view-cell" id="qiyeshoucang">
 					<a class="mui-navigate-right">
-						<span class="mui-icon mui-icon-map" id="qiyeshoucang"></span>收藏的企业
+						<span class="mui-icon mui-icon-map"></span>收藏的企业
 					</a>
 				</li>
 				<li class="mui-table-view-cell weikai">
@@ -49,19 +50,43 @@
 				</li>
 			</ul>
 		</div>
-<script src="js/mui.min.js "></script>
+		<script src="js/mui.min.js "></script>
 		<script src="js/app.js "></script>
 		<script>
 			(function($, doc) {
 				$.init();
-				var settings = app.getSettings();
-				var account = doc.getElementById('account');
-					var weikai = document.getElementsByClassName('weikai');
-					for (var i = 0; i < weikai.length; i++) {
-						weikai[i].addEventListener('tap', function() {
-							alert('该功能暂未开放，敬请期待')
-						})
+				var weikai = document.getElementsByClassName('weikai');
+				for (var i = 0; i < weikai.length; i++) {
+					weikai[i].addEventListener('tap', function() {
+						alert('该功能暂未开放，敬请期待')
+					})
+				}
+
+				function a(b) {
+					return function() {
+						var coo = plus.navigator.getCookie('id');
+						
+						if (coo) {
+							b();
+						} else {
+							var btnArray = ['取消', '登陆'];
+							mui.confirm('您还未登陆，是否立即登陆？', '511人才网', btnArray, function(e) {
+								if (e.index == 1) {
+									$.openWindow({
+										url: 'login.html'
+									})
+								}
+							})
+						}
 					}
+				}
+				//-------------------------------------------------------------------------------------
+				document.getElementById("zhiweishouchang").addEventListener('tap', a(function(){
+					mui.openWindow('shoucangzhiwei.html');
+				}))
+				document.getElementById("qiyeshoucang").addEventListener('tap', a(function(){
+					mui.openWindow('shoucangqiye.html');
+				}))
 			}(mui, document));
 		</script>
 

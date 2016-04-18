@@ -3891,4 +3891,7 @@ var zhiweiData = [{
 	text:"其他"
 }]
 }]
+},{
+	value: '',
+	text: '不限制职位',
 }]

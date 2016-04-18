@@ -28,7 +28,8 @@
 			"message.html",
 			"resumeList.html",
 			"toudifankui.html",
-			"jobInfo.html"
+			"jobInfo.html",
+			"wodeshoucang.html"
 		]
 	},
 	"login.html": {
@@ -392,6 +393,44 @@
 			"css/job.css",
 			"css/mui.min.css",
 			"js/ajax.js"
+		]
+	},
+	"wodeshoucang.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/job.css",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"shoucangzhiwei.html",
+			"shoucangqiye.html"
+		]
+	},
+	"shoucangzhiwei.html": {
+		"resources": [
+			"js/app.js",
+			"images/job/logo.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/job.css",
+			"css/mui.min.css",
+			"js/ajax.js"
+		],
+		"refer": [
+			"jobInfo.html"
+		]
+	},
+	"shoucangqiye.html": {
+		"resources": [
+			"images/job/logo.png",
+			"js/ajax.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/job.css",
+			"css/mui.min.css"
 		]
 	}
 }

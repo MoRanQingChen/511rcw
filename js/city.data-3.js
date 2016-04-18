@@ -60,7 +60,7 @@ var cityData3 = [{
 			text: "延庆县"
 		}, {
 			value: "110230",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -128,7 +128,7 @@ var cityData3 = [{
 			text: "蓟县"
 		}, {
 			value: "120226",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -208,7 +208,7 @@ var cityData3 = [{
 			text: "鹿泉市"
 		}, {
 			value: "130186",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "130200",
@@ -257,7 +257,7 @@ var cityData3 = [{
 			text: "迁安市"
 		}, {
 			value: "130284",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "130300",
@@ -285,7 +285,7 @@ var cityData3 = [{
 			text: "卢龙县"
 		}, {
 			value: "130398",
-			text: "其它区"
+			text: "不限"
 		}, {
 			value: "130399",
 			text: "经济技术开发区"
@@ -352,7 +352,7 @@ var cityData3 = [{
 			text: "武安市"
 		}, {
 			value: "130482",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "130500",
@@ -416,7 +416,7 @@ var cityData3 = [{
 			text: "沙河市"
 		}, {
 			value: "130583",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "130600",
@@ -501,7 +501,7 @@ var cityData3 = [{
 			text: "高开区"
 		}, {
 			value: "130699",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "130700",
@@ -559,7 +559,7 @@ var cityData3 = [{
 			text: "崇礼县"
 		}, {
 			value: "130734",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "130800",
@@ -599,7 +599,7 @@ var cityData3 = [{
 			text: "围场满族蒙古族自治县"
 		}, {
 			value: "130829",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "130900",
@@ -654,7 +654,7 @@ var cityData3 = [{
 			text: "河间市"
 		}, {
 			value: "130985",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "131000",
@@ -697,7 +697,7 @@ var cityData3 = [{
 			text: "三河市"
 		}, {
 			value: "131083",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "131100",
@@ -737,7 +737,7 @@ var cityData3 = [{
 			text: "深州市"
 		}, {
 			value: "131183",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -778,7 +778,7 @@ var cityData3 = [{
 			text: "古交市"
 		}, {
 			value: "140182",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "140200",
@@ -818,7 +818,7 @@ var cityData3 = [{
 			text: "大同县"
 		}, {
 			value: "140228",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "140300",
@@ -840,7 +840,7 @@ var cityData3 = [{
 			text: "盂县"
 		}, {
 			value: "140323",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "140400",
@@ -889,7 +889,7 @@ var cityData3 = [{
 			text: "高新区"
 		}, {
 			value: "140485",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "140500",
@@ -914,7 +914,7 @@ var cityData3 = [{
 			text: "高平市"
 		}, {
 			value: "140582",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "140600",
@@ -939,7 +939,7 @@ var cityData3 = [{
 			text: "怀仁县"
 		}, {
 			value: "140625",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "140700",
@@ -979,7 +979,7 @@ var cityData3 = [{
 			text: "介休市"
 		}, {
 			value: "140782",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "140800",
@@ -1025,7 +1025,7 @@ var cityData3 = [{
 			text: "河津市"
 		}, {
 			value: "140883",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "140900",
@@ -1074,7 +1074,7 @@ var cityData3 = [{
 			text: "原平市"
 		}, {
 			value: "140982",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "141000",
@@ -1132,7 +1132,7 @@ var cityData3 = [{
 			text: "霍州市"
 		}, {
 			value: "141083",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "141100",
@@ -1178,7 +1178,7 @@ var cityData3 = [{
 			text: "汾阳市"
 		}, {
 			value: "141183",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -1216,7 +1216,7 @@ var cityData3 = [{
 			text: "武川县"
 		}, {
 			value: "150126",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "150200",
@@ -1250,7 +1250,7 @@ var cityData3 = [{
 			text: "达尔罕茂明安联合旗"
 		}, {
 			value: "150224",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "150300",
@@ -1266,7 +1266,7 @@ var cityData3 = [{
 			text: "乌达区"
 		}, {
 			value: "150305",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "150400",
@@ -1309,7 +1309,7 @@ var cityData3 = [{
 			text: "敖汉旗"
 		}, {
 			value: "150431",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "150500",
@@ -1340,7 +1340,7 @@ var cityData3 = [{
 			text: "霍林郭勒市"
 		}, {
 			value: "150582",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "150600",
@@ -1371,7 +1371,7 @@ var cityData3 = [{
 			text: "伊金霍洛旗"
 		}, {
 			value: "150628",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "150700",
@@ -1417,7 +1417,7 @@ var cityData3 = [{
 			text: "根河市"
 		}, {
 			value: "150786",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "150800",
@@ -1445,7 +1445,7 @@ var cityData3 = [{
 			text: "杭锦后旗"
 		}, {
 			value: "150827",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "150900",
@@ -1485,7 +1485,7 @@ var cityData3 = [{
 			text: "丰镇市"
 		}, {
 			value: "150982",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "152200",
@@ -1510,7 +1510,7 @@ var cityData3 = [{
 			text: "突泉县"
 		}, {
 			value: "152225",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "152500",
@@ -1553,7 +1553,7 @@ var cityData3 = [{
 			text: "多伦县"
 		}, {
 			value: "152532",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "152900",
@@ -1569,7 +1569,7 @@ var cityData3 = [{
 			text: "额济纳旗"
 		}, {
 			value: "152924",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -1628,7 +1628,7 @@ var cityData3 = [{
 			text: "沈北新区"
 		}, {
 			value: "210185",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "210200",
@@ -1671,7 +1671,7 @@ var cityData3 = [{
 			text: "岭前区"
 		}, {
 			value: "210298",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "210300",
@@ -1702,7 +1702,7 @@ var cityData3 = [{
 			text: "海城市"
 		}, {
 			value: "210382",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "210400",
@@ -1730,7 +1730,7 @@ var cityData3 = [{
 			text: "清原满族自治县"
 		}, {
 			value: "210424",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "210500",
@@ -1755,7 +1755,7 @@ var cityData3 = [{
 			text: "桓仁满族自治县"
 		}, {
 			value: "210523",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "210600",
@@ -1780,7 +1780,7 @@ var cityData3 = [{
 			text: "凤城市"
 		}, {
 			value: "210683",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "210700",
@@ -1808,7 +1808,7 @@ var cityData3 = [{
 			text: "北镇市"
 		}, {
 			value: "210783",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "210800",
@@ -1833,7 +1833,7 @@ var cityData3 = [{
 			text: "大石桥市"
 		}, {
 			value: "210883",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "210900",
@@ -1861,7 +1861,7 @@ var cityData3 = [{
 			text: "彰武县"
 		}, {
 			value: "210923",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "211000",
@@ -1889,7 +1889,7 @@ var cityData3 = [{
 			text: "灯塔市"
 		}, {
 			value: "211082",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "211100",
@@ -1908,7 +1908,7 @@ var cityData3 = [{
 			text: "盘山县"
 		}, {
 			value: "211123",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "211200",
@@ -1936,7 +1936,7 @@ var cityData3 = [{
 			text: "开原市"
 		}, {
 			value: "211283",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "211300",
@@ -1964,7 +1964,7 @@ var cityData3 = [{
 			text: "凌源市"
 		}, {
 			value: "211383",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "211400",
@@ -1989,7 +1989,7 @@ var cityData3 = [{
 			text: "兴城市"
 		}, {
 			value: "211482",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -2042,7 +2042,7 @@ var cityData3 = [{
 			text: "净月旅游开发区"
 		}, {
 			value: "220188",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "220200",
@@ -2076,7 +2076,7 @@ var cityData3 = [{
 			text: "磐石市"
 		}, {
 			value: "220285",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "220300",
@@ -2101,7 +2101,7 @@ var cityData3 = [{
 			text: "双辽市"
 		}, {
 			value: "220383",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "220400",
@@ -2120,7 +2120,7 @@ var cityData3 = [{
 			text: "东辽县"
 		}, {
 			value: "220423",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "220500",
@@ -2148,7 +2148,7 @@ var cityData3 = [{
 			text: "集安市"
 		}, {
 			value: "220583",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "220600",
@@ -2173,7 +2173,7 @@ var cityData3 = [{
 			text: "临江市"
 		}, {
 			value: "220682",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "220700",
@@ -2195,7 +2195,7 @@ var cityData3 = [{
 			text: "扶余县"
 		}, {
 			value: "220725",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "220800",
@@ -2217,7 +2217,7 @@ var cityData3 = [{
 			text: "大安市"
 		}, {
 			value: "220883",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "222400",
@@ -2248,7 +2248,7 @@ var cityData3 = [{
 			text: "安图县"
 		}, {
 			value: "222427",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -2319,7 +2319,7 @@ var cityData3 = [{
 			text: "阿城市"
 		}, {
 			value: "230186",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "230200",
@@ -2374,7 +2374,7 @@ var cityData3 = [{
 			text: "讷河市"
 		}, {
 			value: "230282",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "230300",
@@ -2408,7 +2408,7 @@ var cityData3 = [{
 			text: "密山市"
 		}, {
 			value: "230383",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "230400",
@@ -2439,7 +2439,7 @@ var cityData3 = [{
 			text: "绥滨县"
 		}, {
 			value: "230423",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "230500",
@@ -2470,7 +2470,7 @@ var cityData3 = [{
 			text: "饶河县"
 		}, {
 			value: "230525",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "230600",
@@ -2504,7 +2504,7 @@ var cityData3 = [{
 			text: "杜尔伯特蒙古族自治县"
 		}, {
 			value: "230625",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "230700",
@@ -2562,7 +2562,7 @@ var cityData3 = [{
 			text: "铁力市"
 		}, {
 			value: "230782",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "230800",
@@ -2602,7 +2602,7 @@ var cityData3 = [{
 			text: "富锦市"
 		}, {
 			value: "230883",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "230900",
@@ -2621,7 +2621,7 @@ var cityData3 = [{
 			text: "勃利县"
 		}, {
 			value: "230922",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "231000",
@@ -2658,7 +2658,7 @@ var cityData3 = [{
 			text: "穆棱市"
 		}, {
 			value: "231086",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "231100",
@@ -2683,7 +2683,7 @@ var cityData3 = [{
 			text: "五大连池市"
 		}, {
 			value: "231183",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "231200",
@@ -2720,7 +2720,7 @@ var cityData3 = [{
 			text: "海伦市"
 		}, {
 			value: "231284",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "232700",
@@ -2739,7 +2739,7 @@ var cityData3 = [{
 			text: "加格达奇区"
 		}, {
 			value: "232725",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -2810,7 +2810,7 @@ var cityData3 = [{
 			text: "崇明县"
 		}, {
 			value: "310231",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -2860,7 +2860,7 @@ var cityData3 = [{
 			text: "高淳县"
 		}, {
 			value: "320126",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "320200",
@@ -2894,7 +2894,7 @@ var cityData3 = [{
 			text: "新区"
 		}, {
 			value: "320297",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "320300",
@@ -2934,7 +2934,7 @@ var cityData3 = [{
 			text: "邳州市"
 		}, {
 			value: "320383",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "320400",
@@ -2962,7 +2962,7 @@ var cityData3 = [{
 			text: "金坛市"
 		}, {
 			value: "320483",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "320500",
@@ -3008,7 +3008,7 @@ var cityData3 = [{
 			text: "园区"
 		}, {
 			value: "320596",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "320600",
@@ -3045,7 +3045,7 @@ var cityData3 = [{
 			text: "开发区"
 		}, {
 			value: "320694",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "320700",
@@ -3073,7 +3073,7 @@ var cityData3 = [{
 			text: "灌南县"
 		}, {
 			value: "320725",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "320800",
@@ -3104,7 +3104,7 @@ var cityData3 = [{
 			text: "金湖县"
 		}, {
 			value: "320832",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "320900",
@@ -3138,7 +3138,7 @@ var cityData3 = [{
 			text: "大丰市"
 		}, {
 			value: "320983",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "321000",
@@ -3169,7 +3169,7 @@ var cityData3 = [{
 			text: "经济开发区"
 		}, {
 			value: "321093",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "321100",
@@ -3194,7 +3194,7 @@ var cityData3 = [{
 			text: "句容市"
 		}, {
 			value: "321184",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "321200",
@@ -3219,7 +3219,7 @@ var cityData3 = [{
 			text: "姜堰市"
 		}, {
 			value: "321285",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "321300",
@@ -3241,7 +3241,7 @@ var cityData3 = [{
 			text: "泗洪县"
 		}, {
 			value: "321325",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -3291,7 +3291,7 @@ var cityData3 = [{
 			text: "临安市"
 		}, {
 			value: "330186",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "330200",
@@ -3331,7 +3331,7 @@ var cityData3 = [{
 			text: "奉化市"
 		}, {
 			value: "330284",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "330300",
@@ -3371,7 +3371,7 @@ var cityData3 = [{
 			text: "乐清市"
 		}, {
 			value: "330383",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "330400",
@@ -3399,7 +3399,7 @@ var cityData3 = [{
 			text: "桐乡市"
 		}, {
 			value: "330484",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "330500",
@@ -3421,7 +3421,7 @@ var cityData3 = [{
 			text: "安吉县"
 		}, {
 			value: "330524",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "330600",
@@ -3446,7 +3446,7 @@ var cityData3 = [{
 			text: "嵊州市"
 		}, {
 			value: "330684",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "330700",
@@ -3480,7 +3480,7 @@ var cityData3 = [{
 			text: "永康市"
 		}, {
 			value: "330785",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "330800",
@@ -3505,7 +3505,7 @@ var cityData3 = [{
 			text: "江山市"
 		}, {
 			value: "330882",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "330900",
@@ -3524,7 +3524,7 @@ var cityData3 = [{
 			text: "嵊泗县"
 		}, {
 			value: "330923",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "331000",
@@ -3558,7 +3558,7 @@ var cityData3 = [{
 			text: "临海市"
 		}, {
 			value: "331083",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "331100",
@@ -3592,7 +3592,7 @@ var cityData3 = [{
 			text: "龙泉市"
 		}, {
 			value: "331182",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -3630,7 +3630,7 @@ var cityData3 = [{
 			text: "中区"
 		}, {
 			value: "340192",
-			text: "其它区"
+			text: "不限"
 		}, {
 			value: "341400",
 			text: "巢湖市"
@@ -3667,7 +3667,7 @@ var cityData3 = [{
 			text: "南陵县"
 		}, {
 			value: "340224",
-			text: "其它区"
+			text: "不限"
 		}, {
 			value: "341422",
 			text: "无为县"
@@ -3698,7 +3698,7 @@ var cityData3 = [{
 			text: "固镇县"
 		}, {
 			value: "340324",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "340400",
@@ -3723,7 +3723,7 @@ var cityData3 = [{
 			text: "凤台县"
 		}, {
 			value: "340422",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "340500",
@@ -3742,7 +3742,7 @@ var cityData3 = [{
 			text: "当涂县"
 		}, {
 			value: "340522",
-			text: "其它区"
+			text: "不限"
 		}, {
 			value: "341423",
 			text: "含山县"
@@ -3767,7 +3767,7 @@ var cityData3 = [{
 			text: "濉溪县"
 		}, {
 			value: "340622",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "340700",
@@ -3786,7 +3786,7 @@ var cityData3 = [{
 			text: "铜陵县"
 		}, {
 			value: "340722",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "340800",
@@ -3826,7 +3826,7 @@ var cityData3 = [{
 			text: "桐城市"
 		}, {
 			value: "340882",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "341000",
@@ -3854,7 +3854,7 @@ var cityData3 = [{
 			text: "祁门县"
 		}, {
 			value: "341025",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "341100",
@@ -3885,7 +3885,7 @@ var cityData3 = [{
 			text: "明光市"
 		}, {
 			value: "341183",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "341200",
@@ -3916,7 +3916,7 @@ var cityData3 = [{
 			text: "界首市"
 		}, {
 			value: "341283",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "341300",
@@ -3938,7 +3938,7 @@ var cityData3 = [{
 			text: "泗县"
 		}, {
 			value: "341325",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "341500",
@@ -3966,7 +3966,7 @@ var cityData3 = [{
 			text: "霍山县"
 		}, {
 			value: "341526",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "341600",
@@ -3985,7 +3985,7 @@ var cityData3 = [{
 			text: "利辛县"
 		}, {
 			value: "341624",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "341700",
@@ -4004,7 +4004,7 @@ var cityData3 = [{
 			text: "青阳县"
 		}, {
 			value: "341724",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "341800",
@@ -4032,7 +4032,7 @@ var cityData3 = [{
 			text: "宁国市"
 		}, {
 			value: "341882",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -4082,7 +4082,7 @@ var cityData3 = [{
 			text: "长乐市"
 		}, {
 			value: "350183",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "350200",
@@ -4107,7 +4107,7 @@ var cityData3 = [{
 			text: "翔安区"
 		}, {
 			value: "350214",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "350300",
@@ -4129,7 +4129,7 @@ var cityData3 = [{
 			text: "仙游县"
 		}, {
 			value: "350323",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "350400",
@@ -4172,7 +4172,7 @@ var cityData3 = [{
 			text: "永安市"
 		}, {
 			value: "350482",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "350500",
@@ -4215,7 +4215,7 @@ var cityData3 = [{
 			text: "南安市"
 		}, {
 			value: "350584",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "350600",
@@ -4255,7 +4255,7 @@ var cityData3 = [{
 			text: "龙海市"
 		}, {
 			value: "350682",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "350700",
@@ -4292,7 +4292,7 @@ var cityData3 = [{
 			text: "建阳市"
 		}, {
 			value: "350785",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "350800",
@@ -4320,7 +4320,7 @@ var cityData3 = [{
 			text: "漳平市"
 		}, {
 			value: "350882",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "350900",
@@ -4354,7 +4354,7 @@ var cityData3 = [{
 			text: "福鼎市"
 		}, {
 			value: "350983",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -4401,7 +4401,7 @@ var cityData3 = [{
 			text: "昌北区"
 		}, {
 			value: "360128",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "360200",
@@ -4420,7 +4420,7 @@ var cityData3 = [{
 			text: "乐平市"
 		}, {
 			value: "360282",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "360300",
@@ -4442,7 +4442,7 @@ var cityData3 = [{
 			text: "芦溪县"
 		}, {
 			value: "360324",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "360400",
@@ -4485,7 +4485,7 @@ var cityData3 = [{
 			text: "瑞昌市"
 		}, {
 			value: "360482",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "360500",
@@ -4498,7 +4498,7 @@ var cityData3 = [{
 			text: "分宜县"
 		}, {
 			value: "360522",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "360600",
@@ -4514,7 +4514,7 @@ var cityData3 = [{
 			text: "贵溪市"
 		}, {
 			value: "360682",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "360700",
@@ -4578,7 +4578,7 @@ var cityData3 = [{
 			text: "南康市"
 		}, {
 			value: "360783",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "360800",
@@ -4624,7 +4624,7 @@ var cityData3 = [{
 			text: "井冈山市"
 		}, {
 			value: "360882",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "360900",
@@ -4661,7 +4661,7 @@ var cityData3 = [{
 			text: "高安市"
 		}, {
 			value: "360984",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "361000",
@@ -4701,7 +4701,7 @@ var cityData3 = [{
 			text: "广昌县"
 		}, {
 			value: "361031",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "361100",
@@ -4744,7 +4744,7 @@ var cityData3 = [{
 			text: "德兴市"
 		}, {
 			value: "361182",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -4785,7 +4785,7 @@ var cityData3 = [{
 			text: "章丘市"
 		}, {
 			value: "370182",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "370200",
@@ -4831,7 +4831,7 @@ var cityData3 = [{
 			text: "莱西市"
 		}, {
 			value: "370286",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "370300",
@@ -4862,7 +4862,7 @@ var cityData3 = [{
 			text: "沂源县"
 		}, {
 			value: "370324",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "370400",
@@ -4887,7 +4887,7 @@ var cityData3 = [{
 			text: "滕州市"
 		}, {
 			value: "370482",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "370500",
@@ -4915,7 +4915,7 @@ var cityData3 = [{
 			text: "东城区"
 		}, {
 			value: "370591",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "370600",
@@ -4958,7 +4958,7 @@ var cityData3 = [{
 			text: "海阳市"
 		}, {
 			value: "370688",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "370700",
@@ -5004,7 +5004,7 @@ var cityData3 = [{
 			text: "昌邑市"
 		}, {
 			value: "370787",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "370800",
@@ -5047,7 +5047,7 @@ var cityData3 = [{
 			text: "邹城市"
 		}, {
 			value: "370884",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "370900",
@@ -5072,7 +5072,7 @@ var cityData3 = [{
 			text: "肥城市"
 		}, {
 			value: "370984",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "371000",
@@ -5091,7 +5091,7 @@ var cityData3 = [{
 			text: "乳山市"
 		}, {
 			value: "371084",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "371100",
@@ -5110,7 +5110,7 @@ var cityData3 = [{
 			text: "莒县"
 		}, {
 			value: "371123",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "371200",
@@ -5123,7 +5123,7 @@ var cityData3 = [{
 			text: "钢城区"
 		}, {
 			value: "371204",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "371300",
@@ -5166,7 +5166,7 @@ var cityData3 = [{
 			text: "临沭县"
 		}, {
 			value: "371330",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "371400",
@@ -5209,7 +5209,7 @@ var cityData3 = [{
 			text: "禹城市"
 		}, {
 			value: "371483",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "371500",
@@ -5240,7 +5240,7 @@ var cityData3 = [{
 			text: "临清市"
 		}, {
 			value: "371582",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "371600",
@@ -5268,7 +5268,7 @@ var cityData3 = [{
 			text: "邹平县"
 		}, {
 			value: "371627",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "371700",
@@ -5302,7 +5302,7 @@ var cityData3 = [{
 			text: "东明县"
 		}, {
 			value: "371729",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -5355,7 +5355,7 @@ var cityData3 = [{
 			text: "高新区"
 		}, {
 			value: "410188",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "410200",
@@ -5392,7 +5392,7 @@ var cityData3 = [{
 			text: "兰考县"
 		}, {
 			value: "410226",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "410300",
@@ -5447,7 +5447,7 @@ var cityData3 = [{
 			text: "高新区"
 		}, {
 			value: "471005",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "410400",
@@ -5484,7 +5484,7 @@ var cityData3 = [{
 			text: "汝州市"
 		}, {
 			value: "410483",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "410500",
@@ -5518,7 +5518,7 @@ var cityData3 = [{
 			text: "林州市"
 		}, {
 			value: "410582",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "410600",
@@ -5540,7 +5540,7 @@ var cityData3 = [{
 			text: "淇县"
 		}, {
 			value: "410623",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "410700",
@@ -5583,7 +5583,7 @@ var cityData3 = [{
 			text: "辉县市"
 		}, {
 			value: "410783",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "410800",
@@ -5620,7 +5620,7 @@ var cityData3 = [{
 			text: "孟州市"
 		}, {
 			value: "410884",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "410900",
@@ -5645,7 +5645,7 @@ var cityData3 = [{
 			text: "濮阳县"
 		}, {
 			value: "410929",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "411000",
@@ -5670,7 +5670,7 @@ var cityData3 = [{
 			text: "濮阳县"
 		}, {
 			value: "410929",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "411100",
@@ -5695,7 +5695,7 @@ var cityData3 = [{
 			text: "长葛市"
 		}, {
 			value: "411083",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "411200",
@@ -5717,7 +5717,7 @@ var cityData3 = [{
 			text: "临颍县"
 		}, {
 			value: "411123",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "411300",
@@ -5742,7 +5742,7 @@ var cityData3 = [{
 			text: "灵宝市"
 		}, {
 			value: "411283",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "411400",
@@ -5788,7 +5788,7 @@ var cityData3 = [{
 			text: "邓州市"
 		}, {
 			value: "411382",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "411500",
@@ -5822,7 +5822,7 @@ var cityData3 = [{
 			text: "永城市"
 		}, {
 			value: "411482",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "411600",
@@ -5859,7 +5859,7 @@ var cityData3 = [{
 			text: "息县"
 		}, {
 			value: "411529",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "411700",
@@ -5896,7 +5896,7 @@ var cityData3 = [{
 			text: "项城市"
 		}, {
 			value: "411682",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -5946,7 +5946,7 @@ var cityData3 = [{
 			text: "新洲区"
 		}, {
 			value: "420118",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "420200",
@@ -5971,7 +5971,7 @@ var cityData3 = [{
 			text: "大冶市"
 		}, {
 			value: "420282",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "420300",
@@ -6005,7 +6005,7 @@ var cityData3 = [{
 			text: "城区"
 		}, {
 			value: "420383",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "420500",
@@ -6057,7 +6057,7 @@ var cityData3 = [{
 			text: "枝江市"
 		}, {
 			value: "420584",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "420600",
@@ -6091,7 +6091,7 @@ var cityData3 = [{
 			text: "宜城市"
 		}, {
 			value: "420685",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "420700",
@@ -6107,7 +6107,7 @@ var cityData3 = [{
 			text: "鄂城区"
 		}, {
 			value: "420705",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "420800",
@@ -6129,7 +6129,7 @@ var cityData3 = [{
 			text: "钟祥市"
 		}, {
 			value: "420882",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "420900",
@@ -6157,7 +6157,7 @@ var cityData3 = [{
 			text: "汉川市"
 		}, {
 			value: "420985",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "421000",
@@ -6188,7 +6188,7 @@ var cityData3 = [{
 			text: "松滋市"
 		}, {
 			value: "421088",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "421100",
@@ -6225,7 +6225,7 @@ var cityData3 = [{
 			text: "武穴市"
 		}, {
 			value: "421183",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "421200",
@@ -6253,7 +6253,7 @@ var cityData3 = [{
 			text: "温泉城区"
 		}, {
 			value: "421283",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "421300",
@@ -6269,7 +6269,7 @@ var cityData3 = [{
 			text: "广水市"
 		}, {
 			value: "421382",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "422800",
@@ -6300,7 +6300,7 @@ var cityData3 = [{
 			text: "鹤峰县"
 		}, {
 			value: "422829",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "429004",
@@ -6350,7 +6350,7 @@ var cityData3 = [{
 			text: "浏阳市"
 		}, {
 			value: "430182",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "430200",
@@ -6384,7 +6384,7 @@ var cityData3 = [{
 			text: "醴陵市"
 		}, {
 			value: "430282",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "430300",
@@ -6406,7 +6406,7 @@ var cityData3 = [{
 			text: "韶山市"
 		}, {
 			value: "430383",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "430400",
@@ -6449,7 +6449,7 @@ var cityData3 = [{
 			text: "常宁市"
 		}, {
 			value: "430483",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "430500",
@@ -6492,7 +6492,7 @@ var cityData3 = [{
 			text: "武冈市"
 		}, {
 			value: "430582",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "430600",
@@ -6526,7 +6526,7 @@ var cityData3 = [{
 			text: "临湘市"
 		}, {
 			value: "430683",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "430700",
@@ -6560,7 +6560,7 @@ var cityData3 = [{
 			text: "津市市"
 		}, {
 			value: "430782",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "430800",
@@ -6579,7 +6579,7 @@ var cityData3 = [{
 			text: "桑植县"
 		}, {
 			value: "430823",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "430900",
@@ -6604,7 +6604,7 @@ var cityData3 = [{
 			text: "沅江市"
 		}, {
 			value: "430982",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "431000",
@@ -6644,7 +6644,7 @@ var cityData3 = [{
 			text: "资兴市"
 		}, {
 			value: "431082",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "431100",
@@ -6684,7 +6684,7 @@ var cityData3 = [{
 			text: "江华瑶族自治县"
 		}, {
 			value: "431130",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "431200",
@@ -6727,7 +6727,7 @@ var cityData3 = [{
 			text: "洪江市"
 		}, {
 			value: "431282",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "431300",
@@ -6749,7 +6749,7 @@ var cityData3 = [{
 			text: "涟源市"
 		}, {
 			value: "431383",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "433100",
@@ -6780,7 +6780,7 @@ var cityData3 = [{
 			text: "龙山县"
 		}, {
 			value: "433131",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -6830,7 +6830,7 @@ var cityData3 = [{
 			text: "东山区"
 		}, {
 			value: "440189",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "440200",
@@ -6867,7 +6867,7 @@ var cityData3 = [{
 			text: "南雄市"
 		}, {
 			value: "440283",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "440300",
@@ -6892,7 +6892,7 @@ var cityData3 = [{
 			text: "盐田区"
 		}, {
 			value: "440309",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "440400",
@@ -6914,7 +6914,7 @@ var cityData3 = [{
 			text: "南湾区"
 		}, {
 			value: "440488",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "440500",
@@ -6942,7 +6942,7 @@ var cityData3 = [{
 			text: "南澳县"
 		}, {
 			value: "440524",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "440600",
@@ -6964,7 +6964,7 @@ var cityData3 = [{
 			text: "高明区"
 		}, {
 			value: "440609",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "440700",
@@ -6992,7 +6992,7 @@ var cityData3 = [{
 			text: "恩平市"
 		}, {
 			value: "440786",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "440800",
@@ -7026,7 +7026,7 @@ var cityData3 = [{
 			text: "吴川市"
 		}, {
 			value: "440884",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "440900",
@@ -7051,7 +7051,7 @@ var cityData3 = [{
 			text: "信宜市"
 		}, {
 			value: "440984",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "441200",
@@ -7082,7 +7082,7 @@ var cityData3 = [{
 			text: "四会市"
 		}, {
 			value: "441285",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "441300",
@@ -7104,7 +7104,7 @@ var cityData3 = [{
 			text: "龙门县"
 		}, {
 			value: "441325",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "441400",
@@ -7135,7 +7135,7 @@ var cityData3 = [{
 			text: "兴宁市"
 		}, {
 			value: "441482",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "441500",
@@ -7154,7 +7154,7 @@ var cityData3 = [{
 			text: "陆丰市"
 		}, {
 			value: "441582",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "441600",
@@ -7179,7 +7179,7 @@ var cityData3 = [{
 			text: "东源县"
 		}, {
 			value: "441626",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "441700",
@@ -7198,7 +7198,7 @@ var cityData3 = [{
 			text: "阳春市"
 		}, {
 			value: "441782",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "441800",
@@ -7229,7 +7229,7 @@ var cityData3 = [{
 			text: "连州市"
 		}, {
 			value: "441883",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "441900",
@@ -7254,7 +7254,7 @@ var cityData3 = [{
 			text: "枫溪区"
 		}, {
 			value: "445186",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "445200",
@@ -7279,7 +7279,7 @@ var cityData3 = [{
 			text: "东山区"
 		}, {
 			value: "445285",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "445300",
@@ -7301,7 +7301,7 @@ var cityData3 = [{
 			text: "罗定市"
 		}, {
 			value: "445382",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -7348,7 +7348,7 @@ var cityData3 = [{
 			text: "横县"
 		}, {
 			value: "450128",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "450200",
@@ -7385,7 +7385,7 @@ var cityData3 = [{
 			text: "三江侗族自治县"
 		}, {
 			value: "450227",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "450300",
@@ -7443,7 +7443,7 @@ var cityData3 = [{
 			text: "恭城瑶族自治县"
 		}, {
 			value: "450333",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "450400",
@@ -7471,7 +7471,7 @@ var cityData3 = [{
 			text: "岑溪市"
 		}, {
 			value: "450482",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "450500",
@@ -7490,7 +7490,7 @@ var cityData3 = [{
 			text: "合浦县"
 		}, {
 			value: "450522",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "450600",
@@ -7509,7 +7509,7 @@ var cityData3 = [{
 			text: "东兴市"
 		}, {
 			value: "450682",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "450700",
@@ -7528,7 +7528,7 @@ var cityData3 = [{
 			text: "浦北县"
 		}, {
 			value: "450723",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "450800",
@@ -7550,7 +7550,7 @@ var cityData3 = [{
 			text: "桂平市"
 		}, {
 			value: "450882",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "450900",
@@ -7575,7 +7575,7 @@ var cityData3 = [{
 			text: "北流市"
 		}, {
 			value: "450982",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "451000",
@@ -7618,7 +7618,7 @@ var cityData3 = [{
 			text: "隆林各族自治县"
 		}, {
 			value: "451032",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "451100",
@@ -7639,7 +7639,7 @@ var cityData3 = [{
 
 			{
 				value: "451124",
-				text: "其它区"
+				text: "不限"
 			}
 		]
 	}, {
@@ -7680,7 +7680,7 @@ var cityData3 = [{
 			text: "宜州市"
 		}, {
 			value: "451282",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "451300",
@@ -7705,7 +7705,7 @@ var cityData3 = [{
 			text: "合山市"
 		}, {
 			value: "451382",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "451400",
@@ -7733,7 +7733,7 @@ var cityData3 = [{
 			text: "凭祥市"
 		}, {
 			value: "451482",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -7756,7 +7756,7 @@ var cityData3 = [{
 			text: "美兰区"
 		}, {
 			value: "460109",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "460200",
@@ -7947,7 +7947,7 @@ var cityData3 = [{
 			text: "南川区"
 		}, {
 			value: "500385",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -8015,7 +8015,7 @@ var cityData3 = [{
 			text: "崇州市"
 		}, {
 			value: "510185",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "510300",
@@ -8040,7 +8040,7 @@ var cityData3 = [{
 			text: "富顺县"
 		}, {
 			value: "510323",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "510400",
@@ -8062,7 +8062,7 @@ var cityData3 = [{
 			text: "盐边县"
 		}, {
 			value: "510423",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "510500",
@@ -8090,7 +8090,7 @@ var cityData3 = [{
 			text: "古蔺县"
 		}, {
 			value: "510526",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "510600",
@@ -8115,7 +8115,7 @@ var cityData3 = [{
 			text: "绵竹市"
 		}, {
 			value: "510684",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "510700",
@@ -8152,7 +8152,7 @@ var cityData3 = [{
 			text: "江油市"
 		}, {
 			value: "510782",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "510800",
@@ -8180,7 +8180,7 @@ var cityData3 = [{
 			text: "苍溪县"
 		}, {
 			value: "510825",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "510900",
@@ -8202,7 +8202,7 @@ var cityData3 = [{
 			text: "大英县"
 		}, {
 			value: "510924",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "511000",
@@ -8224,7 +8224,7 @@ var cityData3 = [{
 			text: "隆昌县"
 		}, {
 			value: "511029",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "511100",
@@ -8264,7 +8264,7 @@ var cityData3 = [{
 			text: "峨眉山市"
 		}, {
 			value: "511182",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "511300",
@@ -8298,7 +8298,7 @@ var cityData3 = [{
 			text: "阆中市"
 		}, {
 			value: "511382",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "511400",
@@ -8323,7 +8323,7 @@ var cityData3 = [{
 			text: "青神县"
 		}, {
 			value: "511426",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "511500",
@@ -8360,7 +8360,7 @@ var cityData3 = [{
 			text: "屏山县"
 		}, {
 			value: "511530",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "511600",
@@ -8385,7 +8385,7 @@ var cityData3 = [{
 			text: "市辖区"
 		}, {
 			value: "511683",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "511700",
@@ -8413,7 +8413,7 @@ var cityData3 = [{
 			text: "万源市"
 		}, {
 			value: "511782",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "511800",
@@ -8444,7 +8444,7 @@ var cityData3 = [{
 			text: "宝兴县"
 		}, {
 			value: "511828",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "511900",
@@ -8463,7 +8463,7 @@ var cityData3 = [{
 			text: "平昌县"
 		}, {
 			value: "511924",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "512000",
@@ -8482,7 +8482,7 @@ var cityData3 = [{
 			text: "简阳市"
 		}, {
 			value: "512082",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "513200",
@@ -8528,7 +8528,7 @@ var cityData3 = [{
 			text: "红原县"
 		}, {
 			value: "513234",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "513300",
@@ -8589,7 +8589,7 @@ var cityData3 = [{
 			text: "得荣县"
 		}, {
 			value: "513339",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "513400",
@@ -8647,7 +8647,7 @@ var cityData3 = [{
 			text: "雷波县"
 		}, {
 			value: "513438",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -8691,7 +8691,7 @@ var cityData3 = [{
 			text: "清镇市"
 		}, {
 			value: "520182",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "520200",
@@ -8710,7 +8710,7 @@ var cityData3 = [{
 			text: "盘县"
 		}, {
 			value: "520223",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "520300",
@@ -8759,7 +8759,7 @@ var cityData3 = [{
 			text: "仁怀市"
 		}, {
 			value: "520383",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "520400",
@@ -8784,7 +8784,7 @@ var cityData3 = [{
 			text: "紫云苗族布依族自治县"
 		}, {
 			value: "520426",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "522200",
@@ -8821,7 +8821,7 @@ var cityData3 = [{
 			text: "万山特区"
 		}, {
 			value: "522231",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "522300",
@@ -8852,7 +8852,7 @@ var cityData3 = [{
 			text: "安龙县"
 		}, {
 			value: "522329",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "522400",
@@ -8883,7 +8883,7 @@ var cityData3 = [{
 			text: "赫章县"
 		}, {
 			value: "522429",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "522600",
@@ -8938,7 +8938,7 @@ var cityData3 = [{
 			text: "丹寨县"
 		}, {
 			value: "522637",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "522700",
@@ -8981,7 +8981,7 @@ var cityData3 = [{
 			text: "三都水族自治县"
 		}, {
 			value: "522733",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -9034,7 +9034,7 @@ var cityData3 = [{
 			text: "安宁市"
 		}, {
 			value: "530182",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "530300",
@@ -9068,7 +9068,7 @@ var cityData3 = [{
 			text: "宣威市"
 		}, {
 			value: "530382",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "530400",
@@ -9102,7 +9102,7 @@ var cityData3 = [{
 			text: "元江哈尼族彝族傣族自治县"
 		}, {
 			value: "530429",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "530500",
@@ -9124,7 +9124,7 @@ var cityData3 = [{
 			text: "昌宁县"
 		}, {
 			value: "530525",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "530600",
@@ -9164,7 +9164,7 @@ var cityData3 = [{
 			text: "水富县"
 		}, {
 			value: "530631",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "530700",
@@ -9186,7 +9186,7 @@ var cityData3 = [{
 			text: "宁蒗彝族自治县"
 		}, {
 			value: "530725",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "530800",
@@ -9223,7 +9223,7 @@ var cityData3 = [{
 			text: "西盟佤族自治县"
 		}, {
 			value: "530830",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "530900",
@@ -9254,7 +9254,7 @@ var cityData3 = [{
 			text: "沧源佤族自治县"
 		}, {
 			value: "530928",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "532300",
@@ -9291,7 +9291,7 @@ var cityData3 = [{
 			text: "禄丰县"
 		}, {
 			value: "532332",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "532500",
@@ -9337,7 +9337,7 @@ var cityData3 = [{
 			text: "河口瑶族自治县"
 		}, {
 			value: "532533",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "532600",
@@ -9368,7 +9368,7 @@ var cityData3 = [{
 			text: "富宁县"
 		}, {
 			value: "532629",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "532800",
@@ -9384,7 +9384,7 @@ var cityData3 = [{
 			text: "勐腊县"
 		}, {
 			value: "532824",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "532900",
@@ -9427,7 +9427,7 @@ var cityData3 = [{
 			text: "鹤庆县"
 		}, {
 			value: "532933",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "533100",
@@ -9449,7 +9449,7 @@ var cityData3 = [{
 			text: "陇川县"
 		}, {
 			value: "533125",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "533300",
@@ -9468,7 +9468,7 @@ var cityData3 = [{
 			text: "兰坪白族普米族自治县"
 		}, {
 			value: "533326",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "533400",
@@ -9484,7 +9484,7 @@ var cityData3 = [{
 			text: "维西傈僳族自治县"
 		}, {
 			value: "533424",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -9519,7 +9519,7 @@ var cityData3 = [{
 			text: "墨竹工卡县"
 		}, {
 			value: "540128",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "542100",
@@ -9559,7 +9559,7 @@ var cityData3 = [{
 			text: "边坝县"
 		}, {
 			value: "542134",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "542200",
@@ -9602,7 +9602,7 @@ var cityData3 = [{
 			text: "浪卡子县"
 		}, {
 			value: "542234",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "542300",
@@ -9663,7 +9663,7 @@ var cityData3 = [{
 			text: "岗巴县"
 		}, {
 			value: "542339",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "542400",
@@ -9700,7 +9700,7 @@ var cityData3 = [{
 			text: "尼玛县"
 		}, {
 			value: "542431",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "542500",
@@ -9728,7 +9728,7 @@ var cityData3 = [{
 			text: "措勤县"
 		}, {
 			value: "542528",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "542600",
@@ -9756,7 +9756,7 @@ var cityData3 = [{
 			text: "朗县"
 		}, {
 			value: "542628",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -9806,7 +9806,7 @@ var cityData3 = [{
 			text: "高陵县"
 		}, {
 			value: "610127",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "610200",
@@ -9825,7 +9825,7 @@ var cityData3 = [{
 			text: "宜君县"
 		}, {
 			value: "610223",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "610300",
@@ -9868,7 +9868,7 @@ var cityData3 = [{
 			text: "太白县"
 		}, {
 			value: "610332",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "610400",
@@ -9917,7 +9917,7 @@ var cityData3 = [{
 			text: "兴平市"
 		}, {
 			value: "610482",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "610500",
@@ -9957,7 +9957,7 @@ var cityData3 = [{
 			text: "华阴市"
 		}, {
 			value: "610583",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "610600",
@@ -10003,7 +10003,7 @@ var cityData3 = [{
 			text: "黄陵县"
 		}, {
 			value: "610633",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "610700",
@@ -10043,7 +10043,7 @@ var cityData3 = [{
 			text: "佛坪县"
 		}, {
 			value: "610731",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "610800",
@@ -10086,7 +10086,7 @@ var cityData3 = [{
 			text: "子洲县"
 		}, {
 			value: "610832",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "610900",
@@ -10123,7 +10123,7 @@ var cityData3 = [{
 			text: "白河县"
 		}, {
 			value: "610930",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "611000",
@@ -10151,7 +10151,7 @@ var cityData3 = [{
 			text: "柞水县"
 		}, {
 			value: "611027",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -10186,7 +10186,7 @@ var cityData3 = [{
 			text: "榆中县"
 		}, {
 			value: "620124",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "620200",
@@ -10199,7 +10199,7 @@ var cityData3 = [{
 			text: "永昌县"
 		}, {
 			value: "620322",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "620300",
@@ -10212,7 +10212,7 @@ var cityData3 = [{
 			text: "永昌县"
 		}, {
 			value: "620322",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "620400",
@@ -10234,7 +10234,7 @@ var cityData3 = [{
 			text: "景泰县"
 		}, {
 			value: "620424",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "620500",
@@ -10262,7 +10262,7 @@ var cityData3 = [{
 			text: "张家川回族自治县"
 		}, {
 			value: "620526",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "620600",
@@ -10281,7 +10281,7 @@ var cityData3 = [{
 			text: "天祝藏族自治县"
 		}, {
 			value: "620624",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "620700",
@@ -10306,7 +10306,7 @@ var cityData3 = [{
 			text: "山丹县"
 		}, {
 			value: "620726",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "620800",
@@ -10334,7 +10334,7 @@ var cityData3 = [{
 			text: "静宁县"
 		}, {
 			value: "620827",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "620900",
@@ -10362,7 +10362,7 @@ var cityData3 = [{
 			text: "敦煌市"
 		}, {
 			value: "620983",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "621000",
@@ -10393,7 +10393,7 @@ var cityData3 = [{
 			text: "镇原县"
 		}, {
 			value: "621028",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "621100",
@@ -10421,7 +10421,7 @@ var cityData3 = [{
 			text: "岷县"
 		}, {
 			value: "621127",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "621200",
@@ -10455,7 +10455,7 @@ var cityData3 = [{
 			text: "两当县"
 		}, {
 			value: "621229",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "622900",
@@ -10486,7 +10486,7 @@ var cityData3 = [{
 			text: "积石山保安族东乡族撒拉族自治县"
 		}, {
 			value: "622928",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "623000",
@@ -10517,7 +10517,7 @@ var cityData3 = [{
 			text: "夏河县"
 		}, {
 			value: "623028",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -10549,7 +10549,7 @@ var cityData3 = [{
 			text: "湟源县"
 		}, {
 			value: "630124",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "632100",
@@ -10574,7 +10574,7 @@ var cityData3 = [{
 			text: "循化撒拉族自治县"
 		}, {
 			value: "632129",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "632200",
@@ -10593,7 +10593,7 @@ var cityData3 = [{
 			text: "刚察县"
 		}, {
 			value: "632225",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "632300",
@@ -10612,7 +10612,7 @@ var cityData3 = [{
 			text: "河南蒙古族自治县"
 		}, {
 			value: "632325",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "632500",
@@ -10634,7 +10634,7 @@ var cityData3 = [{
 			text: "贵南县"
 		}, {
 			value: "632526",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "632600",
@@ -10659,7 +10659,7 @@ var cityData3 = [{
 			text: "玛多县"
 		}, {
 			value: "632627",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "632700",
@@ -10684,7 +10684,7 @@ var cityData3 = [{
 			text: "曲麻莱县"
 		}, {
 			value: "632727",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "632800",
@@ -10706,7 +10706,7 @@ var cityData3 = [{
 			text: "天峻县"
 		}, {
 			value: "632824",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -10735,7 +10735,7 @@ var cityData3 = [{
 			text: "灵武市"
 		}, {
 			value: "640182",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "640200",
@@ -10751,7 +10751,7 @@ var cityData3 = [{
 			text: "平罗县"
 		}, {
 			value: "640222",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "640300",
@@ -10773,7 +10773,7 @@ var cityData3 = [{
 			text: "青铜峡市"
 		}, {
 			value: "640382",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "640400",
@@ -10795,7 +10795,7 @@ var cityData3 = [{
 			text: "彭阳县"
 		}, {
 			value: "640426",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "640500",
@@ -10811,7 +10811,7 @@ var cityData3 = [{
 			text: "海原县"
 		}, {
 			value: "640523",
-			text: "其它区"
+			text: "不限"
 		}]
 	}]
 }, {
@@ -10849,7 +10849,7 @@ var cityData3 = [{
 			text: "乌鲁木齐县"
 		}, {
 			value: "650122",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "650200",
@@ -10868,7 +10868,7 @@ var cityData3 = [{
 			text: "乌尔禾区"
 		}, {
 			value: "650206",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "652100",
@@ -10884,7 +10884,7 @@ var cityData3 = [{
 			text: "托克逊县"
 		}, {
 			value: "652124",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "652200",
@@ -10900,7 +10900,7 @@ var cityData3 = [{
 			text: "伊吾县"
 		}, {
 			value: "652224",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "652300",
@@ -10931,7 +10931,7 @@ var cityData3 = [{
 			text: "木垒哈萨克自治县"
 		}, {
 			value: "652329",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "652700",
@@ -10947,7 +10947,7 @@ var cityData3 = [{
 			text: "温泉县"
 		}, {
 			value: "652724",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "652800",
@@ -10981,7 +10981,7 @@ var cityData3 = [{
 			text: "博湖县"
 		}, {
 			value: "652830",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "652900",
@@ -11015,7 +11015,7 @@ var cityData3 = [{
 			text: "柯坪县"
 		}, {
 			value: "652930",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "653000",
@@ -11034,7 +11034,7 @@ var cityData3 = [{
 			text: "乌恰县"
 		}, {
 			value: "653025",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "653100",
@@ -11077,7 +11077,7 @@ var cityData3 = [{
 			text: "塔什库尔干塔吉克自治县"
 		}, {
 			value: "653132",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "653200",
@@ -11108,7 +11108,7 @@ var cityData3 = [{
 			text: "民丰县"
 		}, {
 			value: "653228",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "654000",
@@ -11145,7 +11145,7 @@ var cityData3 = [{
 			text: "尼勒克县"
 		}, {
 			value: "654029",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "654200",
@@ -11173,7 +11173,7 @@ var cityData3 = [{
 			text: "和布克赛尔蒙古自治县"
 		}, {
 			value: "654227",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "654300",
@@ -11201,7 +11201,7 @@ var cityData3 = [{
 			text: "吉木乃县"
 		}, {
 			value: "654327",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "659001",
@@ -11260,7 +11260,7 @@ var cityData3 = [{
 			text: "文山区"
 		}, {
 			value: "710113",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "710200",
@@ -11300,7 +11300,7 @@ var cityData3 = [{
 			text: "小港区"
 		}, {
 			value: "710212",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "710300",
@@ -11325,7 +11325,7 @@ var cityData3 = [{
 			text: "安南区"
 		}, {
 			value: "710307",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "710400",
@@ -11356,7 +11356,7 @@ var cityData3 = [{
 			text: "南屯区"
 		}, {
 			value: "710409",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "710500",
@@ -11390,7 +11390,7 @@ var cityData3 = [{
 			text: "七堵区"
 		}, {
 			value: "710708",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "710800",
@@ -11406,7 +11406,7 @@ var cityData3 = [{
 			text: "香山区"
 		}, {
 			value: "710804",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "710900",
@@ -11419,7 +11419,7 @@ var cityData3 = [{
 			text: "西区"
 		}, {
 			value: "710903",
-			text: "其它区"
+			text: "不限"
 		}]
 	}, {
 		value: "711100",

@@ -21,7 +21,7 @@
 			.animated {
 				-webkit-animation-duration: 0.5s;
 				animation-duration: 0.5s;
-				-webkit-animation-fill-mode: both;
+				-webkit-animation-fill-mode: both; 
 				animation-fill-mode: both;
 			}
 			
@@ -428,6 +428,7 @@
 		<script>
 			var trade;
 			var jobtype;
+			var workplace;
 			mui.init({
 				swipeBack: true //启用右滑关闭功能
 			});
@@ -470,7 +471,6 @@
 				}, 500);
 			}
 			var table = document.body.querySelector('.mui-table-view');
-
 			function addJob() {
 				var yema = document.getElementById("yema");
 				yema.innerHTML = "<li class='mui-previous mui-disabled'><a href='#'>&laquo;</a></li>";
@@ -506,7 +506,7 @@
 						oA.innerHTML = i + 1;
 						if (data.page == i) {
 							oA.style.background = "cornflowerblue";
-							oA.style.color = "white"
+							oA.style.color = "white";
 						}
 						oLi.appendChild(oA);
 						yema.appendChild(oLi);
@@ -538,9 +538,10 @@
 				document.getElementById("heighSearch").addEventListener('tap', function() {
 					data = {
 						t: 2,
-						key: inputKey.value,
+						key: inputKey.value|| "",
 						trade: trade || "",
 						jobtype: jobtype || "",
+						workplace:workplace||"",
 						page: 0
 					};
 					addJob();
@@ -602,7 +603,10 @@
 					showCityPickerButton.addEventListener('tap', function(event) {
 						cityPicker3.show(function(items) {
 							showCityPicker3.innerText = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
-							//返回 false 可以阻止选择框的关闭 
+							workplace = (items[2] || {}).text;
+							if(workplace=='不限')workplace = (items[1] || {}).text;
+							console.log(workplace)
+							//返回 false 可以阻止选择框的关闭
 							//return false;
 						});
 					}, false);
@@ -615,14 +619,23 @@
 					} else if (this.innerHTML == "«" && data.page > 0) {
 						data.page--;
 					} else {
-						if (allPage > 5 && this.innerHTML > 3 && this.innerHTML < allPage - 2) {
-						}
+						if (allPage > 5 && this.innerHTML > 3 && this.innerHTML < allPage - 2) {}
 						data.page = this.innerHTML - 1;
 					}
 					console.log(data.page)
 					addJob();
 				});
 				$.plusReady(function() {
+					var key = plus.webview.currentWebview().id;
+					alert(key)
+					if (key != 'job') {
+						data = {
+							t: 2,
+							key: key,
+							page: 0
+						};
+						addJob();
+					}
 					$.oldBack = mui.back;
 					var backButtonPress = 0;
 					$.back = function(event) {
