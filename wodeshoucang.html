@@ -55,18 +55,20 @@
 		<script>
 			(function($, doc) {
 				$.init();
+				$.plusReady(function(){
+					plus.nativeUI.closeWaiting();
+				})
 				var weikai = document.getElementsByClassName('weikai');
 				for (var i = 0; i < weikai.length; i++) {
 					weikai[i].addEventListener('tap', function() {
 						alert('该功能暂未开放，敬请期待')
 					})
 				}
-
 				function a(b) {
 					return function() {
 						var coo = plus.navigator.getCookie('id');
-						
 						if (coo) {
+							plus.nativeUI.showWaiting();
 							b();
 						} else {
 							var btnArray = ['取消', '登陆'];

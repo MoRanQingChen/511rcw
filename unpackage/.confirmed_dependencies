@@ -29,7 +29,9 @@
 			"resumeList.html",
 			"toudifankui.html",
 			"jobInfo.html",
-			"wodeshoucang.html"
+			"wodeshoucang.html",
+			"change_password.html",
+			"forget_password.html"
 		]
 	},
 	"login.html": {
@@ -190,7 +192,8 @@
 			"app/js/ajax.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css",
-			"css/style.css"
+			"css/style.css",
+			"js/ajax.js"
 		]
 	},
 	"jianli.html": {
@@ -222,7 +225,9 @@
 			"css/mui.poppicker.css",
 			"css/mui.picker.css",
 			"js/city.data-3.js",
-			"js/ajax.js"
+			"js/ajax.js",
+			"fonts/mui.ttf",
+			"js/zhiwei.js"
 		],
 		"refer": [
 			"jianli-3.html"
@@ -281,7 +286,8 @@
 	},
 	"jianli-5.html": {
 		"refer": [
-			"jianli-6.html"
+			"jianli-6.html",
+			"main.html"
 		],
 		"resources": [
 			"js/mui.picker.js",
@@ -383,7 +389,8 @@
 			"css/mui.min.css",
 			"fonts/mui.ttf",
 			"js/ajax.js"
-		]
+		],
+		"refer": []
 	},
 	"toudijilu.html": {
 		"resources": [
@@ -393,7 +400,8 @@
 			"css/job.css",
 			"css/mui.min.css",
 			"js/ajax.js"
-		]
+		],
+		"refer": []
 	},
 	"wodeshoucang.html": {
 		"resources": [
@@ -431,6 +439,46 @@
 			"fonts/mui.ttf",
 			"css/job.css",
 			"css/mui.min.css"
+		],
+		"refer": [
+			"qiyeInfo.html"
 		]
+	},
+	"qiyeInfo.html": {
+		"resources": [
+			"js/app.js",
+			"images/job/logo.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/jobInfo.css",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"js/ajax.js"
+		],
+		"refer": [
+			"jobInfo.html"
+		]
+	},
+	"change_password.html": {
+		"resources": [
+			"css/style.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/ajax.js"
+		],
+		"refer": []
+	},
+	"forget_password.html": {
+		"resources": [
+			"css/style.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/ajax.js"
+		],
+		"refer": []
 	}
 }

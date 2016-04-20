@@ -46,6 +46,7 @@
 				var account = doc.getElementById('account');
 				//------------------------------------------------------
 				$.plusReady(function(){
+				plus.nativeUI.closeWaiting();
 				var coo = plus.navigator.getCookie('id');
 				var data = {
 					t: 19,

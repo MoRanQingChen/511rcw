@@ -19,6 +19,14 @@
 				padding: 10px;
 				http: //127.0.0.1:8020/app/main.html#
 			}
+			
+			#mengban {
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, .2);
+				position: fixed;
+				z-index: 998;
+			}
 		</style>
 	</head>
 
@@ -27,6 +35,9 @@
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">我的简历</h1>
 		</header>
+		<div id="mengban" style="display: none;">
+
+		</div>
 		<div class="mui-content">
 			<br /> 二：求职意向
 			<br />
@@ -50,7 +61,7 @@
 				</div>
 				<div class="mui-input-row" id="zhiwei">
 					<label>求职意向<span style="color: red;">*</span>：</label>
-					<input type="text" placeholder="请选择求职意向" id="yixiang">
+					<input type="text" readonly="true" placeholder="请选择求职意向" id="yixiang">
 				</div>
 
 			</form>
@@ -75,7 +86,7 @@
 		<script src="./js/mui.picker.js"></script>
 		<script src="./js/mui.poppicker.js"></script>
 		<script src="./js/ajax.js"></script>
-
+		<script src="js/zhiwei.js" type="text/javascript" charset="utf-8"></script>
 		<!--<script src="../js/mui.picker.min.js"></script>-->
 
 		<script>
@@ -87,6 +98,7 @@
 				mui('body').on('hidden', '.mui-popover', function(e) {
 					//console.log('hidden', e.detail.id);//detail为当前popover元素
 				});
+				//---------------------------------------------------------------------------------
 				//----------------------------------------------------------------------------------------
 				document.getElementById("xingzhi").addEventListener('tap', function() {
 					var btnArray = [{
@@ -178,14 +190,37 @@
 					});
 				}, false);
 				//--------------------------------------------------------------------------
+				var cityPicker2 = new $.PopPicker({
+					layer: 1
+				});
+				cityPicker2.setData(zhiweiData);
+				var zhiwei = doc.getElementById('zhiwei');
+				var cityResult3 = doc.getElementById('cityResult3');
+				zhiwei.addEventListener('tap', function(event) {
+					cityPicker2.show(function(items) {
+						//							hangwei.innerText
+						//返回 false 可以阻止选择框的关闭
+						if ((items[0] || {}).children) {
+							cityPicker2.setData((items[0] || {}).children)
+							return false
+						} else {
+							zhiwei.getElementsByTagName('input')[0].value = (items[0] || {}).text + " ";
+							jobtype = (items[0] || {}).value
+							alert(window.jobtype);
+						}
+						cityPicker2.setData(zhiweiData);
+					});
+				}, false);
 				//--------------------------------------------------------
-				document.getElementById('reg1').addEventListener('tap',function() {
+				document.getElementById('reg1').addEventListener('tap', function() {
 					if (/^\s*$/.test(v('yixiang')) || /^\s*$/.test(v('HopeType')) || /^\s*$/.test(v('HopeZone')) || /^\s*$/.test(v('HopeMonthFee'))) {
 						alert("有未填写的必填项！");
 						return
 					}
-											this.disabled=true;
-						this.innerHTML="正在提交";
+					var mengban = document.getElementById("mengban");
+					mengban.style.display = 'block';
+					this.disabled = true;
+					this.innerHTML = "正在提交";
 					var resumeInfo = plus.webview.currentWebview();
 					var data = {
 						t: 7,
@@ -194,14 +229,15 @@
 						HopeType: v('HopeType'),
 						HopeZone: v('HopeZone'),
 						HopeMonthFee: v('HopeMonthFee'),
-						zhiwei: 0 //待修改！！！！！
+						zhiwei: window.jobtype //待修改！！！！！
 					}
 					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
+						mengban.style.display = 'none';
 						if (JSONdata != 0) {
 							alert("出现错误！");
 						} else {
-										                    this.disabled=false;
-						this.innerHTML="保存并下一步";
+							this.disabled = false;
+							this.innerHTML = "保存并下一步";
 							var extrasId = resumeInfo.id;
 							console.log(extrasId);
 							mui.openWindow({
@@ -211,9 +247,9 @@
 							})
 						}
 						var data = {
-						t: 8,
-						id: resumeInfo.id,
-						ContentsSkill: v('ContentsSkill')
+							t: 8,
+							id: resumeInfo.id,
+							ContentsSkill: v('ContentsSkill')
 						}
 						console.log(data.RecuetlyPost)
 						jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
@@ -226,8 +262,7 @@
 					function v(ele) {
 						return document.getElementById(ele).value;
 					}
-				}
-			)
+				})
 				$.plusReady(function() {
 					var resumeInfo = plus.webview.currentWebview();
 					var data = {
@@ -242,10 +277,11 @@
 						}
 						document.getElementById("RecuetlyPost").value = arr[15];
 						document.getElementById("HopeType").value = arr[16];
-						document.getElementById("HopeZone").value = arr[17]
-						document.getElementById("HopeMonthFee").value = arr[18]
-						document.getElementById("yixiang").value = arr[19]
-						document.getElementById("ContentsSkill").value = arr[20]
+						document.getElementById("HopeZone").value = arr[17];
+						document.getElementById("HopeMonthFee").value = arr[18];
+						document.getElementById("yixiang").value = arr[21];
+						document.getElementById("ContentsSkill").value = arr[20];
+						window.jobtype = arr[39];
 					});
 				})
 			})(mui, document);

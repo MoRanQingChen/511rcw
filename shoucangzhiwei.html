@@ -44,25 +44,30 @@
 				var account = doc.getElementById('account');;
 				mui.plusReady(function() {
 					var coo = plus.navigator.getCookie('id');
+					plus.nativeUI.closeWaiting()
 					jp('http://www.511rcw.com/app/AppHandler.ashx', {
 						t: 24,
 						memberid: coo
 					}, function(JSONdata) {
+						plus.nativeUI.closeWaiting();
 						console.log(JSONdata)
 						var arr = JSONdata.split('|$|');
 						var flag = document.createDocumentFragment();
-						for (var i = 0; i < arr.length / 6; i++) {
+						for (var i = 0; i < arr.length / 7; i++) {
+							arr[6 + 7 * i]=arr[6 + 7 * i]?'http://www.511rcw.com/'+arr[6 + 7 * i]:'images/job/logo.png';
 							var oLi = document.createElement("li");
 							oLi.className = "mui-table-view-cell mui-media";
-							oLi.id = arr[1 + 6 * i];
-							if (arr[1 + 6 * i] != undefined) {
+							oLi.id = arr[1 + 7 * i];
+							oLi.mark=arr[7 * i];
+							if (arr[1 + 7 * i] != undefined) {
+								//arr[5]=arr[5]?'http://www.511rcw.com/'+arr[5]:'images/job/logo.png';
 								oLi.innerHTML = "<a class='jobInfoHref' href='#'>" +
-									"<img class='mui-media-object mui-pull-left' src='images/job/logo.png'>" +
+									"<img class='mui-media-object mui-pull-left' src='"+arr[6 + 7 * i]+"'>" +
 									"<div class='mui-media-body'>" +
-									arr[2 + 6 * i] +
-									"<span id='value'>" + arr[4 + 6 * i] + "</span>" +
-									"<p class='mui-ellipsis'>" + arr[5 + 6 * i] +
-									"</br><span id='address'>" + arr[3 + 6 * i] + "</span>" +
+									arr[2 + 7 * i] +
+									"<span id='value'>" + arr[4 + 7 * i] + "</span>" +
+									"<p class='mui-ellipsis'>" + arr[5 + 7 * i] +
+									"</br><span id='address'>" + arr[3 + 7 * i] + "</span>" +
 									"</p>" +
 									"</div>" +
 									"</a>";
@@ -91,7 +96,11 @@
 												})();
 												break;
 											case 2:
-												text += "选取现有的";
+												jp('http://www.511rcw.com/app/AppHandler.ashx', {t:25,id:_this.mark},function(JSONdata){
+													
+													alert("删除成功！")
+													_this.style.display='none';
+												});
 												break;
 										}
 									});

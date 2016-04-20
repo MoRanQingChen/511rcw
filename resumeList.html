@@ -48,6 +48,7 @@
 					id: coo
 				}
 				jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
+					plus.nativeUI.closeWaiting();
 					console.log(JSONdata)
 					var arr = JSONdata.split('|$|');
 					for (var i = 0; i < arr.length / 3; i++) {

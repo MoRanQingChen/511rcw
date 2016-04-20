@@ -228,7 +228,9 @@
 					"resumeList.html",
 					"toudifankui.html",
 					"jobInfo.html",
-					"wodeshoucang.html"
+					"wodeshoucang.html",
+					"change_password.html",
+					"forget_password.html"
 				],
 				"priority": 1
 			},
@@ -254,9 +256,11 @@
 					"fonts/mui.ttf",
 					"css/style.css",
 					"js/mui.min.js",
-					"js/app.js"
+					"js/app.js",
+					"js/ajax.js"
 				],
-				"priority": 1
+				"priority": 1,
+				"refer": []
 			},
 			"reg.html": {
 				"href": "reg.html",
@@ -266,7 +270,8 @@
 					"css/style.css",
 					"js/mui.min.js",
 					"js/app.js",
-					"app/js/ajax.js"
+					"app/js/ajax.js",
+					"js/ajax.js"
 				],
 				"refer": [
 					"login.html"
@@ -406,7 +411,9 @@
 					"css/mui.poppicker.css",
 					"css/mui.picker.css",
 					"js/city.data-3.js",
-					"js/ajax.js"
+					"js/ajax.js",
+					"fonts/mui.ttf",
+					"js/zhiwei.js"
 				],
 				"refer": [
 					"jianli-3.html"
@@ -479,7 +486,8 @@
 					"js/city.data-3.js"
 				],
 				"refer": [
-					"jianli-6.html"
+					"jianli-6.html",
+					"main.html"
 				],
 				"priority": 0
 			},
@@ -622,6 +630,36 @@
 					"fonts/mui.ttf",
 					"css/job.css",
 					"css/mui.min.css"
+				],
+				"refer": [
+					"qiyeInfo.html"
+				],
+				"priority": 0
+			},
+			"qiyeInfo.html": {
+				"resources": [
+					"js/app.js",
+					"images/job/logo.png",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/jobInfo.css",
+					"css/iconfont.css",
+					"css/mui.min.css",
+					"js/ajax.js"
+				],
+				"refer": [
+					"jobInfo.html"
+				],
+				"priority": 0
+			},
+			"change_password.html": {
+				"resources": [
+					"css/style.css",
+					"js/app.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/ajax.js"
 				],
 				"refer": [],
 				"priority": 0

@@ -41,6 +41,7 @@
 			(function($, doc) {
 				$.init();
 				mui.plusReady(function() {
+					plus.nativeUI.closeWaiting()
 						var coo = plus.navigator.getCookie('id');
 						jp('http://www.511rcw.com/app/AppHandler.ashx', {
 							t: 21,
@@ -48,23 +49,26 @@
 						}, function(JSONdata) {
 							console.log(JSONdata)
 							var arr = JSONdata.split('|$|');
-							console.log(arr.length)
+							console.log(arr)
 							var flag = document.createDocumentFragment();
-							for (var i = 0; i < arr.length / 4; i++) {
-								console.log(i);
+							for (var i = 0; i < arr.length / 5; i++) {
+								arr[4 + 5 * i]=arr[4 + 5 * i]?'http://www.511rcw.com/'+arr[4 + 5 * i]:'images/job/logo.png';
 								var oLi = document.createElement("li");
 								oLi.className = "mui-table-view-cell mui-media";
-								if (arr[1] != undefined) {
-									oLi.innerHTML = "<a class='jobInfoHref' id='" + arr[0 + 4 * i] + "' href='#'>" +
-										"<img class='mui-media-object mui-pull-left' src='images/job/logo.png'>" +
+								if (arr[1 + 5 * i] != undefined) {
+									oLi.mark=arr[5 * i];
+									oLi.id=arr[1 + 5 * i];
+									oLi.innerHTML = "<a class='jobInfoHref' id='" + arr[0 + 5 * i] + "' href='#'>" +
+										"<img class='mui-media-object mui-pull-left' src='"+arr[4 + 5 * i]+"'>" +
 										"<div class='mui-media-body'>" +
-										arr[2 + 4 * i] +
-										"<p class='mui-ellipsis'>" + arr[3 + 4 * i] +
+										arr[2 + 5 * i] +
+										"<p class='mui-ellipsis'>" + arr[3 + 5 * i] +
 										"</p>" +
 										"</div>" +
 										"</a>";
 									flag.appendChild(oLi);
 									oLi.addEventListener('tap', function() {
+										var _this=this;
 										var btnArray = [{
 											title: "查看公司详情"
 										}, {
@@ -79,11 +83,15 @@
 												case 0:
 													break;
 												case 1:
-													text += "拍照或录像";
+													mui.openWindow('qiyeInfo.html',_this.id)
 													break;
 												case 2:
-													text += "选取现有的";
-													break;
+													
+											jp('http://www.511rcw.com/app/AppHandler.ashx', {t:22,id:_this.mark},function(JSONdata){
+													alert("删除成功！");
+													_this.style.display='none';
+												});
+												break;
 											}
 										});
 									})

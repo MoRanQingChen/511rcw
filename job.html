@@ -218,7 +218,7 @@
 					opacity: 1;
 					-webkit-transform: translate3d(0, 0px, 0);
 					transform: translate3d(0, 0px, 0);
-				}
+				} 
 				100% {
 					opacity: 0;
 					-webkit-transform: translate3d(0, -100%, 0);
@@ -366,7 +366,7 @@
 				<ul class="mui-table-view mui-table-view-inverted">
 					<li class="mui-table-view-cell ">
 						<input id="inputKey" type="search" class="mui-input-clear" placeholder="请输入公司名或职位名" style="width:90%;margin: 10px auto;">
-					</li>
+					</li> 
 					<li class="mui-table-view-cell">
 						<a id="hangwei">行业类别</a>
 					</li>
@@ -429,6 +429,7 @@
 			var trade;
 			var jobtype;
 			var workplace;
+			
 			mui.init({
 				swipeBack: true //启用右滑关闭功能
 			});
@@ -481,11 +482,12 @@
 					var flag = document.createDocumentFragment();
 					for (var i in JSONdata) {
 						var arr = JSONdata[i].split('|$|');
+						arr[5]=arr[5]?'http://www.511rcw.com/'+arr[5]:'images/job/logo.png';
 						var oLi = document.createElement("li");
 						oLi.className = "mui-table-view-cell mui-media";
 						if (arr[1] != undefined) {
 							oLi.innerHTML = "<a class='jobInfoHref' id='" + arr[0] + "' href='#'>" +
-								"<img class='mui-media-object mui-pull-left' src='images/job/logo.png'>" +
+								"<img class='mui-media-object mui-pull-left' src="+arr[5]+">" +
 								"<div class='mui-media-body'>" +
 								arr[1] +
 								"<span id='value'>" + arr[2] + "</span>" +
@@ -521,11 +523,12 @@
 					var jobInfoHref = document.querySelectorAll(".jobInfoHref")
 					for (var i = 0; i < jobInfoHref.length; i++) {
 						jobInfoHref[i].addEventListener('tap', function(event) {
+							plus.nativeUI.showWaiting();
 							var extrasId = this.id
 							mui.openWindow({
 								url: 'jobInfo.html',
 								id: this.id,
-								extras: extrasId
+								extras: extrasId,
 							})
 						}, 0);
 					}
@@ -626,8 +629,11 @@
 					addJob();
 				});
 				$.plusReady(function() {
+					
+					
+					
+					plus.nativeUI.closeWaiting();
 					var key = plus.webview.currentWebview().id;
-					alert(key)
 					if (key != 'job') {
 						data = {
 							t: 2,

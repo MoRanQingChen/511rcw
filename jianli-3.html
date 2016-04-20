@@ -19,6 +19,13 @@
 				padding: 10px;
 				http: //127.0.0.1:8020/app/main.html#
 			}
+						#mengban{
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0,0,0,.2);
+				position: fixed;
+				z-index: 998;
+			}
 		</style>
 	</head>
 
@@ -27,6 +34,9 @@
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">我的简历</h1>
 		</header>
+		<div id="mengban" style="display: none;">
+			
+		</div>
 		<div class="mui-content">
 			<br /> 三：教育经历
 			<br />
@@ -214,6 +224,8 @@
 						alert("有未填写的必填项！");
 						return
 					}
+												var mengban=document.getElementById("mengban");
+							mengban.style.display='block';
 											this.disabled=true;
 						this.innerHTML="正在提交";
 					var data = {
@@ -227,6 +239,7 @@
 					}
 					console.log(data.RecuetlyPost)
 					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
+						mengban.style.display='none'
 						if (JSONdata != 0) {
 							alert("出现错误！");
 						} else {

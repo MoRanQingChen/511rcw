@@ -31,7 +31,7 @@
 			<div id="page2">
 				<ul class="mui-table-view">
 					<li class="noblack mui-media" style="border-bottom: 1px solid #dddddd">
-						<img src="./images/job/logo.png" style="width: 70px;height: 70px;display: block;margin: 0 auto;border-radius: 35px;border: 1px solid #cccccc;" alt="" />
+						<img src="./images/job/logo.png" id="logo" style="width: 70px;height: 70px;display: block;margin: 0 auto;border-radius: 35px;border: 1px solid #cccccc;" alt="" />
 						<h4 style="text-align: center" id="companyName">东东网络科技公司</h4>
 					</li>
 					<li class="noblack mui-media">
@@ -63,13 +63,6 @@
 
 					</li>
 				</ul>
-				<nav class="mui-bar mui-bar-tab">
-
-					<a class="mui-tab-item" style="background-color: #fa9f20;" id="shoucangqiye">
-
-						<span class="mui-tab-label " style="color: white;line-height: 50px;">收藏</span>
-					</a>
-				</nav>
 			</div>
 		</div>
 		</div>
@@ -99,7 +92,7 @@
 				return document.getElementById(ele);
 			}
 			(function($, doc) {
-				$.init();
+				$.init(); 
 				var settings = app.getSettings();
 				var account = doc.getElementById('account');
 				//
@@ -115,54 +108,23 @@
 					//设置
 					var JobId = plus.webview.currentWebview();
 					var data = {
-						t: 3,
-						id: JobId.id
+						t: 28,
+						CompanyID: JobId.id
 					};
+					console.log(JobId.id); 
 					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
 						if (JSONdata.success) {
-							var arr = JSONdata.success.split('|$|');
-							I('mainName').innerHTML = arr[50];
-							document.getElementById("Title").innerHTML = arr[2]
-							var oSpan = document.createElement('span');
-							oSpan.className = "qian";
-							oSpan.innerHTML = arr[44];
-							document.getElementById("Title").appendChild(oSpan);
-							document.getElementById("didian").innerHTML = arr[12]
-							var date = arr[25].split(' ')[0].split('-');
-							document.getElementsByClassName('date')[0].innerHTML = date[1] + '-' + date[2];
-							arr[42] = arr[42].split('/')[1]
-							document.getElementById('info').innerHTML = '<span class="mui-icon mui-icon-location"></span>' + arr[42] + '&nbsp;<span class="icon iconfont">&#xe655;</span>' + arr[43] + '&nbsp;<span class="icon iconfont">&#xe613;</span>' + arr[3] + '&nbsp;<span class="icon iconfont">&#xe6a9;</span>' + arr[28] + '&nbsp;<span class="icon iconfont">&#xe605;</span>' + arr[5] + '人&nbsp;';
-							var text = arr[14].replace(/\/\/\//g, '\n\n');
-							document.getElementById('zhiWeiMiaoShu').innerHTML = text;
-							var fuli = document.getElementById('fuli');
-							if (arr[45] != '不确定') {
-								var oSpan = document.createElement('span');
-								oSpan.className = "fuli";
-								oSpan.innerHTML = arr[45];
-								fuli.appendChild(oSpan)
-							}
-							if (arr[46] != '不确定') {
-								var oSpan = document.createElement('span');
-								oSpan.className = "fuli";
-								oSpan.innerHTML = arr[46]
-								fuli.appendChild(oSpan)
-							}
-							if (arr[15] != '面议') {
-								var oSpan = document.createElement('span');
-								oSpan.className = "fuli";
-								oSpan.innerHTML = '有福利';
-								fuli.appendChild(oSpan)
-								arr[15] = arr[15].replace(/\/\/\//g, '\n\n');
-								document.getElementById('fulidaiyu').innerHTML = '<br /><ul class="mui-table-view"><li class="mui-table-view-cell mui-media"><span class="headName">福利待遇</span></li><li class="noblack"><pre id="fuLiDaiYu">' + arr[15] + '</pre></li></ul>'
-							}
-							I('companyName').innerHTML = arr[50];
-							I('xingzhi').innerHTML = arr[51];
-							I('guimo').innerHTML = arr[52];
-							I('dizhi').innerHTML += arr[48];
-							text = arr[54].replace(/\/\/\//g, '\n\n');
+							var arr=JSONdata.success.split('|$|');
+							console.log(arr);
+							I('companyName').innerHTML = arr[0];
+							I('xingzhi').innerHTML = arr[1];
+							I('guimo').innerHTML = arr[2];
+							I('dizhi').innerHTML += arr[arr.length-1];
+							text = arr[4].replace(/\/\/\//g, '\n\n');
 							I('jianjie').innerHTML = text;
+							if(arr[5]){I('logo').src='http://www.511rcw.com/'+arr[5]}
 							var qitazhiwei = I('qitazhiwei');
-							for (var i = 56; arr[i]; i += 4) {
+							for (var i = 6; arr[i+1]; i += 4) { 
 								var oLi = document.createElement('li');
 								oLi.className = "mui-table-view-cell mui-media";
 								oLi.id = arr[i];
@@ -178,38 +140,6 @@
 								qitazhiwei.appendChild(oLi)
 							}
 							//----------------------------------------------------------------
-							document.getElementById("apply").addEventListener('tap', a(function() {
-								mui.openWindow({
-									url: 'application.html',
-									id: (JobId.id + "|" + arr[arr.length - 1]),
-									extras: {
-										name: arr[2],
-										local: arr[12],
-										companty: arr[50]
-									}
-								})
-							}));
-							document.getElementById("shoucang").addEventListener('tap', a(function(coo) {
-								jp("http://www.511rcw.com/app/AppHandler.ashx", {
-									t: 23,
-									memberid: coo,
-									rescuitid: JobId.id
-								}, function() {
-									alert("收藏职位成功");
-								})
-							}))
-							document.getElementById("shoucangqiye").addEventListener('tap', a(function(coo) {
-									jp("http://www.511rcw.com/app/AppHandler.ashx", {
-										t: 20,
-										memberid: coo,
-										companyid: arr[arr.length - 1]
-									}, function() {
-										alert("收藏企业成功");
-									})
-								}))
-								/*							document.getElementById("apply").addEventListener('tap', a(function() {
-																
-															}))*/
 						}
 					});
 					var settingButton = doc.getElementById('setting');
@@ -239,14 +169,8 @@
 					})
 				}
 			}(mui, document));
-			document.querySelectorAll("#segmentedControl>a")[0].addEventListener('tap', function() {
-				document.querySelector("#page2").style.display = "none";
-				document.querySelector("#page1").style.display = "block";
-			})
-			document.querySelectorAll("#segmentedControl>a")[1].addEventListener('tap', function() {
-				document.querySelector("#page1").style.display = "none";
-				document.querySelector("#page2").style.display = "block";
-			})
+
+
 		</script>
 
 	</body>

@@ -135,7 +135,7 @@
 			<div id="page2" style="display: none">
 				<ul class="mui-table-view">
 					<li class="noblack mui-media" style="border-bottom: 1px solid #dddddd">
-						<img src="./images/job/logo.png" style="width: 70px;height: 70px;display: block;margin: 0 auto;border-radius: 35px;border: 1px solid #cccccc;" alt="" />
+						<img src="./images/job/logo.png" id="logo" style="width: 70px;height: 70px;display: block;margin: 0 auto;border-radius: 35px;border: 1px solid #cccccc;" alt="" />
 						<h4 style="text-align: center" id="companyName">东东网络科技公司</h4>
 					</li>
 					<li class="noblack mui-media">
@@ -212,10 +212,7 @@
 					account.innerText = state.account;
 				}, false);
 				$.plusReady(function() {
-					var settingPage = $.preload({
-						"id ": 'setting',
-						"url ": 'setting.html'
-					});
+					
 					//设置
 					var JobId = plus.webview.currentWebview();
 					var data = {
@@ -224,6 +221,7 @@
 					};
 					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
 						if (JSONdata.success) {
+							plus.nativeUI.closeWaiting();
 							var arr = JSONdata.success.split('|$|');
 							I('mainName').innerHTML = arr[50];
 							document.getElementById("Title").innerHTML = arr[2]
@@ -265,6 +263,7 @@
 							I('dizhi').innerHTML += arr[48];
 							text = arr[54].replace(/\/\/\//g, '\n\n');
 							I('jianjie').innerHTML = text;
+							if(arr[55]){I('logo').src='http://www.511rcw.com/'+arr[55]}
 							var qitazhiwei = I('qitazhiwei');
 							for (var i = 56; arr[i]; i += 4) {
 								var oLi = document.createElement('li');
@@ -333,8 +332,6 @@
 						});
 					});
 					//--
-					$.oldBack = mui.back;
-					var backButtonPress = 0;
 				});
 				var weikai = document.getElementsByClassName('weikai');
 				for (var i = 0; i < weikai.length; i++) {

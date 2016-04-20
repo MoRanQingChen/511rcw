@@ -29,9 +29,13 @@
 		</header>
 
 		<div class="mui-content">
-			<div class="mui-input-row mui-search" style="margin: 15px;margin-bottom: 0;">
-				<input type="search" class="mui-input-clear" placeholder="请输入职位名">
+			<div class="mui-input-row mui-search" style="margin-left: 5%;margin-top: 15px; width: 70%;float: left;">
+				<input type="search" class="mui-input-clear" placeholder="请输入职位名" id="sousuokuang">
 			</div>
+			<button id="sousuo" type="button" class="mui-btn mui-btn-primary mui-icon mui-icon-search" style="height:34px;float: left;width: 20%;margin-top: 15px">
+		            搜索
+		        </button>
+
 			<div id="slider" class="mui-slider">
 				<div class="mui-slider-group mui-slider-loop">
 					<div class="mui-slider-item mui-slider-item-duplicate">
@@ -65,7 +69,7 @@
 		</div>
 
 		<ul class="mui-table-view mui-grid-view" style="padding: 0;">
-			<li class="mui-table-view-cell mui-media mui-col-xs-6 weikai" style="border-right: 1px solid #DDD;">
+			<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-right: 1px solid #DDD;" id="shoucang">
 				<a href="#">
 					<div class="mui-media-body " style="height: 40px;">
 						我的收藏<span class="mui-icon mui-icon-star"></span>
@@ -74,8 +78,7 @@
 			</li>
 			<li class="mui-table-view-cell mui-media mui-col-xs-6 " id="jianliguanli">
 				<a href="#">
-
-					<div class="mui-media-body" style="height: 40px;" >
+					<div class="mui-media-body" style="height: 40px;">
 						简历管理<span class="mui-icon mui-icon-compose"></span>
 					</div>
 				</a>
@@ -140,34 +143,35 @@
 				})
 			}
 			//----------------------------------------------------------------------推荐职位
-			jp("http://www.511rcw.com/app/AppHandler.ashx", {t:26}, function(a,JSONdata) {
-				var flag = document.createDocumentFragment();
-			for(var i in JSONdata){
-				var arr = JSONdata[i].split('|$|');
-				var oLi = document.createElement("li");
-				oLi.className = "mui-table-view-cell mui-media";
-				oLi.innerHTML = "<a href='#'>" +
-					"<img class='mui-media-object mui-pull-left' src='images/job/logo.png'>" +
-					"<div class='mui-media-body'>" +
-					arr[1] +
-					"<span id='value'>" + arr[2] + "</span>" +
-					"<p class='mui-ellipsis'>" + arr[4] +
-					"</br><span id='address'>" + arr[3] + "</span>" +
-					"</p>" +
-					"</div>" +
-					"</a>";
-				flag.appendChild(oLi);
-				;(function(i){
-									oLi.addEventListener('tap',function(){
-					mui.openWindow('jobInfo.html',i)
-				})
-				})(arr[0]);
-				
-
-			}
-			document.getElementById("jobs").appendChild(flag);
-			})
-			
+			jp("http://www.511rcw.com/app/AppHandler.ashx", {
+				t: 26
+			}, function(a, JSONdata) {
+				var flag = document.createDocumentFragment(); 
+				for (var i in JSONdata) {
+					var arr = JSONdata[i].split('|$|');
+					arr[5]=arr[5]?'http://www.511rcw.com/'+arr[5]:'images/job/logo.png';
+					var oLi = document.createElement("li");
+					oLi.className = "mui-table-view-cell mui-media";
+					oLi.innerHTML = "<a href='#'>" +
+						"<img class='mui-media-object mui-pull-left' src='"+arr[5]+"'>" +
+						"<div class='mui-media-body'>" +
+						arr[1] +
+						"<span id='value'>" + arr[2] + "</span>" +
+						"<p class='mui-ellipsis'>" + arr[4] +
+						"</br><span id='address'>" + arr[3] + "</span>" +
+						"</p>" +
+						"</div>" +
+						"</a>";
+					flag.appendChild(oLi);;
+					(function(i) {
+						oLi.addEventListener('tap', function() {
+							plus.nativeUI.showWaiting()
+							mui.openWindow('jobInfo.html', i)
+						})
+					})(arr[0]);
+				}
+				document.getElementById("jobs").appendChild(flag);
+			});
 			(function($, doc) {
 				$.init();
 				var settings = app.getSettings();
@@ -197,25 +201,34 @@
 				var weikai = document.getElementsByClassName('weikai');
 				for (var i = 0; i < weikai.length; i++) {
 					weikai[i].addEventListener('tap', function() {
-						alert('该功能暂未开放，敬请期待');
+						$.openWindow({
+							url: 'forget_password.html'
+						})
+//						alert('该功能暂未开放，敬请期待');
 					})
 				}
 				//------------------------------------------------简历管理
 				var jianliguanli = document.getElementById("jianliguanli");
 				jianliguanli.addEventListener('tap', a(function() {
-					$.openWindow({
-						url: 'resumeList.html'
-					})
-				}))
-				document.getElementById("jianlifankui").addEventListener('tap',a(function(){
+						$.openWindow({
+							url: 'resumeList.html'
+						})
+					}))
+					//------------------------------------------------------------
+				document.getElementById("jianlifankui").addEventListener('tap', a(function() {
 					$.openWindow({
 						url: 'toudifankui.html'
 					})
-				}))
+				}));
+				document.getElementById("shoucang").addEventListener('tap', a(function() {
+						$.openWindow('wodeshoucang.html')
+					}))
+					//-----------------------------------------------------------
 				function a(b) {
 					return function() {
 						var coo = plus.navigator.getCookie('id');
-						if (coo) {
+						if (coo) {http://127.0.0.1:8020/app/main.html#
+							plus.nativeUI.showWaiting();
 							b();
 						} else {
 							var btnArray = ['取消', '登陆'];
@@ -229,6 +242,14 @@
 						}
 					}
 				}
+				//----------------------------------------------------------------
+				document.getElementById("sousuo").addEventListener('tap', function() {
+					plus.nativeUI.showWaiting()
+					mui.openWindow({
+						url: 'job.html',
+						id: document.getElementById("sousuokuang").value
+					});
+				})
 			}(mui, document));
 		</script>
 
