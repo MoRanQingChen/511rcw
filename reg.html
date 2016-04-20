@@ -94,7 +94,7 @@
 						return;
 					}
 					console.log(data.birth);
-					if(/\d+/.test(data.birth)){
+					if(!/\d+/.test(data.birth)){
 						alert('未选择出生日期')
 						return;
 					}
