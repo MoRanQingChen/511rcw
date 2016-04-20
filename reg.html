@@ -68,7 +68,7 @@
 						alert('两次密码不一致！')
 						return;
 					}
-					mui.nativeUI.showWaiting();
+					plus.nativeUI.showWaiting();
 					var data = {
 						t: 27,
 						UserID: document.getElementById("account").value,
@@ -78,7 +78,7 @@
 						birth: document.getElementById("birth").value
 					}
 					jp('http://www.511rcw.com/app/AppHandler.ashx', data, function() {
-						mui.nativeUI.closeWaiting();
+						plus.nativeUI.closeWaiting();
 						alert(arguments[0].msg);
 						if (arguments[0].success == "true") mui.back();
 					});

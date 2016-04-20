@@ -41,75 +41,81 @@
 			(function($, doc) {
 				$.init();
 				var settings = app.getSettings();
-				$.plusReady(function(){
-				var coo = plus.navigator.getCookie('id');
-				var data = {
-					t: 5,
-					id: coo
-				}
-				jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
-					plus.nativeUI.closeWaiting();
-					console.log(JSONdata)
-					var arr = JSONdata.split('|$|');
-					for (var i = 0; i < arr.length / 3; i++) {
-						var oLi = document.createElement('li');
-						oLi.className = "mui-table-view-cell";
-						oLi.innerHTML = '<div class="mui-slider-right mui-disabled"><a class="mui-btn mui-btn-grey viw" id="' + arr[3 * i] + '">预览</a><a class="mui-btn mui-btn-yellow edt">编辑</a><a class="mui-btn mui-btn-red del" id="' + arr[3 * i + 1] + '">删除</a></div><div class="mui-slider-handle"><div class="mui-table-cell">' + arr[3 * i + 2] + '</div></div>'
-						document.getElementById('resumeList').appendChild(oLi);
+				$.plusReady(function() {
+					var coo = plus.navigator.getCookie('id');
+					var data = {
+						t: 5,
+						id: coo
 					}
-					var edt = document.getElementsByClassName('edt');
-					var del = document.getElementsByClassName('del');
-					var viw = document.getElementsByClassName('viw');
-					var cell = document.getElementsByClassName('mui-table-view-cell');
-					for (var i = 0; i < del.length; i++) {
-						var resumeID = del[i].id
-						del[i].addEventListener('tap', function() {
-							event.stopPropagation()
-							var _this = this;
-							var btnArray = ['否', '是'];
-							mui.confirm('确认要删除此简历？', '511人才网', btnArray, function(e) {
-								if (e.index == 1) {
-									var data2 = {
-										t: 13,
-										id: _this.id
-									}
-									jp("http://www.511rcw.com/app/AppHandler.ashx", data2, function(JSONdata) {
-										if (JSONdata.success) {
-											_this.parentNode.parentNode.style.display = "none";
-										}
-									});
-								}
-							})
-						})
-						var rows = viw[i].id;
-						edt[i].addEventListener('tap', function() {
-							event.stopPropagation()
-							mui.openWindow({
-								url: 'jianli-1.html',
-								id: resumeID,
-								extras: {
-									Memid: data.id,
-									rows: rows
-								}
-							})
-						})
-						function a(){
-							mui.openWindow({
-								url: 'viewResume.html',
-								id: "viewResume",
-								extras: {
-									Memid: data.id,
-									rows: rows
-								}
-							})
+					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
+						plus.nativeUI.closeWaiting();
+						console.log(JSONdata)
+						var arr = JSONdata.split('|$|');
+						var rows = [];
+						var Rid = [];
+						for (var i = 0; i < arr.length / 3; i++) {
+							var oLi = document.createElement('li');
+							oLi.className = "mui-table-view-cell";
+							oLi.innerHTML = '<div class="mui-slider-right mui-disabled"><a class="mui-btn mui-btn-grey viw" id="' + arr[3 * i] + '">预览</a><a class="mui-btn mui-btn-yellow edt">编辑</a><a class="mui-btn mui-btn-red del" id="' + arr[3 * i + 1] + '">删除</a></div><div class="mui-slider-handle"><div class="mui-table-cell">' + arr[3 * i + 2] + '</div></div>'
+							document.getElementById('resumeList').appendChild(oLi);
+							rows.push(arr[3 * i]);
+							Rid.push(arr[3 * i + 1]);
 						}
-						viw[i].addEventListener('tap',a)
-						cell[i].addEventListener('tap',a)
-					}
-				});
-				
+						var edt = document.getElementsByClassName('edt');
+						var del = document.getElementsByClassName('del');
+						var viw = document.getElementsByClassName('viw');
+						var cell = document.getElementsByClassName('mui-table-view-cell');
+						for (var i = 0; i < del.length; i++) {;
+							(function() {
+								var resumeID = del[i].id
+								del[i].addEventListener('tap', function() {
+									event.stopPropagation()
+									var _this = this;
+									var btnArray = ['否', '是'];
+									mui.confirm('确认要删除此简历？', '511人才网', btnArray, function(e) {
+										if (e.index == 1) {
+											var data2 = {
+												t: 13,
+												id: _this.id
+											}
+											jp("http://www.511rcw.com/app/AppHandler.ashx", data2, function(JSONdata) {
+												if (JSONdata.success) {
+													_this.parentNode.parentNode.style.display = "none";
+												}
+											});
+										}
+									})
+								})
+								var rows = viw[i].id;
+								edt[i].addEventListener('tap', function() {
+									event.stopPropagation()
+									mui.openWindow({
+										url: 'jianli-1.html',
+										id: resumeID,
+										extras: {
+											Memid: data.id,
+											rows: rows
+										}
+									})
+								})
+
+								function a() {
+									mui.openWindow({
+										url: 'viewResume.html',
+										id: "viewResume",
+										extras: {
+											Memid: data.id,
+											rows: rows
+										}
+									})
+								}
+								viw[i].addEventListener('tap', a)
+								cell[i].addEventListener('tap', a)
+							})()
+						}
+					});
 				})
-				document.getElementById('newResume').addEventListener('tap',function() {
+				document.getElementById('newResume').addEventListener('tap', function() {
 						mui.openWindow({
 							url: 'jianli-1.html',
 							id: 0
