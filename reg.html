@@ -37,7 +37,7 @@
 					<label>真实姓名:</label>
 					<input id='RealName' type="text" class="mui-input-clear mui-input" placeholder="请输入真实姓名">
 				</div>
-				<div class="mui-input-row">
+				<div class="mui-input-row" id="chusheng">
 					<label>出生日期:</label>
 					<input id='birth' readonly="true" type="text" class="mui-input-clear mui-input" placeholder="选择出生日期">
 				</div>
@@ -68,7 +68,7 @@
 						alert('两次密码不一致！')
 						return;
 					}
-					plus.nativeUI.showWaiting();
+					
 					var data = {
 						t: 27,
 						UserID: document.getElementById("account").value,
@@ -77,6 +77,28 @@
 						Email: document.getElementById("email").value,
 						birth: document.getElementById("birth").value
 					}
+					if(!/^\w{5,20}$/.test(data.UserID)){
+						alert('用户名只能由5到20位字母和数字组成');
+						return;
+					}
+					if(!/\w{6,20}/.test(data.UserPwd)){
+						alert('密码只能由6到20位字母和数字组成');
+						return;
+					}
+					if(!/^[\u4E00-\u9FA5]{2,5}$/.test(data.RealName)){
+						alert('姓名格式不正确')
+						return;
+					}
+					if(!/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test(data.Email)){
+						alert('邮箱格式不正确')
+						return;
+					}
+					console.log(data.birth);
+					if(/\d+/.test(data.birth)){
+						alert('未选择出生日期')
+						return;
+					}
+					plus.nativeUI.showWaiting();
 					jp('http://www.511rcw.com/app/AppHandler.ashx', data, function() {
 						plus.nativeUI.closeWaiting();
 						alert(arguments[0].msg);
@@ -92,9 +114,9 @@
 					maxDate.setFullYear(2010, 0, 1);
 					plus.nativeUI.pickDate(function(e) {
 						var d = e.date;
-						document.getElementById("chusheng").getElementsByTagName('input')[0].value = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+						document.getElementById("birth").value = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
 					}, function(e) {
-						document.getElementById("chusheng").getElementsByTagName('input')[0].value = ""
+						document.getElementById("birth").value = ""
 					}, {
 						title: "请选择日期",
 						date: dDate,
