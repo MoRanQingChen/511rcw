@@ -1,1 +1,1 @@
-callback(1,0)
+callback(0,0)
