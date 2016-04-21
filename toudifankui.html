@@ -55,11 +55,11 @@
 				jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
 				var arr = JSONdata.split('|$|');
 				var fankui = document.getElementById("fankui");
-				for (var i = 0; i < arr.length / 4; i++) {
-					arr[i + 2] = arr[i + 2].replace(/\/\/\//g, '\n');
+				for (var i = 0; i < arr.length / 3; i++) {
+					arr[3*i + 2] = arr[3*i + 2].replace(/\/\/\//g, '\n');
 					var oLi = document.createElement('li');
 					oLi.className = "mui-table-view-cell";
-					oLi.innerHTML = '<div class="mui-table"><div class="mui-table-cell mui-col-xs-10"><h4 class="mui-ellipsis">' + arr[1] + '</h4><pre>' + arr[2] + '</pre><p class="mui-h6 mui-ellipsis">' + arr[0] + '</p></div></div>';
+					oLi.innerHTML = '<div class="mui-table"><div class="mui-table-cell mui-col-xs-10"><h4 class="mui-ellipsis">' + arr[3*i+1] + '</h4><pre>' + arr[3*i+2] + '</pre><p class="mui-h6 mui-ellipsis">' + arr[3*i+0] + '</p></div></div>';
 					fankui.appendChild(oLi);
 				}
 				if(arr.length<3){

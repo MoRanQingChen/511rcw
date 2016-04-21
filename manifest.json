@@ -377,7 +377,9 @@
 				"refer": [
 					"resumeList.html",
 					"toudifankui.html",
-					"toudijilu.html"
+					"toudijilu.html",
+					"shoucangzhiwei.html",
+					"shoucangqiye.html"
 				],
 				"priority": 0
 			},

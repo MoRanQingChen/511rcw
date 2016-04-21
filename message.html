@@ -47,12 +47,12 @@
 			</ul>
 			<br />
 			<ul class="mui-table-view mui-table-view-chevron">
-				<li class="mui-table-view-cell">
+				<li class="mui-table-view-cell" id="zhiwei">
 					<a class="mui-navigate-right">
 						<span class="mui-icon mui-icon-star"></span>职位收藏夹
 					</a>
 				</li>
-				<li class="mui-table-view-cell">
+				<li class="mui-table-view-cell" id="qiye">
 					<a class="mui-navigate-right">
 						<span class="mui-icon mui-icon-map"></span>收藏的企业
 					</a>
@@ -172,6 +172,17 @@
 							url: 'toudijilu.html'
 						})
 					}));
+					document.getElementById("zhiwei").addEventListener('tap',a(function(){
+						$.openWindow({
+							url: 'shoucangzhiwei.html'
+						})
+					}))
+					document.getElementById("qiye").addEventListener('tap',a(function(){
+						$.openWindow({
+							url: 'shoucangqiye.html'
+						})
+					}))
+					
 					document.getElementById("xiugai").addEventListener('tap',a(function(){
 						$.openWindow({
 							url: 'change_password.html'

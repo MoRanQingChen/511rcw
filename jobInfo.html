@@ -220,9 +220,9 @@
 						id: JobId.id
 					};
 					jp("http://www.511rcw.com/app/AppHandler.ashx", data, function(JSONdata) {
-						if (JSONdata.success) {
+						if (JSONdata) {
 							plus.nativeUI.closeWaiting();
-							var arr = JSONdata.success.split('|$|');
+							var arr = JSONdata.split('|$|');
 							I('mainName').innerHTML = arr[50];
 							document.getElementById("Title").innerHTML = arr[2]
 							var oSpan = document.createElement('span');
